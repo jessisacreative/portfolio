@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOU:MATTER — Jess Watson</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --black: #0a0a0a;
+            --grey-600: #555;
+            --grey-400: #999;
+            --grey-200: #ddd;
+            --grey-100: #f4f4f4;
+            --white: #fff;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: var(--black);
+            background: var(--white);
+            font-weight: 400;
+        }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 32px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            mix-blend-mode: difference;
+        }
+        header * { color: var(--white); }
+        .logo {
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+        nav { display: flex; gap: 48px; }
+        nav a {
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+        }
+        nav a:hover { opacity: 1; }
+
+        .project-hero {
+            position: relative;
+            height: 80vh;
+            min-height: 600px;
+            overflow: hidden;
+        }
+        .project-hero img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .project-hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%);
+        }
+        .project-hero-content {
+            position: absolute;
+            bottom: 80px;
+            left: 80px;
+            right: 80px;
+            color: var(--white);
+        }
+        .project-number {
+            font-size: 14px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            margin-bottom: 24px;
+        }
+        .project-title {
+            font-size: clamp(48px, 8vw, 96px);
+            font-weight: 300;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 24px;
+        }
+        .project-meta {
+            font-size: 14px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            opacity: 0.7;
+        }
+
+        .project-content {
+            padding: 120px 80px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .project-intro {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+            margin-bottom: 120px;
+        }
+        .project-details {
+            font-size: 13px;
+            line-height: 2;
+        }
+        .project-details dt {
+            color: var(--grey-400);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            font-size: 11px;
+            margin-top: 24px;
+        }
+        .project-details dt:first-child { margin-top: 0; }
+        .project-details dd { color: var(--black); }
+        .project-description {
+            font-size: 22px;
+            font-weight: 300;
+            line-height: 1.6;
+        }
+        .project-description p + p {
+            margin-top: 24px;
+            font-size: 16px;
+            color: var(--grey-600);
+            line-height: 1.8;
+        }
+
+        .project-gallery { display: grid; gap: 32px; }
+        .gallery-row { display: grid; gap: 32px; }
+        .gallery-row.two-col { grid-template-columns: 1fr 1fr; }
+        .gallery-row.three-col { grid-template-columns: 1fr 1fr 1fr; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-caption {
+            margin-top: 12px;
+            font-size: 12px;
+            color: var(--grey-400);
+            line-height: 1.5;
+        }
+
+        .project-nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 80px;
+            border-top: 1px solid var(--grey-200);
+        }
+        .project-nav a {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--grey-400);
+            transition: color 0.3s;
+        }
+        .project-nav a:hover { color: var(--black); }
+        .project-nav .next { text-align: right; }
+        .project-nav .label {
+            font-size: 11px;
+            margin-bottom: 8px;
+            display: block;
+        }
+        .project-nav .title {
+            font-size: 24px;
+            color: var(--black);
+            text-transform: none;
+            letter-spacing: -0.02em;
+        }
+
+        footer {
+            padding: 48px 80px;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--grey-200);
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+        }
+
+        @media (max-width: 1024px) {
+            header { padding: 24px 32px; }
+            .project-hero-content { left: 32px; right: 32px; bottom: 48px; }
+            .project-content { padding: 80px 32px; }
+            .project-intro { grid-template-columns: 1fr; gap: 48px; }
+            .gallery-row.two-col, .gallery-row.three-col { grid-template-columns: 1fr; }
+            .project-nav { padding: 48px 32px; flex-direction: column; gap: 48px; }
+            .project-nav .next { text-align: left; }
+            footer { padding: 32px; flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">Jess Watson</a>
+        <nav>
+            <a href="/#work">Work</a>
+            <a href="/#about">About</a>
+            <a href="/#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <img src="images/YOU MATTER.jpg" alt="YOU:MATTER campaign">
+        <div class="project-hero-overlay"></div>
+        <div class="project-hero-content">
+            <p class="project-number">Project 01</p>
+            <h1 class="project-title">YOU:MATTER</h1>
+            <p class="project-meta">National Science and Media Museum, 2025</p>
+        </div>
+    </section>
+
+    <div class="project-content">
+        <div class="project-intro">
+            <dl class="project-details">
+                <dt>Client</dt>
+                <dd>National Science and Media Museum</dd>
+                <dt>Partners</dt>
+                <dd>Bradford 2025, Marshmallow Laser Feast</dd>
+                <dt>Role</dt>
+                <dd>Marketing Manager, Campaign Lead</dd>
+                <dt>Year</dt>
+                <dd>2025</dd>
+            </dl>
+            <div class="project-description">
+                <p>YOU:MATTER is a spectacular immersive installation by experiential artist collective Marshmallow Laser Feast for Bradford 2025 UK City of Culture. The experience invites visitors to explore their connection to the universe, discovering how everything from the stars to each living cell is woven together.</p>
+                <p>I led the marketing and communications campaign, working closely with Bradford 2025 and the museum's exhibitions team. This was a joined-up campaign requiring careful coordination between multiple partners. I directed the creative content strategy, coordinating photo and video shoots to capture the immersive nature of the experience. Working with external agencies, I managed asset production while ensuring messaging remained accessible for diverse audiences.</p>
+                <p>The social media strategy needed to communicate complex ideas (our connection to the cosmos, the science behind the experience) in ways that felt warm and relevant to Bradford's communities. The project required sensitive messaging around wellbeing themes, careful consideration of accessibility, and a tone that balanced wonder and science with genuine warmth.</p>
+            </div>
+        </div>
+
+        <div class="project-gallery">
+            <div class="gallery-row two-col">
+                <div class="gallery-item">
+                    <img src="images/you matter D6 design - families.jpg" alt="Campaign design for families">
+                    <p class="gallery-caption">D6 poster design for family audiences</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/you matter D6 design - young adults.jpg" alt="Campaign design for young adults">
+                    <p class="gallery-caption">D6 poster design for young adult audiences</p>
+                </div>
+            </div>
+
+            <div class="gallery-row">
+                <div class="gallery-item">
+                    <img src="images/photo of the you matter campaign in bradford forster square train station.jpg" alt="Campaign at Bradford train station">
+                    <p class="gallery-caption">Out-of-home advertising at Bradford Forster Square station</p>
+                </div>
+            </div>
+
+            <div class="gallery-row two-col">
+                <div class="gallery-item">
+                    <img src="images/you matter family hero image square.jpg" alt="Family campaign creative">
+                    <p class="gallery-caption">Social media creative for family audiences</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/you matter young adults hero image square.jpg" alt="Young adults campaign creative">
+                    <p class="gallery-caption">Social media creative for young adults</p>
+                </div>
+            </div>
+
+            <div class="gallery-row">
+                <div class="gallery-item">
+                    <img src="images/a photograph of me in front of the breathing planet installation in the you matter galleries featured in the yorkshire evening post.jpg" alt="Yorkshire Evening Post feature">
+                    <p class="gallery-caption">Press coverage in the Yorkshire Evening Post</p>
+                </div>
+            </div>
+
+            <div class="gallery-row two-col">
+                <div class="gallery-item">
+                    <img src="images/screenshot of the you matter social media campaign on facebook.png" alt="Social media campaign">
+                    <p class="gallery-caption">Paid social campaign on Meta platforms</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/photo of me and the you matter project team at the launch.jpg" alt="Launch event team">
+                    <p class="gallery-caption">The project team at the exhibition launch</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="project-nav">
+        <a href="/" class="prev">
+            <span class="label">← Back to</span>
+            <span class="title">All Projects</span>
+        </a>
+        <a href="soundvision.html" class="next">
+            <span class="label">Next Project →</span>
+            <span class="title">Sound + Vision</span>
+        </a>
+    </nav>
+
+    <footer>
+        <span>© 2026 Jess Watson</span>
+        <span>Marketing & Design for Arts & Culture</span>
+    </footer>
+</body>
+</html>

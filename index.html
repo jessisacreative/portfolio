@@ -12,223 +12,539 @@
         }
 
         :root {
-            --black: #000000;
-            --grey-900: #1a1a1a;
-            --grey-700: #4d4d4d;
-            --grey-500: #808080;
-            --grey-300: #b3b3b3;
-            --grey-100: #e6e6e6;
-            --white: #ffffff;
+            --black: #0a0a0a;
+            --grey-800: #222;
+            --grey-600: #555;
+            --grey-400: #999;
+            --grey-200: #ddd;
+            --grey-100: #f4f4f4;
+            --white: #fff;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: var(--black);
+            background: var(--white);
             font-weight: 400;
-            line-height: 1.5;
-            color: var(--grey-900);
-            background-color: var(--white);
         }
 
-        nav {
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Header */
+        header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            padding: 24px 48px;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--grey-100);
-            z-index: 100;
+            z-index: 1000;
+            padding: 32px 48px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            mix-blend-mode: difference;
+        }
+
+        header * {
+            color: var(--white);
         }
 
         .logo {
-            font-size: 16px;
+            font-size: 13px;
             font-weight: 500;
-            color: var(--black);
-            text-decoration: none;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
 
-        .nav-links {
+        nav {
             display: flex;
-            gap: 32px;
-            list-style: none;
+            gap: 48px;
         }
 
-        .nav-links a {
-            font-size: 14px;
-            color: var(--grey-700);
-            text-decoration: none;
+        nav a {
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            transition: opacity 0.3s;
         }
 
-        .nav-links a:hover {
-            color: var(--black);
+        nav a:hover {
+            opacity: 1;
         }
 
+        /* Hero */
         .hero {
-            min-height: 80vh;
+            min-height: 100vh;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+        }
+
+        .hero-left {
+            background: var(--black);
+            color: var(--white);
+            padding: 180px 80px 80px;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            padding: 120px 48px 80px;
-            max-width: 1400px;
-            margin: 0 auto;
+            justify-content: space-between;
         }
 
-        h1 {
-            font-size: 56px;
-            font-weight: 400;
-            letter-spacing: -0.02em;
-            line-height: 1.1;
-            margin-bottom: 32px;
-            max-width: 900px;
+        .hero-title {
+            font-size: clamp(56px, 9vw, 140px);
+            font-weight: 300;
+            line-height: 0.85;
+            letter-spacing: -0.04em;
         }
 
-        .subtitle {
-            font-size: 20px;
-            color: var(--grey-500);
-            max-width: 600px;
-            line-height: 1.6;
+        .hero-title em {
+            font-style: normal;
+            font-weight: 600;
         }
 
-        .section {
-            padding: 96px 48px;
-            max-width: 1400px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            font-size: 12px;
+        .hero-location {
+            font-size: 11px;
+            letter-spacing: 0.2em;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--grey-500);
-            margin-bottom: 48px;
+            color: var(--grey-400);
         }
 
-        .work-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 32px;
+        .hero-right {
+            background: var(--grey-100);
+            padding: 180px 80px 80px;
+            display: flex;
+            align-items: flex-end;
+        }
+
+        .hero-intro {
+            max-width: 380px;
+        }
+
+        .hero-intro .lead {
+            font-size: 26px;
+            font-weight: 300;
+            line-height: 1.35;
+            margin-bottom: 28px;
+            letter-spacing: -0.01em;
+        }
+
+        .hero-intro p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: var(--grey-600);
+        }
+
+        /* Section */
+        .section {
+            padding: 160px 80px;
+        }
+
+        .section-label {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+            margin-bottom: 80px;
+            display: flex;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--grey-200);
+            padding-bottom: 20px;
+        }
+
+        /* Work */
+        .work-list {
+            display: flex;
+            flex-direction: column;
+            gap: 160px;
         }
 
         .work-item {
-            cursor: pointer;
-            text-decoration: none;
-            color: inherit;
-            display: block;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .work-item:nth-child(even) {
+            direction: rtl;
+        }
+
+        .work-item:nth-child(even) > * {
+            direction: ltr;
         }
 
         .work-image {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work-image img {
             width: 100%;
-            aspect-ratio: 4 / 3;
-            background-color: var(--grey-100);
-            margin-bottom: 16px;
+            height: auto;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .work-item:hover .work-image img {
+            transform: scale(1.04);
+        }
+
+        .work-number {
+            font-size: 120px;
+            font-weight: 200;
+            line-height: 1;
+            color: var(--grey-200);
+            margin-bottom: 24px;
+            letter-spacing: -0.04em;
+        }
+
+        .work-item:hover .work-number {
+            color: var(--grey-400);
         }
 
         .work-title {
-            font-size: 22px;
-            font-weight: 500;
-            margin-bottom: 8px;
+            font-size: 42px;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            margin-bottom: 16px;
+            line-height: 1.1;
         }
 
         .work-meta {
-            font-size: 13px;
-            color: var(--grey-500);
-            margin-bottom: 12px;
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+            margin-bottom: 32px;
         }
 
         .work-desc {
             font-size: 15px;
-            color: var(--grey-700);
-            line-height: 1.5;
+            line-height: 1.7;
+            color: var(--grey-600);
+            max-width: 400px;
         }
 
-        footer {
-            padding: 48px;
-            text-align: center;
-            border-top: 1px solid var(--grey-100);
+        /* About */
+        .about {
+            background: var(--black);
+            color: var(--white);
         }
 
-        footer p {
+        .about-grid {
+            display: grid;
+            grid-template-columns: 400px 1fr;
+            gap: 120px;
+            align-items: center;
+        }
+
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .about-label {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+            margin-bottom: 40px;
+        }
+
+        .about-text .lead {
+            font-size: 32px;
+            font-weight: 300;
+            line-height: 1.4;
+            letter-spacing: -0.01em;
+            margin-bottom: 40px;
+        }
+
+        .about-text p {
+            font-size: 15px;
+            line-height: 1.8;
+            color: var(--grey-400);
+            max-width: 520px;
+        }
+
+        .about-text p + p {
+            margin-top: 24px;
+        }
+
+        /* Contact */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: end;
+        }
+
+        .contact-cta {
+            font-size: clamp(48px, 7vw, 96px);
+            font-weight: 300;
+            line-height: 1;
+            letter-spacing: -0.03em;
+        }
+
+        .contact-info {
+            text-align: right;
+        }
+
+        .contact-info p {
             font-size: 13px;
-            color: var(--grey-500);
+            color: var(--grey-400);
+            margin-bottom: 20px;
+            line-height: 1.6;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 36px;
+        .contact-email {
+            font-size: 20px;
+            font-weight: 400;
+            border-bottom: 1px solid var(--black);
+            padding-bottom: 4px;
+            transition: border-color 0.3s;
+        }
+
+        .contact-email:hover {
+            border-color: var(--grey-400);
+        }
+
+        /* Footer */
+        footer {
+            padding: 48px 80px;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--grey-200);
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            header {
+                padding: 24px 32px;
             }
 
-            .work-grid {
+            .hero {
                 grid-template-columns: 1fr;
+            }
+
+            .hero-left {
+                padding: 140px 32px 64px;
+                min-height: 60vh;
+            }
+
+            .hero-right {
+                padding: 64px 32px;
+            }
+
+            .section {
+                padding: 100px 32px;
+            }
+
+            .work-list {
+                gap: 100px;
+            }
+
+            .work-item {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .work-item:nth-child(even) {
+                direction: ltr;
+            }
+
+            .work-number {
+                font-size: 72px;
+            }
+
+            .work-title {
+                font-size: 28px;
+            }
+
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 64px;
+            }
+
+            .about-image {
+                max-width: 320px;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+
+            .contact-info {
+                text-align: left;
+            }
+
+            footer {
+                padding: 32px;
+                flex-direction: column;
+                gap: 8px;
             }
         }
     </style>
 </head>
 <body>
-    <nav>
+    <header>
         <a href="/" class="logo">Jess Watson</a>
-        <ul class="nav-links">
-            <li><a href="#work">Work</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+        <nav>
+            <a href="#work">Work</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
     <section class="hero">
-        <h1>Strategic marketing and creative campaigns for arts and culture</h1>
-        <p class="subtitle">Marketing Manager at the National Science and Media Museum and Campaign Coordinator for Bradford Museums and Galleries.</p>
-    </section>
-
-    <section id="work" class="section">
-        <h2 class="section-title">Selected Work</h2>
-        <div class="work-grid">
-            
-            <a href="youmatter.html" class="work-item">
-                <div class="work-image"></div>
-                <h3 class="work-title">YOU:MATTER</h3>
-                <p class="work-meta">National Science and Media Museum</p>
-                <p class="work-desc">Multi-channel campaign with Bradford 2025 and Marshmallow Laser Feast, engaging families and young adults.</p>
-            </a>
-
-            <a href="soundvision.html" class="work-item">
-                <div class="work-image"></div>
-                <h3 class="work-title">Sound + Vision</h3>
-                <p class="work-meta">National Science and Media Museum</p>
-                <p class="work-desc">Campaign launch for permanent galleries. Led creative direction and secured out-of-home advertising across Yorkshire.</p>
-            </a>
-
-            <a href="jameelprize.html" class="work-item">
-                <div class="work-image"></div>
-                <h3 class="work-title">Jameel Prize: Moving Images</h3>
-                <p class="work-meta">Bradford Museums and Galleries</p>
-                <p class="work-desc">International contemporary art exhibition campaign coordinating design agencies and paid social strategy.</p>
-            </a>
-
-            <a href="fungiexhibition.html" class="work-item">
-                <div class="work-image"></div>
-                <h3 class="work-title">The Great Leeds Fungi Exhibition</h3>
-                <p class="work-meta">Leeds Central Library</p>
-                <p class="work-desc">Event photography and exhibition of personal nature photography exploring fungi and natural forms.</p>
-            </a>
-
+        <div class="hero-left">
+            <h1 class="hero-title">
+                Arts &<br>
+                <em>Culture</em><br>
+                Marketing
+            </h1>
+            <p class="hero-location">West Yorkshire, UK</p>
+        </div>
+        <div class="hero-right">
+            <div class="hero-intro">
+                <p class="lead">Strategic campaigns for museums, galleries, and cultural institutions.</p>
+                <p>Marketing Manager at the National Science and Media Museum. Campaign Coordinator for Bradford Museums and Galleries. Connecting audiences with arts and culture across Yorkshire and beyond.</p>
+            </div>
         </div>
     </section>
 
-    <section id="about" class="section">
-        <h2 class="section-title">About</h2>
-        <p style="max-width: 700px; font-size: 18px; line-height: 1.7;">I specialize in strategic marketing for arts and culture, working across cultural institutions and creative agencies to deliver exhibitions, events, and campaigns. Based in West Yorkshire.</p>
+    <section id="work" class="section">
+        <div class="section-label">
+            <span>Selected Work</span>
+            <span>2023–2025</span>
+        </div>
+
+        <div class="work-list">
+            <a href="youmatter.html" class="work-item">
+                <div class="work-image">
+                    <img src="images/YOU MATTER.jpg" alt="YOU:MATTER campaign">
+                </div>
+                <div class="work-info">
+                    <div class="work-number">01</div>
+                    <h2 class="work-title">YOU:MATTER</h2>
+                    <p class="work-meta">National Science and Media Museum, 2025</p>
+                    <p class="work-desc">Multi-channel campaign for an immersive installation by Marshmallow Laser Feast, part of Bradford 2025 UK City of Culture.</p>
+                </div>
+            </a>
+
+            <a href="soundvision.html" class="work-item">
+                <div class="work-image">
+                    <img src="images/Sound and Vision.jpg" alt="Sound + Vision gallery">
+                </div>
+                <div class="work-info">
+                    <div class="work-number">02</div>
+                    <h2 class="work-title">Sound + Vision</h2>
+                    <p class="work-meta">National Science and Media Museum, 2025</p>
+                    <p class="work-desc">Campaign for the museum's new permanent galleries showcasing over 500 world-class exhibits from photography, film, television, animation and sound.</p>
+                </div>
+            </a>
+
+            <a href="jameelprize.html" class="work-item">
+                <div class="work-image">
+                    <img src="images/photographs of the jameel prize exhibitionDSCF9988.jpg" alt="Jameel Prize exhibition">
+                </div>
+                <div class="work-info">
+                    <div class="work-number">03</div>
+                    <h2 class="work-title">Jameel Prize:<br>Moving Images</h2>
+                    <p class="work-meta">Bradford Museums and Galleries, 2025</p>
+                    <p class="work-desc">Fast-turnaround campaign for the V&A's prestigious contemporary art award at Cartwright Hall during Bradford 2025.</p>
+                </div>
+            </a>
+
+            <a href="fungiexhibition.html" class="work-item">
+                <div class="work-image">
+                    <img src="images/Photograph of me in front of my exhibited photos at The Great Leeds Fungi Exhibition.jpeg" alt="Fungi Exhibition">
+                </div>
+                <div class="work-info">
+                    <div class="work-number">04</div>
+                    <h2 class="work-title">The Great Leeds<br>Fungi Exhibition</h2>
+                    <p class="work-meta">Headrow House, Leeds, 2025</p>
+                    <p class="work-desc">Personal photography project exploring fungi and natural forms, exhibited as part of a group show curated by Studio Greenly.</p>
+                </div>
+            </a>
+
+            <a href="beyondtheframe.html" class="work-item">
+                <div class="work-image">
+                    <img src="images/beyond the frame window graphics outside the uni.jpg" alt="Beyond the Frame">
+                </div>
+                <div class="work-info">
+                    <div class="work-number">05</div>
+                    <h2 class="work-title">Beyond the Frame</h2>
+                    <p class="work-meta">Leeds Arts University, 2024</p>
+                    <p class="work-desc">Full campaign for the university's end of year exhibition, from student brief to delivery across print, OOH and digital.</p>
+                </div>
+            </a>
+
+            <a href="artmarket.html" class="work-item">
+                <div class="work-image">
+                    <img src="images/Art Market 1.png" alt="The Art Market">
+                </div>
+                <div class="work-info">
+                    <div class="work-number">06</div>
+                    <h2 class="work-title">The Art Market</h2>
+                    <p class="work-meta">Leeds Arts University, 2024</p>
+                    <p class="work-desc">Branding and event coordination for a student marketplace with 130+ sellers. Record-breaking year for sales.</p>
+                </div>
+            </a>
+
+            <a href="leedsarts.html" class="work-item">
+                <div class="work-image">
+                    <img src="images/front cover of the leeds arts university prospectus designed by me.png" alt="University branding">
+                </div>
+                <div class="work-info">
+                    <div class="work-number">07</div>
+                    <h2 class="work-title">University Branding<br>& Marketing</h2>
+                    <p class="work-meta">Leeds Arts University, 2023–2024</p>
+                    <p class="work-desc">Brand rollout following website redesign, including prospectuses, promotional materials and graduation ceremony coordination.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="section about">
+        <div class="about-grid">
+            <div class="about-image">
+                <img src="images/My Portrait.jpeg" alt="Jess Watson">
+            </div>
+            <div class="about-content">
+                <p class="about-label">About</p>
+                <div class="about-text">
+                    <p class="lead">I'm a Yorkshire-based creative working in marketing, communications, and design, with almost five years of experience in the cultural sector.</p>
+                    <p>My work sits at the intersection of campaign delivery, content production, and visual design. I move between strategic thinking and hands-on making, depending on what a project needs. Currently I work as Marketing Manager at the National Science and Media Museum in Bradford, where I run campaigns for exhibitions, gallery launches and major events.</p>
+                    <p>I also work freelance as Campaign Coordinator for Bradford Museums and Galleries, which brought me into projects like the Jameel Prize exhibition during Bradford 2025 UK City of Culture. Before museums, I worked at Leeds Arts University running campaigns like the End of Year Show and Art Market.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section id="contact" class="section">
-        <h2 class="section-title">Contact</h2>
-        <p style="font-size: 24px;"><a href="mailto:jessisacreative@gmail.com" style="color: var(--black); text-decoration: underline;">jessisacreative@gmail.com</a></p>
+        <div class="contact-grid">
+            <h2 class="contact-cta">Let's work<br>together</h2>
+            <div class="contact-info">
+                <p>Available for freelance projects<br>and collaborations</p>
+                <a href="mailto:jessisacreative@gmail.com" class="contact-email">jessisacreative@gmail.com</a>
+            </div>
+        </div>
     </section>
 
     <footer>
-        <p>© 2026 Jess Watson</p>
+        <span>© 2026 Jess Watson</span>
+        <span>Marketing & Design for Arts & Culture</span>
     </footer>
 </body>
 </html>

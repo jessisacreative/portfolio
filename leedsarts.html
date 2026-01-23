@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>University Branding & Marketing — Jess Watson</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --black: #0a0a0a;
+            --grey-600: #555;
+            --grey-400: #999;
+            --grey-200: #ddd;
+            --grey-100: #f4f4f4;
+            --white: #fff;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: var(--black);
+            background: var(--white);
+            font-weight: 400;
+        }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 32px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            mix-blend-mode: difference;
+        }
+        header * { color: var(--white); }
+        .logo { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+        nav { display: flex; gap: 48px; }
+        nav a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.3s; }
+        nav a:hover { opacity: 1; }
+
+        .project-hero { position: relative; height: 80vh; min-height: 600px; overflow: hidden; }
+        .project-hero img { width: 100%; height: 100%; object-fit: cover; }
+        .project-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%); }
+        .project-hero-content { position: absolute; bottom: 80px; left: 80px; right: 80px; color: var(--white); }
+        .project-number { font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 24px; }
+        .project-title { font-size: clamp(48px, 8vw, 96px); font-weight: 300; letter-spacing: -0.03em; line-height: 1; margin-bottom: 24px; }
+        .project-meta { font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; }
+
+        .project-content { padding: 120px 80px; max-width: 1400px; margin: 0 auto; }
+        .project-intro { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; margin-bottom: 120px; }
+        .project-details { font-size: 13px; line-height: 2; }
+        .project-details dt { color: var(--grey-400); text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; margin-top: 24px; }
+        .project-details dt:first-child { margin-top: 0; }
+        .project-details dd { color: var(--black); }
+        .project-description { font-size: 22px; font-weight: 300; line-height: 1.6; }
+        .project-description p + p { margin-top: 24px; font-size: 16px; color: var(--grey-600); line-height: 1.8; }
+
+        .project-gallery { display: grid; gap: 32px; }
+        .gallery-row { display: grid; gap: 32px; }
+        .gallery-row.two-col { grid-template-columns: 1fr 1fr; }
+        .gallery-row.three-col { grid-template-columns: 1fr 1fr 1fr; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-caption { margin-top: 12px; font-size: 12px; color: var(--grey-400); line-height: 1.5; }
+
+        .project-nav { display: flex; justify-content: space-between; padding: 80px; border-top: 1px solid var(--grey-200); }
+        .project-nav a { font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey-400); transition: color 0.3s; }
+        .project-nav a:hover { color: var(--black); }
+        .project-nav .next { text-align: right; }
+        .project-nav .label { font-size: 11px; margin-bottom: 8px; display: block; }
+        .project-nav .title { font-size: 24px; color: var(--black); text-transform: none; letter-spacing: -0.02em; }
+
+        footer { padding: 48px 80px; display: flex; justify-content: space-between; border-top: 1px solid var(--grey-200); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-400); }
+
+        @media (max-width: 1024px) {
+            header { padding: 24px 32px; }
+            .project-hero-content { left: 32px; right: 32px; bottom: 48px; }
+            .project-content { padding: 80px 32px; }
+            .project-intro { grid-template-columns: 1fr; gap: 48px; }
+            .gallery-row.two-col, .gallery-row.three-col { grid-template-columns: 1fr; }
+            .project-nav { padding: 48px 32px; flex-direction: column; gap: 48px; }
+            .project-nav .next { text-align: left; }
+            footer { padding: 32px; flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">Jess Watson</a>
+        <nav>
+            <a href="/#work">Work</a>
+            <a href="/#about">About</a>
+            <a href="/#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <img src="images/front cover of the leeds arts university prospectus designed by me.png" alt="Leeds Arts University Prospectus">
+        <div class="project-hero-overlay"></div>
+        <div class="project-hero-content">
+            <p class="project-number">Project 07</p>
+            <h1 class="project-title">University Branding<br>& Marketing</h1>
+            <p class="project-meta">Leeds Arts University, 2023–2024</p>
+        </div>
+    </section>
+
+    <div class="project-content">
+        <div class="project-intro">
+            <dl class="project-details">
+                <dt>Client</dt>
+                <dd>Leeds Arts University</dd>
+                <dt>Role</dt>
+                <dd>Marketing & Design Officer</dd>
+                <dt>Scope</dt>
+                <dd>Brand Rollout, Print Design, Event Coordination</dd>
+                <dt>Year</dt>
+                <dd>2023–2024</dd>
+            </dl>
+            <div class="project-description">
+                <p>Following Leeds Arts University's website redesign, I led the rollout of new branding across the university. This included updating brand guidelines and redesigning core marketing materials to align with the refreshed visual identity.</p>
+                <p>I managed the application of the new branding across all university marketing materials: prospectuses, postcards, event assets, promotional materials for open days, graduations, and events. This wasn't just about applying a logo. It was about ensuring consistency, quality, and appropriate use of the new identity across everything we produced.</p>
+                <p>Part of my role involved developing student-led design competitions for merchandise. I briefed students, selected winners, and ensured their designs were vectorised correctly before organising print production. This created opportunities for students to see their work used by the university while keeping our merchandise feeling current and student-led.</p>
+                <p>I prepared artwork for print and managed production with external suppliers, balancing cost-effectiveness with quality and sustainability. I also coordinated the university's graduation ceremonies at the Royal Armouries in Leeds, working with the events team to ensure the ceremonies ran smoothly.</p>
+            </div>
+        </div>
+
+        <div class="project-gallery">
+            <div class="gallery-row two-col">
+                <div class="gallery-item">
+                    <img src="images/front cover of the leeds arts university prospectus designed by me.png" alt="Prospectus cover">
+                    <p class="gallery-caption">Undergraduate prospectus front cover</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/damien hirst quote alongside image of his skull art featured in the leeds arts university prospectus.png" alt="Prospectus spread">
+                    <p class="gallery-caption">Interior spread featuring alumni work</p>
+                </div>
+            </div>
+
+            <div class="gallery-row two-col">
+                <div class="gallery-item">
+                    <img src="images/leeds arts university promotional bookmark 1.png" alt="Promotional bookmark">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/leeds arts university promotional bookmark 2.png" alt="Promotional bookmark">
+                    <p class="gallery-caption">Promotional bookmarks for open days</p>
+                </div>
+            </div>
+
+            <div class="gallery-row two-col">
+                <div class="gallery-item">
+                    <img src="images/leeds arts university promotional post card printed design.png" alt="Promotional postcard">
+                    <p class="gallery-caption">Printed promotional postcard</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/An exhibition display I designed for leeds arts university to use at student recruitment events.png" alt="Exhibition display">
+                    <p class="gallery-caption">Exhibition display for recruitment events</p>
+                </div>
+            </div>
+
+            <div class="gallery-row">
+                <div class="gallery-item">
+                    <img src="images/Student Recruitment.jpeg" alt="Student recruitment materials">
+                    <p class="gallery-caption">Student recruitment materials and event setup</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="project-nav">
+        <a href="artmarket.html" class="prev">
+            <span class="label">← Previous Project</span>
+            <span class="title">The Art Market</span>
+        </a>
+        <a href="/" class="next">
+            <span class="label">Back to →</span>
+            <span class="title">All Projects</span>
+        </a>
+    </nav>
+
+    <footer>
+        <span>© 2026 Jess Watson</span>
+        <span>Marketing & Design for Arts & Culture</span>
+    </footer>
+</body>
+</html>

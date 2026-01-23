@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sound + Vision — Jess Watson</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --black: #0a0a0a;
+            --grey-600: #555;
+            --grey-400: #999;
+            --grey-200: #ddd;
+            --grey-100: #f4f4f4;
+            --white: #fff;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: var(--black);
+            background: var(--white);
+            font-weight: 400;
+        }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 32px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            mix-blend-mode: difference;
+        }
+        header * { color: var(--white); }
+        .logo { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+        nav { display: flex; gap: 48px; }
+        nav a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.3s; }
+        nav a:hover { opacity: 1; }
+
+        .project-hero { position: relative; height: 80vh; min-height: 600px; overflow: hidden; }
+        .project-hero img { width: 100%; height: 100%; object-fit: cover; }
+        .project-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%); }
+        .project-hero-content { position: absolute; bottom: 80px; left: 80px; right: 80px; color: var(--white); }
+        .project-number { font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 24px; }
+        .project-title { font-size: clamp(48px, 8vw, 96px); font-weight: 300; letter-spacing: -0.03em; line-height: 1; margin-bottom: 24px; }
+        .project-meta { font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; }
+
+        .project-content { padding: 120px 80px; max-width: 1400px; margin: 0 auto; }
+        .project-intro { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; margin-bottom: 120px; }
+        .project-details { font-size: 13px; line-height: 2; }
+        .project-details dt { color: var(--grey-400); text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; margin-top: 24px; }
+        .project-details dt:first-child { margin-top: 0; }
+        .project-details dd { color: var(--black); }
+        .project-description { font-size: 22px; font-weight: 300; line-height: 1.6; }
+        .project-description p + p { margin-top: 24px; font-size: 16px; color: var(--grey-600); line-height: 1.8; }
+
+        .project-gallery { display: grid; gap: 32px; }
+        .gallery-row { display: grid; gap: 32px; }
+        .gallery-row.two-col { grid-template-columns: 1fr 1fr; }
+        .gallery-row.three-col { grid-template-columns: 1fr 1fr 1fr; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-caption { margin-top: 12px; font-size: 12px; color: var(--grey-400); line-height: 1.5; }
+
+        .project-nav { display: flex; justify-content: space-between; padding: 80px; border-top: 1px solid var(--grey-200); }
+        .project-nav a { font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey-400); transition: color 0.3s; }
+        .project-nav a:hover { color: var(--black); }
+        .project-nav .next { text-align: right; }
+        .project-nav .label { font-size: 11px; margin-bottom: 8px; display: block; }
+        .project-nav .title { font-size: 24px; color: var(--black); text-transform: none; letter-spacing: -0.02em; }
+
+        footer { padding: 48px 80px; display: flex; justify-content: space-between; border-top: 1px solid var(--grey-200); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-400); }
+
+        @media (max-width: 1024px) {
+            header { padding: 24px 32px; }
+            .project-hero-content { left: 32px; right: 32px; bottom: 48px; }
+            .project-content { padding: 80px 32px; }
+            .project-intro { grid-template-columns: 1fr; gap: 48px; }
+            .gallery-row.two-col, .gallery-row.three-col { grid-template-columns: 1fr; }
+            .project-nav { padding: 48px 32px; flex-direction: column; gap: 48px; }
+            .project-nav .next { text-align: left; }
+            footer { padding: 32px; flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">Jess Watson</a>
+        <nav>
+            <a href="/#work">Work</a>
+            <a href="/#about">About</a>
+            <a href="/#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <img src="images/Sound and Vision.jpg" alt="Sound + Vision gallery">
+        <div class="project-hero-overlay"></div>
+        <div class="project-hero-content">
+            <p class="project-number">Project 02</p>
+            <h1 class="project-title">Sound + Vision</h1>
+            <p class="project-meta">National Science and Media Museum, 2025</p>
+        </div>
+    </section>
+
+    <div class="project-content">
+        <div class="project-intro">
+            <dl class="project-details">
+                <dt>Client</dt>
+                <dd>National Science and Media Museum</dd>
+                <dt>Funders</dt>
+                <dd>National Lottery Heritage Fund, Bradford 2025</dd>
+                <dt>Role</dt>
+                <dd>Marketing Manager (Co-Lead)</dd>
+                <dt>Year</dt>
+                <dd>2025</dd>
+            </dl>
+            <div class="project-description">
+                <p>Sound and Vision is the culmination of a multi-million pound transformation of the National Science and Media Museum. Two new permanent galleries spanning two floors showcase over 500 world-class exhibits from the museum's collection of photography, film, television, animation, video games and sound technologies.</p>
+                <p>Working in a job share arrangement, I co-led the campaign with my partner, focusing on creative delivery and production. This meant turning the ambition of the galleries into campaign materials that could communicate the scale, diversity and local relevance of what we were launching.</p>
+                <p>I managed the campaign planning and content strategy, working with design agencies to develop assets that captured both the historical significance and contemporary energy of the collections. The galleries opened just days after installation was completed, so coordinating photo and video shoots required tight timelines and quick turnarounds.</p>
+                <p>I secured print and out-of-home advertising across Yorkshire, working directly with suppliers like Pop Art Media (poster towers in Leeds) and Metro newspaper to extend our local reach. I commissioned photography that ended up being picked up by BBC and regional media, helping to amplify the story beyond our owned channels.</p>
+            </div>
+        </div>
+
+        <div class="project-gallery">
+            <div class="gallery-row">
+                <div class="gallery-item">
+                    <img src="images/sound and vision postcards.jpeg" alt="Sound + Vision postcard collection">
+                    <p class="gallery-caption">Collectable postcard series featuring objects from the museum's collection</p>
+                </div>
+            </div>
+
+            <div class="gallery-row three-col">
+                <div class="gallery-item">
+                    <img src="images/a postcard design with the Marshall Amp for the sound and vision galleries.jpg" alt="Marshall Amp postcard">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/a postcard design with the Xenomorph for the sound and vision galleries.jpg" alt="Xenomorph postcard">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/a postcard design with the Polaroid Spice Cam for the sound and vision galleries.jpg" alt="Spice Cam postcard">
+                </div>
+            </div>
+
+            <div class="gallery-row two-col">
+                <div class="gallery-item">
+                    <img src="images/photograph of the sound and vision c ampaign on a poster tower in leeds.jpg" alt="Campaign poster in Leeds">
+                    <p class="gallery-caption">Out-of-home advertising in Leeds city centre</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/photo of a full page advert for the sound and vision family fun day event in the newspapers.jpg" alt="Newspaper advertisement">
+                    <p class="gallery-caption">Full-page newspaper advertisement for Family Fun Day</p>
+                </div>
+            </div>
+
+            <div class="gallery-row two-col">
+                <div class="gallery-item">
+                    <img src="images/photo of the sound and vision midas console postcards among other flyers in a venue.jpg" alt="Postcards in venue">
+                    <p class="gallery-caption">Postcards distributed across Yorkshire venues</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/photo of the sound and vision spice cam postcards among other flyers in a venue.jpg" alt="Spice Cam postcards">
+                </div>
+            </div>
+
+            <div class="gallery-row">
+                <div class="gallery-item">
+                    <img src="images/promotional photograph of someone in the sound and vision galleries looking at musical objects on display .jpg" alt="Visitor in galleries">
+                    <p class="gallery-caption">Promotional photography in the Sound + Vision galleries</p>
+                </div>
+            </div>
+
+            <div class="gallery-row two-col">
+                <div class="gallery-item">
+                    <img src="images/the director of the national science and media museum giving her opening speech at the sound and vision gallery opening.jpg" alt="Director speech">
+                    <p class="gallery-caption">Museum Director at the gallery opening event</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/lord mayor of bradford chatting to museums worker vicky clifton in the bcb radio studio replica in the sound and vision galleries during the launch event.jpg" alt="Lord Mayor visit">
+                    <p class="gallery-caption">Lord Mayor of Bradford at the BCB Radio studio replica</p>
+                </div>
+            </div>
+
+            <div class="gallery-row two-col">
+                <div class="gallery-item">
+                    <img src="images/Photograph of me in front of the Midas Console in the Sound and Vision Galleries at the National Science and Media Museum while filming content for the exhibition campaign.jpg" alt="Filming content">
+                    <p class="gallery-caption">Creating video content for the campaign</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/a photograph of me screen printing a design i made for the sound and vision galleries at a print workshop during the opening event.jpg" alt="Screen printing workshop">
+                    <p class="gallery-caption">Screen printing workshop at the opening event</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="project-nav">
+        <a href="youmatter.html" class="prev">
+            <span class="label">← Previous Project</span>
+            <span class="title">YOU:MATTER</span>
+        </a>
+        <a href="jameelprize.html" class="next">
+            <span class="label">Next Project →</span>
+            <span class="title">Jameel Prize</span>
+        </a>
+    </nav>
+
+    <footer>
+        <span>© 2026 Jess Watson</span>
+        <span>Marketing & Design for Arts & Culture</span>
+    </footer>
+</body>
+</html>

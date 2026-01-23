@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Great Leeds Fungi Exhibition — Jess Watson</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --black: #0a0a0a;
+            --grey-600: #555;
+            --grey-400: #999;
+            --grey-200: #ddd;
+            --grey-100: #f4f4f4;
+            --white: #fff;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: var(--black);
+            background: var(--white);
+            font-weight: 400;
+        }
+        a { color: inherit; text-decoration: none; }
+        img { max-width: 100%; height: auto; display: block; }
+
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 32px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            mix-blend-mode: difference;
+        }
+        header * { color: var(--white); }
+        .logo { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+        nav { display: flex; gap: 48px; }
+        nav a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.3s; }
+        nav a:hover { opacity: 1; }
+
+        .project-hero { position: relative; height: 80vh; min-height: 600px; overflow: hidden; }
+        .project-hero img { width: 100%; height: 100%; object-fit: cover; }
+        .project-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%); }
+        .project-hero-content { position: absolute; bottom: 80px; left: 80px; right: 80px; color: var(--white); }
+        .project-number { font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 24px; }
+        .project-title { font-size: clamp(48px, 8vw, 96px); font-weight: 300; letter-spacing: -0.03em; line-height: 1; margin-bottom: 24px; }
+        .project-meta { font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; }
+
+        .project-content { padding: 120px 80px; max-width: 1400px; margin: 0 auto; }
+        .project-intro { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; margin-bottom: 120px; }
+        .project-details { font-size: 13px; line-height: 2; }
+        .project-details dt { color: var(--grey-400); text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; margin-top: 24px; }
+        .project-details dt:first-child { margin-top: 0; }
+        .project-details dd { color: var(--black); }
+        .project-description { font-size: 22px; font-weight: 300; line-height: 1.6; }
+        .project-description p + p { margin-top: 24px; font-size: 16px; color: var(--grey-600); line-height: 1.8; }
+
+        .project-gallery { display: grid; gap: 32px; }
+        .gallery-row { display: grid; gap: 32px; }
+        .gallery-row.two-col { grid-template-columns: 1fr 1fr; }
+        .gallery-row.three-col { grid-template-columns: 1fr 1fr 1fr; }
+        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
+        .gallery-caption { margin-top: 12px; font-size: 12px; color: var(--grey-400); line-height: 1.5; }
+
+        .project-nav { display: flex; justify-content: space-between; padding: 80px; border-top: 1px solid var(--grey-200); }
+        .project-nav a { font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey-400); transition: color 0.3s; }
+        .project-nav a:hover { color: var(--black); }
+        .project-nav .next { text-align: right; }
+        .project-nav .label { font-size: 11px; margin-bottom: 8px; display: block; }
+        .project-nav .title { font-size: 24px; color: var(--black); text-transform: none; letter-spacing: -0.02em; }
+
+        footer { padding: 48px 80px; display: flex; justify-content: space-between; border-top: 1px solid var(--grey-200); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-400); }
+
+        @media (max-width: 1024px) {
+            header { padding: 24px 32px; }
+            .project-hero-content { left: 32px; right: 32px; bottom: 48px; }
+            .project-content { padding: 80px 32px; }
+            .project-intro { grid-template-columns: 1fr; gap: 48px; }
+            .gallery-row.two-col, .gallery-row.three-col { grid-template-columns: 1fr; }
+            .project-nav { padding: 48px 32px; flex-direction: column; gap: 48px; }
+            .project-nav .next { text-align: left; }
+            footer { padding: 32px; flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="/" class="logo">Jess Watson</a>
+        <nav>
+            <a href="/#work">Work</a>
+            <a href="/#about">About</a>
+            <a href="/#contact">Contact</a>
+        </nav>
+    </header>
+
+    <section class="project-hero">
+        <img src="images/Photograph of me in front of my exhibited photos at The Great Leeds Fungi Exhibition.jpeg" alt="Fungi Exhibition">
+        <div class="project-hero-overlay"></div>
+        <div class="project-hero-content">
+            <p class="project-number">Project 04</p>
+            <h1 class="project-title">The Great Leeds<br>Fungi Exhibition</h1>
+            <p class="project-meta">Headrow House, Leeds, 2025</p>
+        </div>
+    </section>
+
+    <div class="project-content">
+        <div class="project-intro">
+            <dl class="project-details">
+                <dt>Curator</dt>
+                <dd>Studio Greenly</dd>
+                <dt>Venue</dt>
+                <dd>Headrow House, Leeds</dd>
+                <dt>Role</dt>
+                <dd>Exhibiting Artist, Event Photographer</dd>
+                <dt>Year</dt>
+                <dd>2025</dd>
+            </dl>
+            <div class="project-description">
+                <p>The Great Leeds Fungi Exhibition was a group exhibition curated by Studio Greenly, a Leeds/Bradford based eco collective working in illustration and design. The exhibition celebrated the fascinating world of mushrooms and fungi through artistic depictions across ceramics, textiles, zines, paintings, prints, and photography.</p>
+                <p>I exhibited fungi-inspired photography exploring themes of decay, nature, and connection. My work looked at mushrooms not just as visual subjects but as symbols of transformation, decomposition, and the unseen networks that sustain ecosystems.</p>
+                <p>I also documented the exhibition as the event photographer throughout the weekend, capturing the artworks, the atmosphere, and the conversations that emerged. This meant being present across both days, photographing the works on display, the visitors engaging with them, and the live performances and music that brought the space to life.</p>
+                <p>The exhibition was a chance to show personal work alongside other artists who share a fascination with the mycelial world. It was a fun, creative weekend full of earthy textures, curious conversations, and shared love for the weird and wonderful world of fungi.</p>
+            </div>
+        </div>
+
+        <div class="project-gallery">
+            <div class="gallery-row three-col">
+                <div class="gallery-item">
+                    <img src="images/Photography from Fungi Exhibition (4).png" alt="Fungi photography">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Photography from Fungi Exhibition (6).png" alt="Fungi photography">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Photography from Fungi Exhibition (7).png" alt="Fungi photography">
+                </div>
+            </div>
+
+            <div class="gallery-row two-col">
+                <div class="gallery-item">
+                    <img src="images/Photography from Fungi Exhibition (8).png" alt="Fungi photography">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Photography from Fungi Exhibition (9).png" alt="Fungi photography">
+                </div>
+            </div>
+
+            <div class="gallery-row three-col">
+                <div class="gallery-item">
+                    <img src="images/Photography from Fungi Exhibition (11).png" alt="Fungi photography">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Photography from Fungi Exhibition (13).png" alt="Fungi photography">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/Photography from Fungi Exhibition (14).png" alt="Fungi photography">
+                </div>
+            </div>
+
+            <div class="gallery-row">
+                <div class="gallery-item">
+                    <img src="images/Photography from Fungi Exhibition (5).png" alt="Exhibition opening event">
+                    <p class="gallery-caption">Opening event at Headrow House</p>
+                </div>
+            </div>
+
+            <div class="gallery-row two-col">
+                <div class="gallery-item">
+                    <img src="images/photograph of artist Chloe Maybury in front of her illustrations and the fungi exhibition.png" alt="Chloe Maybury with illustrations">
+                    <p class="gallery-caption">Illustrator Chloe Maybury with her fungi-inspired work</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="images/photo of a performance at the fungi exhibition.png" alt="Live performance">
+                    <p class="gallery-caption">Live music at the exhibition opening</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="project-nav">
+        <a href="jameelprize.html" class="prev">
+            <span class="label">← Previous Project</span>
+            <span class="title">Jameel Prize</span>
+        </a>
+        <a href="beyondtheframe.html" class="next">
+            <span class="label">Next Project →</span>
+            <span class="title">Beyond the Frame</span>
+        </a>
+    </nav>
+
+    <footer>
+        <span>© 2026 Jess Watson</span>
+        <span>Marketing & Design for Arts & Culture</span>
+    </footer>
+</body>
+</html>
