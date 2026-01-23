@@ -5,12 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jess Watson — Marketing & Design for Arts & Culture</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --black: #0a0a0a;
             --grey-800: #222;
@@ -20,29 +15,18 @@
             --grey-100: #f4f4f4;
             --white: #fff;
         }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
+        html { scroll-behavior: smooth; }
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             color: var(--black);
             background: var(--white);
             font-weight: 400;
         }
+        a { color: inherit; text-decoration: none; }
 
-        a {
-            color: inherit;
-            text-decoration: none;
-        }
-
-        /* Header */
         header {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             z-index: 1000;
             padding: 32px 48px;
             display: flex;
@@ -50,42 +34,17 @@
             align-items: center;
             mix-blend-mode: difference;
         }
+        header * { color: var(--white); }
+        .logo { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+        nav { display: flex; gap: 48px; }
+        nav a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.3s; }
+        nav a:hover { opacity: 1; }
 
-        header * {
-            color: var(--white);
-        }
-
-        .logo {
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-
-        nav {
-            display: flex;
-            gap: 48px;
-        }
-
-        nav a {
-            font-size: 12px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            opacity: 0.7;
-            transition: opacity 0.3s;
-        }
-
-        nav a:hover {
-            opacity: 1;
-        }
-
-        /* Hero */
         .hero {
             min-height: 100vh;
             display: grid;
             grid-template-columns: 1.2fr 1fr;
         }
-
         .hero-left {
             background: var(--black);
             color: var(--white);
@@ -94,37 +53,26 @@
             flex-direction: column;
             justify-content: space-between;
         }
-
         .hero-title {
             font-size: clamp(56px, 9vw, 140px);
             font-weight: 300;
             line-height: 0.85;
             letter-spacing: -0.04em;
         }
-
-        .hero-title em {
-            font-style: normal;
-            font-weight: 600;
-        }
-
+        .hero-title em { font-style: normal; font-weight: 600; }
         .hero-location {
             font-size: 11px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--grey-400);
         }
-
         .hero-right {
             background: var(--grey-100);
             padding: 180px 80px 80px;
             display: flex;
             align-items: flex-end;
         }
-
-        .hero-intro {
-            max-width: 380px;
-        }
-
+        .hero-intro { max-width: 380px; }
         .hero-intro .lead {
             font-size: 26px;
             font-weight: 300;
@@ -132,97 +80,80 @@
             margin-bottom: 28px;
             letter-spacing: -0.01em;
         }
-
         .hero-intro p {
             font-size: 14px;
             line-height: 1.7;
             color: var(--grey-600);
         }
 
-        /* Section */
-        .section {
-            padding: 160px 80px;
+        .section { padding: 120px 80px; }
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 80px;
+            border-bottom: 1px solid var(--grey-200);
+            padding-bottom: 20px;
         }
-
         .section-label {
             font-size: 11px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--grey-400);
-            margin-bottom: 80px;
-            display: flex;
-            justify-content: space-between;
-            border-bottom: 1px solid var(--grey-200);
-            padding-bottom: 20px;
         }
+        .section-link {
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+            transition: color 0.3s;
+        }
+        .section-link:hover { color: var(--black); }
 
-        /* Work */
-        .work-list {
+        .featured-work {
             display: flex;
             flex-direction: column;
-            gap: 160px;
+            gap: 120px;
         }
-
         .work-item {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 80px;
             align-items: center;
         }
-
-        .work-item:nth-child(even) {
-            direction: rtl;
-        }
-
-        .work-item:nth-child(even) > * {
-            direction: ltr;
-        }
-
-        .work-image {
-            position: relative;
-            overflow: hidden;
-        }
-
+        .work-item:nth-child(even) { direction: rtl; }
+        .work-item:nth-child(even) > * { direction: ltr; }
+        .work-image { position: relative; overflow: hidden; }
         .work-image img {
             width: 100%;
             height: auto;
             display: block;
             transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
         }
-
-        .work-item:hover .work-image img {
-            transform: scale(1.04);
-        }
-
+        .work-item:hover .work-image img { transform: scale(1.04); }
         .work-number {
-            font-size: 120px;
+            font-size: 100px;
             font-weight: 200;
             line-height: 1;
             color: var(--grey-200);
-            margin-bottom: 24px;
+            margin-bottom: 20px;
             letter-spacing: -0.04em;
         }
-
-        .work-item:hover .work-number {
-            color: var(--grey-400);
-        }
-
+        .work-item:hover .work-number { color: var(--grey-400); }
         .work-title {
-            font-size: 42px;
+            font-size: 36px;
             font-weight: 400;
             letter-spacing: -0.02em;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
             line-height: 1.1;
         }
-
         .work-meta {
             font-size: 12px;
             letter-spacing: 0.1em;
             text-transform: uppercase;
             color: var(--grey-400);
-            margin-bottom: 32px;
+            margin-bottom: 24px;
         }
-
         .work-desc {
             font-size: 15px;
             line-height: 1.7;
@@ -230,91 +161,72 @@
             max-width: 400px;
         }
 
-        /* About */
-        .about {
+        .view-all {
+            text-align: center;
+            margin-top: 80px;
+        }
+        .view-all-link {
+            display: inline-block;
+            padding: 16px 32px;
+            border: 1px solid var(--black);
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            transition: all 0.3s;
+        }
+        .view-all-link:hover {
             background: var(--black);
             color: var(--white);
         }
 
+        .about-preview {
+            background: var(--black);
+            color: var(--white);
+        }
         .about-grid {
             display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 120px;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 80px;
             align-items: center;
         }
-
         .about-image img {
             width: 100%;
+            max-width: 350px;
             height: auto;
             display: block;
         }
-
-        .about-label {
+        .about-content .label {
             font-size: 11px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--grey-400);
-            margin-bottom: 40px;
+            margin-bottom: 32px;
         }
-
-        .about-text .lead {
-            font-size: 32px;
+        .about-content .lead {
+            font-size: 28px;
             font-weight: 300;
             line-height: 1.4;
             letter-spacing: -0.01em;
-            margin-bottom: 40px;
+            margin-bottom: 24px;
         }
-
-        .about-text p {
+        .about-content p {
             font-size: 15px;
             line-height: 1.8;
             color: var(--grey-400);
-            max-width: 520px;
+            max-width: 500px;
+            margin-bottom: 32px;
         }
-
-        .about-text p + p {
-            margin-top: 24px;
-        }
-
-        /* Contact */
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: end;
-        }
-
-        .contact-cta {
-            font-size: clamp(48px, 7vw, 96px);
-            font-weight: 300;
-            line-height: 1;
-            letter-spacing: -0.03em;
-        }
-
-        .contact-info {
-            text-align: right;
-        }
-
-        .contact-info p {
-            font-size: 13px;
-            color: var(--grey-400);
-            margin-bottom: 20px;
-            line-height: 1.6;
-        }
-
-        .contact-email {
-            font-size: 20px;
-            font-weight: 400;
-            border-bottom: 1px solid var(--black);
+        .about-link {
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--white);
+            border-bottom: 1px solid var(--white);
             padding-bottom: 4px;
-            transition: border-color 0.3s;
+            transition: opacity 0.3s;
         }
+        .about-link:hover { opacity: 0.7; }
 
-        .contact-email:hover {
-            border-color: var(--grey-400);
-        }
-
-        /* Footer */
         footer {
             padding: 48px 80px;
             display: flex;
@@ -326,73 +238,20 @@
             color: var(--grey-400);
         }
 
-        /* Responsive */
         @media (max-width: 1024px) {
-            header {
-                padding: 24px 32px;
-            }
-
-            .hero {
-                grid-template-columns: 1fr;
-            }
-
-            .hero-left {
-                padding: 140px 32px 64px;
-                min-height: 60vh;
-            }
-
-            .hero-right {
-                padding: 64px 32px;
-            }
-
-            .section {
-                padding: 100px 32px;
-            }
-
-            .work-list {
-                gap: 100px;
-            }
-
-            .work-item {
-                grid-template-columns: 1fr;
-                gap: 40px;
-            }
-
-            .work-item:nth-child(even) {
-                direction: ltr;
-            }
-
-            .work-number {
-                font-size: 72px;
-            }
-
-            .work-title {
-                font-size: 28px;
-            }
-
-            .about-grid {
-                grid-template-columns: 1fr;
-                gap: 64px;
-            }
-
-            .about-image {
-                max-width: 320px;
-            }
-
-            .contact-grid {
-                grid-template-columns: 1fr;
-                gap: 48px;
-            }
-
-            .contact-info {
-                text-align: left;
-            }
-
-            footer {
-                padding: 32px;
-                flex-direction: column;
-                gap: 8px;
-            }
+            header { padding: 24px 32px; }
+            .hero { grid-template-columns: 1fr; }
+            .hero-left { padding: 140px 32px 64px; min-height: 60vh; }
+            .hero-right { padding: 64px 32px; }
+            .section { padding: 80px 32px; }
+            .featured-work { gap: 80px; }
+            .work-item { grid-template-columns: 1fr; gap: 32px; }
+            .work-item:nth-child(even) { direction: ltr; }
+            .work-number { font-size: 64px; }
+            .work-title { font-size: 28px; }
+            .about-grid { grid-template-columns: 1fr; gap: 48px; }
+            .about-image { max-width: 280px; }
+            footer { padding: 32px; flex-direction: column; gap: 8px; }
         }
     </style>
 </head>
@@ -400,9 +259,9 @@
     <header>
         <a href="index.html" class="logo">Jess Watson</a>
         <nav>
-            <a href="#work">Work</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
@@ -423,13 +282,13 @@
         </div>
     </section>
 
-    <section id="work" class="section">
-        <div class="section-label">
-            <span>Selected Work</span>
-            <span>2023–2025</span>
+    <section class="section">
+        <div class="section-header">
+            <span class="section-label">Featured Work</span>
+            <a href="work.html" class="section-link">View all projects →</a>
         </div>
 
-        <div class="work-list">
+        <div class="featured-work">
             <a href="youmatter.html" class="work-item">
                 <div class="work-image">
                     <img src="images/YOU MATTER.jpg" alt="YOU:MATTER campaign">
@@ -465,85 +324,29 @@
                     <p class="work-desc">Fast-turnaround campaign for the V&A's prestigious contemporary art award at Cartwright Hall during Bradford 2025.</p>
                 </div>
             </a>
+        </div>
 
-            <a href="fungiexhibition.html" class="work-item">
-                <div class="work-image">
-                    <img src="images/Photograph of me in front of my exhibited photos at The Great Leeds Fungi Exhibition.jpeg" alt="Fungi Exhibition">
-                </div>
-                <div class="work-info">
-                    <div class="work-number">04</div>
-                    <h2 class="work-title">The Great Leeds<br>Fungi Exhibition</h2>
-                    <p class="work-meta">Headrow House, Leeds, 2025</p>
-                    <p class="work-desc">Personal photography project exploring fungi and natural forms, exhibited as part of a group show curated by Studio Greenly.</p>
-                </div>
-            </a>
-
-            <a href="beyondtheframe.html" class="work-item">
-                <div class="work-image">
-                    <img src="images/beyond the frame window graphics outside the uni.jpg" alt="Beyond the Frame">
-                </div>
-                <div class="work-info">
-                    <div class="work-number">05</div>
-                    <h2 class="work-title">Beyond the Frame</h2>
-                    <p class="work-meta">Leeds Arts University, 2024</p>
-                    <p class="work-desc">Full campaign for the university's end of year exhibition, from student brief to delivery across print, OOH and digital.</p>
-                </div>
-            </a>
-
-            <a href="artmarket.html" class="work-item">
-                <div class="work-image">
-                    <img src="images/Art Market 1.png" alt="The Art Market">
-                </div>
-                <div class="work-info">
-                    <div class="work-number">06</div>
-                    <h2 class="work-title">The Art Market</h2>
-                    <p class="work-meta">Leeds Arts University, 2024</p>
-                    <p class="work-desc">Branding and event coordination for a student marketplace with 130+ sellers. Record-breaking year for sales.</p>
-                </div>
-            </a>
-
-            <a href="leedsarts.html" class="work-item">
-                <div class="work-image">
-                    <img src="images/front cover of the leeds arts university prospectus designed by me.png" alt="University branding">
-                </div>
-                <div class="work-info">
-                    <div class="work-number">07</div>
-                    <h2 class="work-title">University Branding<br>& Marketing</h2>
-                    <p class="work-meta">Leeds Arts University, 2023–2024</p>
-                    <p class="work-desc">Brand rollout following website redesign, including prospectuses, promotional materials and graduation ceremony coordination.</p>
-                </div>
-            </a>
+        <div class="view-all">
+            <a href="work.html" class="view-all-link">View all projects</a>
         </div>
     </section>
 
-    <section id="about" class="section about">
+    <section class="section about-preview">
         <div class="about-grid">
             <div class="about-image">
                 <img src="images/My Portrait.jpeg" alt="Jess Watson">
             </div>
             <div class="about-content">
-                <p class="about-label">About</p>
-                <div class="about-text">
-                    <p class="lead">I'm a Yorkshire-based creative working in marketing, communications, and design, with almost five years of experience in the cultural sector.</p>
-                    <p>My work sits at the intersection of campaign delivery, content production, and visual design. I move between strategic thinking and hands-on making, depending on what a project needs. Currently I work as Marketing Manager at the National Science and Media Museum in Bradford, where I run campaigns for exhibitions, gallery launches and major events.</p>
-                    <p>I also work freelance as Campaign Coordinator for Bradford Museums and Galleries, which brought me into projects like the Jameel Prize exhibition during Bradford 2025 UK City of Culture. Before museums, I worked at Leeds Arts University running campaigns like the End of Year Show and Art Market.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="contact" class="section">
-        <div class="contact-grid">
-            <h2 class="contact-cta">Let's work<br>together</h2>
-            <div class="contact-info">
-                <p>Available for freelance projects<br>and collaborations</p>
-                <a href="mailto:jessisacreative@gmail.com" class="contact-email">jessisacreative@gmail.com</a>
+                <p class="label">About</p>
+                <p class="lead">I'm a Yorkshire-based creative working in marketing, communications, and design for the cultural sector.</p>
+                <p>With almost five years of experience, my work sits at the intersection of campaign delivery, content production, and visual design. I move between strategic thinking and hands-on making, depending on what a project needs.</p>
+                <a href="about.html" class="about-link">More about me →</a>
             </div>
         </div>
     </section>
 
     <footer>
-        <span>© 2026 Jess Watson</span>
+        <span>© 2025 Jess Watson</span>
         <span>Marketing & Design for Arts & Culture</span>
     </footer>
 </body>

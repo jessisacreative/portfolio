@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact — Jess Watson</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --black: #0a0a0a;
+            --grey-800: #222;
+            --grey-600: #555;
+            --grey-400: #999;
+            --grey-200: #ddd;
+            --grey-100: #f4f4f4;
+            --white: #fff;
+        }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            color: var(--black);
+            background: var(--white);
+            font-weight: 400;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        a { color: inherit; text-decoration: none; }
+
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 1000;
+            padding: 32px 48px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: var(--white);
+            border-bottom: 1px solid var(--grey-200);
+        }
+        .logo { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
+        nav { display: flex; gap: 48px; }
+        nav a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); transition: color 0.3s; }
+        nav a:hover, nav a.active { color: var(--black); }
+
+        .contact-main {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            padding: 160px 80px 80px;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .contact-intro h1 {
+            font-size: clamp(48px, 7vw, 80px);
+            font-weight: 300;
+            letter-spacing: -0.03em;
+            line-height: 1;
+            margin-bottom: 32px;
+        }
+        .contact-intro p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--grey-600);
+            max-width: 400px;
+        }
+
+        .contact-details {
+            padding-top: 16px;
+        }
+        .contact-item {
+            margin-bottom: 48px;
+        }
+        .contact-label {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+            margin-bottom: 12px;
+        }
+        .contact-value {
+            font-size: 24px;
+            font-weight: 400;
+        }
+        .contact-value a {
+            border-bottom: 1px solid var(--black);
+            padding-bottom: 4px;
+            transition: border-color 0.3s;
+        }
+        .contact-value a:hover {
+            border-color: var(--grey-400);
+        }
+
+        .contact-social {
+            display: flex;
+            gap: 32px;
+            margin-top: 48px;
+        }
+        .contact-social a {
+            font-size: 13px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+            transition: color 0.3s;
+        }
+        .contact-social a:hover {
+            color: var(--black);
+        }
+
+        footer {
+            padding: 48px 80px;
+            display: flex;
+            justify-content: space-between;
+            border-top: 1px solid var(--grey-200);
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+        }
+
+        @media (max-width: 1024px) {
+            header { padding: 24px 32px; }
+            .contact-main { padding: 120px 32px 48px; }
+            .contact-content {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            .contact-value { font-size: 20px; }
+            footer { padding: 32px; flex-direction: column; gap: 8px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Jess Watson</a>
+        <nav>
+            <a href="work.html">Work</a>
+            <a href="about.html">About</a>
+            <a href="contact.html" class="active">Contact</a>
+        </nav>
+    </header>
+
+    <main class="contact-main">
+        <div class="contact-content">
+            <div class="contact-intro">
+                <h1>Let's work<br>together</h1>
+                <p>I'm available for freelance projects, collaborations, and interesting conversations about arts and culture marketing.</p>
+            </div>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <p class="contact-label">Email</p>
+                    <p class="contact-value"><a href="mailto:jessisacreative@gmail.com">jessisacreative@gmail.com</a></p>
+                </div>
+                <div class="contact-item">
+                    <p class="contact-label">Location</p>
+                    <p class="contact-value">West Yorkshire, UK</p>
+                </div>
+                <div class="contact-social">
+                    <a href="https://www.linkedin.com/in/jessisacreative/" target="_blank" rel="noopener">LinkedIn</a>
+                    <a href="https://www.instagram.com/jessisacreative/" target="_blank" rel="noopener">Instagram</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <span>© 2025 Jess Watson</span>
+        <span>Marketing & Design for Arts & Culture</span>
+    </footer>
+</body>
+</html>
