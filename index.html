@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jess Watson — Marketing & Design</title>
+    <title>Jess Watson — Marketing & Design for Arts & Culture</title>
     <style>
         * {
             margin: 0;
@@ -21,27 +21,22 @@
             --white: #ffffff;
         }
 
-        html {
-            font-size: 16px;
-            scroll-behavior: smooth;
-        }
-
         body {
             font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
             font-weight: 400;
-            line-height: 1.6;
+            line-height: 1.5;
             color: var(--grey-900);
             background-color: var(--white);
         }
 
-        /* Navigation */
         nav {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             padding: 24px 48px;
-            background-color: var(--white);
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--grey-100);
             z-index: 100;
             display: flex;
@@ -50,9 +45,8 @@
         }
 
         .logo {
-            font-size: 18px;
-            font-weight: 700;
-            letter-spacing: -0.02em;
+            font-size: 16px;
+            font-weight: 500;
             color: var(--black);
             text-decoration: none;
         }
@@ -65,163 +59,117 @@
 
         .nav-links a {
             font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
             color: var(--grey-700);
             text-decoration: none;
-            transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
             color: var(--black);
         }
 
-        /* Hero */
         .hero {
-            min-height: 70vh;
+            min-height: 80vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
-            padding: 120px 48px 96px;
-            max-width: 1200px;
+            padding: 120px 48px 80px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         h1 {
-            font-size: 64px;
-            font-weight: 700;
+            font-size: 56px;
+            font-weight: 400;
             letter-spacing: -0.02em;
             line-height: 1.1;
-            margin-bottom: 16px;
+            margin-bottom: 32px;
+            max-width: 900px;
         }
 
         .subtitle {
-            font-size: 24px;
+            font-size: 20px;
             color: var(--grey-500);
-            font-weight: 400;
+            max-width: 600px;
+            line-height: 1.6;
         }
 
-        /* Section */
         .section {
             padding: 96px 48px;
-            max-width: 1200px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
         .section-title {
-            font-size: 14px;
-            font-weight: 400;
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.15em;
             color: var(--grey-500);
             margin-bottom: 48px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--grey-100);
         }
 
-        /* Work Grid */
         .work-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
-            gap: 64px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 32px;
         }
 
         .work-item {
             cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: block;
         }
 
         .work-image {
             width: 100%;
-            aspect-ratio: 16 / 10;
+            aspect-ratio: 4 / 3;
             background-color: var(--grey-100);
             margin-bottom: 16px;
-            overflow: hidden;
-        }
-
-        .work-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: grayscale(100%);
-            transition: filter 0.3s ease;
-        }
-
-        .work-item:hover .work-image img {
-            filter: grayscale(0%);
         }
 
         .work-title {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 500;
-            letter-spacing: -0.01em;
             margin-bottom: 8px;
         }
 
+        .work-meta {
+            font-size: 13px;
+            color: var(--grey-500);
+            margin-bottom: 12px;
+        }
+
         .work-desc {
-            font-size: 16px;
+            font-size: 15px;
             color: var(--grey-700);
             line-height: 1.5;
         }
 
-        .work-meta {
-            font-size: 14px;
-            color: var(--grey-500);
-            margin-top: 8px;
-        }
-
-        /* About */
-        .about-content {
-            max-width: 700px;
-        }
-
-        .about-content p {
-            font-size: 20px;
-            line-height: 1.6;
-            color: var(--grey-900);
-            margin-bottom: 24px;
-        }
-
-        /* Footer */
         footer {
-            padding: 64px 48px;
+            padding: 48px;
             text-align: center;
             border-top: 1px solid var(--grey-100);
         }
 
         footer p {
-            font-size: 14px;
+            font-size: 13px;
             color: var(--grey-500);
         }
 
-        /* Responsive */
         @media (max-width: 768px) {
-            nav {
-                padding: 16px 24px;
-            }
-
             h1 {
-                font-size: 40px;
-            }
-
-            .subtitle {
-                font-size: 18px;
-            }
-
-            .hero,
-            .section {
-                padding: 64px 24px;
+                font-size: 36px;
             }
 
             .work-grid {
                 grid-template-columns: 1fr;
-                gap: 48px;
             }
         }
     </style>
 </head>
 <body>
     <nav>
-        <a href="/" class="logo">JW</a>
+        <a href="/" class="logo">Jess Watson</a>
         <ul class="nav-links">
             <li><a href="#work">Work</a></li>
             <li><a href="#about">About</a></li>
@@ -230,98 +178,53 @@
     </nav>
 
     <section class="hero">
-        <h1>Jess Watson</h1>
-        <p class="subtitle">Strategic marketing for arts & culture</p>
+        <h1>Strategic marketing and creative campaigns for arts and culture</h1>
+        <p class="subtitle">Marketing Manager at the National Science and Media Museum and Campaign Coordinator for Bradford Museums and Galleries.</p>
     </section>
 
     <section id="work" class="section">
         <h2 class="section-title">Selected Work</h2>
         <div class="work-grid">
             
-            <div class="work-item">
-                <div class="work-image">
-                    <!-- Image will go here -->
-                </div>
-                <div class="work-info">
-                    <h3 class="work-title">YOU:MATTER</h3>
-                    <p class="work-desc">Multi-channel campaign for the National Science and Media Museum in collaboration with Bradford 2025 and Marshmallow Laser Feast, engaging families and young adults.</p>
-                    <p class="work-meta">Campaign Coordination · Social Media · Event Marketing</p>
-                </div>
-            </div>
+            <a href="youmatter.html" class="work-item">
+                <div class="work-image"></div>
+                <h3 class="work-title">YOU:MATTER</h3>
+                <p class="work-meta">National Science and Media Museum</p>
+                <p class="work-desc">Multi-channel campaign with Bradford 2025 and Marshmallow Laser Feast, engaging families and young adults.</p>
+            </a>
 
-            <div class="work-item">
-                <div class="work-image">
-                    <!-- Image will go here -->
-                </div>
-                <div class="work-info">
-                    <h3 class="work-title">Sound + Vision</h3>
-                    <p class="work-desc">Campaign launch for permanent galleries at the National Science and Media Museum, including print advertising, social media, and event coordination.</p>
-                    <p class="work-meta">Marketing Manager · Campaign Design · Print & Digital</p>
-                </div>
-            </div>
+            <a href="soundvision.html" class="work-item">
+                <div class="work-image"></div>
+                <h3 class="work-title">Sound + Vision</h3>
+                <p class="work-meta">National Science and Media Museum</p>
+                <p class="work-desc">Campaign launch for permanent galleries. Led creative direction and secured out-of-home advertising across Yorkshire.</p>
+            </a>
 
-            <div class="work-item">
-                <div class="work-image">
-                    <!-- Image will go here -->
-                </div>
-                <div class="work-info">
-                    <h3 class="work-title">Jameel Prize: Moving Images</h3>
-                    <p class="work-desc">Marketing campaign for international contemporary art exhibition at Cartwright Hall, Bradford Museums and Galleries.</p>
-                    <p class="work-meta">Campaign Coordinator · OOH Advertising · Digital Marketing</p>
-                </div>
-            </div>
+            <a href="jameelprize.html" class="work-item">
+                <div class="work-image"></div>
+                <h3 class="work-title">Jameel Prize: Moving Images</h3>
+                <p class="work-meta">Bradford Museums and Galleries</p>
+                <p class="work-desc">International contemporary art exhibition campaign coordinating design agencies and paid social strategy.</p>
+            </a>
 
-            <div class="work-item">
-                <div class="work-image">
-                    <!-- Image will go here -->
-                </div>
-                <div class="work-info">
-                    <h3 class="work-title">The Great Leeds Fungi Exhibition</h3>
-                    <p class="work-desc">Event photography and exhibition of personal nature photography work at Leeds Central Library.</p>
-                    <p class="work-meta">Photography · Exhibition · Event Documentation</p>
-                </div>
-            </div>
-
-            <div class="work-item">
-                <div class="work-image">
-                    <!-- Image will go here -->
-                </div>
-                <div class="work-info">
-                    <h3 class="work-title">Beyond the Frame</h3>
-                    <p class="work-desc">Exhibition series showcasing Leeds Arts University student work across multiple venues and formats.</p>
-                    <p class="work-meta">Marketing & Design · Exhibition Coordination</p>
-                </div>
-            </div>
-
-            <div class="work-item">
-                <div class="work-image">
-                    <!-- Image will go here -->
-                </div>
-                <div class="work-info">
-                    <h3 class="work-title">Leeds Arts University Recruitment</h3>
-                    <p class="work-desc">Prospectus design, promotional materials, and exhibition displays following new brand rollout.</p>
-                    <p class="work-meta">Design · Print Production · Brand Implementation</p>
-                </div>
-            </div>
+            <a href="fungiexhibition.html" class="work-item">
+                <div class="work-image"></div>
+                <h3 class="work-title">The Great Leeds Fungi Exhibition</h3>
+                <p class="work-meta">Leeds Central Library</p>
+                <p class="work-desc">Event photography and exhibition of personal nature photography exploring fungi and natural forms.</p>
+            </a>
 
         </div>
     </section>
 
     <section id="about" class="section">
         <h2 class="section-title">About</h2>
-        <div class="about-content">
-            <p>I'm a strategic marketing professional specializing in arts and culture, working to bridge gaps between organizations, venues, and artists through creative campaigns and exhibitions.</p>
-            <p>Currently Marketing Manager at the National Science and Media Museum (job-share) and freelance Campaign Coordinator for Bradford Museums and Galleries, based in West Yorkshire.</p>
-            <p>My work spans marketing communications, campaign coordination, and design across cultural institutions and higher education.</p>
-        </div>
+        <p style="max-width: 700px; font-size: 18px; line-height: 1.7;">I specialize in strategic marketing for arts and culture, working across cultural institutions and creative agencies to deliver exhibitions, events, and campaigns. Based in West Yorkshire.</p>
     </section>
 
     <section id="contact" class="section">
         <h2 class="section-title">Contact</h2>
-        <div class="about-content">
-            <p>Get in touch for collaborations, projects, or just to say hello.</p>
-            <p style="margin-top: 24px;"><a href="mailto:hello@jesswatson.com" style="color: var(--black); text-decoration: underline;">hello@jesswatson.com</a></p>
-        </div>
+        <p style="font-size: 24px;"><a href="mailto:jessisacreative@gmail.com" style="color: var(--black); text-decoration: underline;">jessisacreative@gmail.com</a></p>
     </section>
 
     <footer>
