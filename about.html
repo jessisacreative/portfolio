@@ -194,8 +194,9 @@
                 grid-template-columns: 1fr 1fr;
                 gap: 32px;
             }
-            .cta-section { padding: 48px 32px; }
-            footer { padding: 32px; flex-direction: column; gap: 8px; }
+            .site-footer { padding: 48px 32px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 8px; }
         }
 
         @media (max-width: 600px) {
@@ -208,8 +209,8 @@
         <a href="index.html" class="logo">Jess Watson</a>
         <nav>
             <a href="work.html">Work</a>
+            <a href="journal.html">Journal</a>
             <a href="about.html" class="active">About</a>
-            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
@@ -291,15 +292,30 @@
         </div>
     </section>
 
-    <section class="cta-section">
-        <h2>Let's work together</h2>
-        <p>Available for freelance projects and collaborations</p>
-        <a href="contact.html" class="cta-button">Get in touch</a>
-    </section>
-
-    <footer>
-        <span>© 2025 Jess Watson</span>
-        <span>Marketing & Design for Arts & Culture</span>
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="mailto:jessisacreative@gmail.com" class="footer-email">jessisacreative@gmail.com</a></p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/jessisacreative/" target="_blank">LinkedIn</a>
+                    <a href="https://www.instagram.com/jessisacreative/" target="_blank">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Location</h3>
+                <p>West Yorkshire, UK</p>
+                <p>Available for freelance projects and collaborations</p>
+            </div>
+            <div class="footer-section">
+                <h3>Currently</h3>
+                <p>Marketing Manager at the National Science and Media Museum, Bradford</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Jess Watson</span>
+            <span>Marketing & Design for Arts & Culture</span>
+        </div>
     </footer>
 </body>
 </html>

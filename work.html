@@ -116,11 +116,106 @@
             max-width: 400px;
         }
 
-        footer {
-            padding: 48px 80px;
+        .crosslink-section {
+            padding: 80px;
+            background: var(--grey-100);
+        }
+        .crosslink-header {
             display: flex;
             justify-content: space-between;
-            border-top: 1px solid var(--grey-200);
+            align-items: baseline;
+            margin-bottom: 48px;
+        }
+        .crosslink-title {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+        }
+        .crosslink-link {
+            font-size: 12px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+            transition: color 0.3s;
+        }
+        .crosslink-link:hover { color: var(--black); }
+
+        .crosslink-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 32px;
+        }
+        .crosslink-item {
+            display: block;
+        }
+        .crosslink-item:hover { opacity: 0.8; }
+        .crosslink-item .journal-image {
+            aspect-ratio: 4/3;
+            overflow: hidden;
+            margin-bottom: 16px;
+            background: var(--white);
+        }
+        .crosslink-item .journal-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .crosslink-item:hover .journal-image img { transform: scale(1.04); }
+        .crosslink-item .journal-category {
+            font-size: 11px;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+            margin-bottom: 8px;
+        }
+        .crosslink-item .journal-title {
+            font-size: 18px;
+            font-weight: 400;
+            line-height: 1.3;
+        }
+
+        .site-footer {
+            background: var(--black);
+            color: var(--white);
+            padding: 80px;
+        }
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 48px;
+            margin-bottom: 64px;
+        }
+        .footer-section h3 {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+            margin-bottom: 20px;
+        }
+        .footer-section p, .footer-section a {
+            font-size: 14px;
+            line-height: 1.8;
+            color: var(--grey-400);
+        }
+        .footer-section a:hover { color: var(--white); }
+        .footer-email {
+            font-size: 18px;
+            color: var(--white);
+            border-bottom: 1px solid var(--white);
+            padding-bottom: 2px;
+        }
+        .footer-social {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+        }
+        .footer-bottom {
+            display: flex;
+            justify-content: space-between;
+            padding-top: 32px;
+            border-top: 1px solid var(--grey-800);
             font-size: 11px;
             letter-spacing: 0.1em;
             text-transform: uppercase;
@@ -136,7 +231,11 @@
             .work-item:nth-child(even) { direction: ltr; }
             .work-number { font-size: 64px; }
             .work-title { font-size: 28px; }
-            footer { padding: 32px; flex-direction: column; gap: 8px; }
+            .crosslink-section { padding: 48px 32px; }
+            .crosslink-grid { grid-template-columns: 1fr; gap: 32px; }
+            .site-footer { padding: 48px 32px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-bottom { flex-direction: column; gap: 8px; }
         }
     </style>
 </head>
@@ -145,8 +244,8 @@
         <a href="index.html" class="logo">Jess Watson</a>
         <nav>
             <a href="work.html" class="active">Work</a>
+            <a href="journal.html">Journal</a>
             <a href="about.html">About</a>
-            <a href="contact.html">Contact</a>
         </nav>
     </header>
 
@@ -243,9 +342,60 @@
         </div>
     </section>
 
-    <footer>
-        <span>© 2025 Jess Watson</span>
-        <span>Marketing & Design for Arts & Culture</span>
+    <section class="crosslink-section">
+        <div class="crosslink-header">
+            <span class="crosslink-title">From the Journal</span>
+            <a href="journal.html" class="crosslink-link">Read all articles →</a>
+        </div>
+        <div class="crosslink-grid">
+            <a href="journal.html" class="crosslink-item">
+                <div class="journal-image">
+                    <img src="images/david hockney exhibition in the press featuring a photograph i took of a colleague in the gallery.png" alt="Hockney exhibition">
+                </div>
+                <p class="journal-category">Exhibition Review</p>
+                <h3 class="journal-title">David Hockney at Cartwright Hall</h3>
+            </a>
+            <a href="journal.html" class="crosslink-item">
+                <div class="journal-image">
+                    <img src="images/Photograph of me in front of my exhibited photos at The Great Leeds Fungi Exhibition.jpeg" alt="Fungi photography">
+                </div>
+                <p class="journal-category">Personal Project</p>
+                <h3 class="journal-title">Finding Fungi</h3>
+            </a>
+            <a href="journal.html" class="crosslink-item">
+                <div class="journal-image">
+                    <img src="images/feathers mcgraw peeping out a box, ready to be installed within the media museum.jpg" alt="Feathers McGraw">
+                </div>
+                <p class="journal-category">Behind the Scenes</p>
+                <h3 class="journal-title">Installing Feathers McGraw</h3>
+            </a>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><a href="mailto:jessisacreative@gmail.com" class="footer-email">jessisacreative@gmail.com</a></p>
+                <div class="footer-social">
+                    <a href="https://www.linkedin.com/in/jessisacreative/" target="_blank">LinkedIn</a>
+                    <a href="https://www.instagram.com/jessisacreative/" target="_blank">Instagram</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Location</h3>
+                <p>West Yorkshire, UK</p>
+                <p>Available for freelance projects and collaborations</p>
+            </div>
+            <div class="footer-section">
+                <h3>Currently</h3>
+                <p>Marketing Manager at the National Science and Media Museum, Bradford</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2025 Jess Watson</span>
+            <span>Marketing & Design for Arts & Culture</span>
+        </div>
     </footer>
 </body>
 </html>
