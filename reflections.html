@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Art Market — Jess Watson</title>
+    <title>Social Media Management — Jess Watson</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
@@ -40,10 +40,8 @@
         nav a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.3s; }
         nav a:hover { opacity: 1; }
 
-        .project-hero { position: relative; height: 80vh; min-height: 600px; overflow: hidden; }
-        .project-hero img { width: 100%; height: 100%; object-fit: cover; }
-        .project-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%); }
-        .project-hero-content { position: absolute; bottom: 80px; left: 80px; right: 80px; color: var(--white); }
+        .project-hero { position: relative; height: 80vh; min-height: 600px; overflow: hidden; background: var(--black); display: flex; align-items: flex-end; }
+        .project-hero-content { padding: 80px; color: var(--white); }
         .project-number { font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 24px; }
         .project-title { font-size: clamp(48px, 8vw, 96px); font-weight: 300; letter-spacing: -0.03em; line-height: 1; margin-bottom: 24px; }
         .project-meta { font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; }
@@ -57,12 +55,10 @@
         .project-description { font-size: 22px; font-weight: 300; line-height: 1.6; }
         .project-description p + p { margin-top: 24px; font-size: 16px; color: var(--grey-600); line-height: 1.8; }
 
-        .project-gallery { display: grid; gap: 32px; }
-        .gallery-row { display: grid; gap: 32px; }
-        .gallery-row.two-col { grid-template-columns: 1fr 1fr; }
-        .gallery-row.three-col { grid-template-columns: 1fr 1fr 1fr; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-        .gallery-caption { margin-top: 12px; font-size: 12px; color: var(--grey-400); line-height: 1.5; }
+        .project-section { margin-bottom: 80px; }
+        .project-section-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey-400); margin-bottom: 24px; }
+        .project-section ul { list-style: none; columns: 2; column-gap: 48px; }
+        .project-section li { font-size: 14px; line-height: 2; color: var(--grey-600); break-inside: avoid; }
 
         .project-nav { display: flex; justify-content: space-between; padding: 80px; border-top: 1px solid var(--grey-200); }
         .project-nav a { font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey-400); transition: color 0.3s; }
@@ -75,10 +71,10 @@
 
         @media (max-width: 1024px) {
             header { padding: 24px 32px; }
-            .project-hero-content { left: 32px; right: 32px; bottom: 48px; }
+            .project-hero-content { padding: 48px 32px; }
             .project-content { padding: 80px 32px; }
             .project-intro { grid-template-columns: 1fr; gap: 48px; }
-            .gallery-row.two-col, .gallery-row.three-col { grid-template-columns: 1fr; }
+            .project-section ul { columns: 1; }
             .project-nav { padding: 48px 32px; flex-direction: column; gap: 48px; }
             .project-nav .next { text-align: left; }
             footer { padding: 32px; flex-direction: column; gap: 8px; }
@@ -95,12 +91,10 @@
     </header>
 
     <section class="project-hero">
-        <img src="images/Art Market 1.png" alt="The Art Market">
-        <div class="project-hero-overlay"></div>
         <div class="project-hero-content">
-            <p class="project-number">Project 06</p>
-            <h1 class="project-title">The Art Market</h1>
-            <p class="project-meta">Leeds Arts University, 2024</p>
+            <p class="project-number">Project 09</p>
+            <h1 class="project-title">Social Media<br>Management</h1>
+            <p class="project-meta">Reflections Film & Media, 2022–2023</p>
         </div>
     </section>
 
@@ -108,46 +102,45 @@
         <div class="project-intro">
             <dl class="project-details">
                 <dt>Client</dt>
-                <dd>Leeds Arts University</dd>
+                <dd>Reflections Film & Media</dd>
+                <dt>Sector</dt>
+                <dd>Early Years & Educational Content</dd>
                 <dt>Role</dt>
-                <dd>Marketing & Design Officer, Event Coordinator</dd>
-                <dt>Scope</dt>
-                <dd>Branding, Event Management, Financial Admin</dd>
+                <dd>Freelance Social Media Manager</dd>
                 <dt>Year</dt>
-                <dd>2024</dd>
+                <dd>2022–2023</dd>
             </dl>
             <div class="project-description">
-                <p>The Art Market ran during the Beyond the Frame End of Year Show in June 2024. It was a student-run marketplace featuring 130+ students selling their work across prints, ceramics, textiles, zines, and illustration. This was a record-breaking year for sales.</p>
-                <p>I created the new branding and logos for the Art Market, giving it a distinct identity within the broader Beyond the Frame campaign. Two months before the event, I presented the brief to students, walking them through what was expected and how the market would work.</p>
-                <p>In the days leading up to the event, I checked students' stock and inventory lists, making sure everything was ready. I set up the displays for the merchandise that would be on sale throughout the week. During the event itself, I trained and managed teams of student ambassadors who were running the sales. This meant making sure they understood how to handle transactions, manage stock, and provide a good experience for buyers.</p>
-                <p>After the event, I handled all the financial distribution, gathering banking details from over 130 students and ensuring everyone received their earnings. Students had worked all year to create this work, and getting paid fairly and on time mattered.</p>
+                <p>Reflections Film & Media is a production company specialising in early years and educational content. I worked with them as a freelance social media manager, handling their online presence and creating content that positioned them within the education and early years sectors.</p>
+                <p>I managed Reflections' social media presence, creating social video content and handling day-to-day channel management. This meant planning content calendars, creating engaging posts, and making sure their social channels reflected their expertise and professionalism.</p>
+                <p>I implemented new marketing and digital strategies, helping them think about how social media could support their wider business goals. Part of this involved designing event graphics and promotional materials (shell schemes, banners, flyers, digital media) for their presence at national industry events.</p>
+                <p>I visited these industry events to capture video and photography content for online coverage. This meant being on-site, documenting what was happening, and turning that into content that worked across their social channels.</p>
             </div>
         </div>
 
-        <div class="project-gallery">
-            <div class="gallery-row three-col">
-                <div class="gallery-item">
-                    <img src="images/Art Market 1.png" alt="Art Market">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Art Market 2.png" alt="Art Market">
-                </div>
-                <div class="gallery-item">
-                    <img src="images/Art Market 3.png" alt="Art Market">
-                    <p class="gallery-caption">The Art Market branding and event documentation</p>
-                </div>
-            </div>
+        <div class="project-section">
+            <h3 class="project-section-title">Deliverables</h3>
+            <ul>
+                <li>Social media management (all platforms)</li>
+                <li>Social video content creation and editing</li>
+                <li>Channel management and content planning</li>
+                <li>Marketing and digital strategy</li>
+                <li>Event graphics and promotional materials</li>
+                <li>Shell schemes, banners, flyers, digital media</li>
+                <li>National industry event coverage</li>
+                <li>Video and photography content</li>
+            </ul>
         </div>
     </div>
 
     <nav class="project-nav">
-        <a href="beyondtheframe.html" class="prev">
+        <a href="mediaworks.html" class="prev">
             <span class="label">Previous Project</span>
-            <span class="title">Beyond the Frame</span>
+            <span class="title">Mediaworks</span>
         </a>
-        <a href="leedsarts.html" class="next">
+        <a href="fungiexhibition.html" class="next">
             <span class="label">Next Project</span>
-            <span class="title">University Branding</span>
+            <span class="title">Fungi Exhibition</span>
         </a>
     </nav>
 

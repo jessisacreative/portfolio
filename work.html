@@ -116,66 +116,6 @@
             max-width: 400px;
         }
 
-        .crosslink-section {
-            padding: 80px;
-            background: var(--grey-100);
-        }
-        .crosslink-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 48px;
-        }
-        .crosslink-title {
-            font-size: 11px;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--grey-400);
-        }
-        .crosslink-link {
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--grey-400);
-            transition: color 0.3s;
-        }
-        .crosslink-link:hover { color: var(--black); }
-
-        .crosslink-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 32px;
-        }
-        .crosslink-item {
-            display: block;
-        }
-        .crosslink-item:hover { opacity: 0.8; }
-        .crosslink-item .journal-image {
-            aspect-ratio: 4/3;
-            overflow: hidden;
-            margin-bottom: 16px;
-            background: var(--white);
-        }
-        .crosslink-item .journal-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .crosslink-item:hover .journal-image img { transform: scale(1.04); }
-        .crosslink-item .journal-category {
-            font-size: 11px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--grey-400);
-            margin-bottom: 8px;
-        }
-        .crosslink-item .journal-title {
-            font-size: 18px;
-            font-weight: 400;
-            line-height: 1.3;
-        }
-
         .site-footer {
             background: var(--black);
             color: var(--white);
@@ -239,8 +179,6 @@
             .work-item:nth-child(even) { direction: ltr; }
             .work-number { font-size: 64px; }
             .work-title { font-size: 28px; }
-            .crosslink-section { padding: 48px 32px; }
-            .crosslink-grid { grid-template-columns: 1fr; gap: 32px; }
             .site-footer { padding: 48px 32px; }
             .footer-content { grid-template-columns: 1fr; gap: 48px; }
             .footer-bottom { flex-direction: column; gap: 8px; }
@@ -252,7 +190,6 @@
         <a href="index.html" class="logo">Jess Watson</a>
         <nav>
             <a href="work.html" class="active">Work</a>
-            <a href="journal.html">Journal</a>
             <a href="about.html">About</a>
         </nav>
     </header>
@@ -264,12 +201,24 @@
 
     <section class="section">
         <div class="work-list">
+            <a href="bradfordsciencefestival.html" class="work-item">
+                <div class="work-image">
+                    <img src="images/bradford science festival social media post.png" alt="Bradford Science Festival">
+                </div>
+                <div class="work-info">
+                    <div class="work-number">01</div>
+                    <h2 class="work-title">Bradford Science Festival</h2>
+                    <p class="work-meta">National Science and Media Museum, 2025</p>
+                    <p class="work-desc">Nine days of free science programming across five Bradford venues during UK City of Culture. Integrated campaign across print, digital OOH, paid social, and PR.</p>
+                </div>
+            </a>
+
             <a href="youmatter.html" class="work-item">
                 <div class="work-image">
                     <img src="images/YOU MATTER.jpg" alt="YOU:MATTER campaign">
                 </div>
                 <div class="work-info">
-                    <div class="work-number">01</div>
+                    <div class="work-number">02</div>
                     <h2 class="work-title">YOU:MATTER</h2>
                     <p class="work-meta">National Science and Media Museum, 2025</p>
                     <p class="work-desc">Multi-channel campaign for an immersive installation by Marshmallow Laser Feast, part of Bradford 2025 UK City of Culture.</p>
@@ -281,7 +230,7 @@
                     <img src="images/Sound and Vision.jpg" alt="Sound + Vision gallery">
                 </div>
                 <div class="work-info">
-                    <div class="work-number">02</div>
+                    <div class="work-number">03</div>
                     <h2 class="work-title">Sound + Vision</h2>
                     <p class="work-meta">National Science and Media Museum, 2025</p>
                     <p class="work-desc">Campaign for the museum's new permanent galleries showcasing over 500 world-class exhibits from photography, film, television, animation and sound.</p>
@@ -293,22 +242,10 @@
                     <img src="images/photographs of the jameel prize exhibitionDSCF9988.jpg" alt="Jameel Prize exhibition">
                 </div>
                 <div class="work-info">
-                    <div class="work-number">03</div>
+                    <div class="work-number">04</div>
                     <h2 class="work-title">Jameel Prize:<br>Moving Images</h2>
                     <p class="work-meta">Bradford Museums and Galleries, 2025</p>
                     <p class="work-desc">Fast-turnaround campaign for the V&A's prestigious contemporary art award at Cartwright Hall during Bradford 2025.</p>
-                </div>
-            </a>
-
-            <a href="fungiexhibition.html" class="work-item">
-                <div class="work-image">
-                    <img src="images/Photograph of me in front of my exhibited photos at The Great Leeds Fungi Exhibition.jpeg" alt="Fungi Exhibition">
-                </div>
-                <div class="work-info">
-                    <div class="work-number">04</div>
-                    <h2 class="work-title">The Great Leeds<br>Fungi Exhibition</h2>
-                    <p class="work-meta">Headrow House, Leeds, 2025</p>
-                    <p class="work-desc">Personal photography project exploring fungi and natural forms, exhibited as part of a group show curated by Studio Greenly.</p>
                 </div>
             </a>
 
@@ -347,35 +284,41 @@
                     <p class="work-desc">Brand rollout following website redesign, including prospectuses, promotional materials and graduation ceremony coordination.</p>
                 </div>
             </a>
-        </div>
-    </section>
 
-    <section class="crosslink-section">
-        <div class="crosslink-header">
-            <span class="crosslink-title">From the Journal</span>
-            <a href="journal.html" class="crosslink-link">Read all articles →</a>
-        </div>
-        <div class="crosslink-grid">
-            <a href="journal.html" class="crosslink-item">
-                <div class="journal-image">
-                    <img src="images/david hockney exhibition in the press featuring a photograph i took of a colleague in the gallery.png" alt="Hockney exhibition">
+            <a href="mediaworks.html" class="work-item">
+                <div class="work-image">
+                    <img src="images/mediaworks-content.jpg" alt="Social media content">
                 </div>
-                <p class="journal-category">Exhibition Review</p>
-                <h3 class="journal-title">David Hockney at Cartwright Hall</h3>
+                <div class="work-info">
+                    <div class="work-number">08</div>
+                    <h2 class="work-title">Social Media<br>Content Production</h2>
+                    <p class="work-meta">Mediaworks UK Ltd, 2021–2023</p>
+                    <p class="work-desc">Content strategy and production for global FMCG skincare brands. TikTok content lead, video production, and AR filter creation.</p>
+                </div>
             </a>
-            <a href="journal.html" class="crosslink-item">
-                <div class="journal-image">
-                    <img src="images/Photograph of me in front of my exhibited photos at The Great Leeds Fungi Exhibition.jpeg" alt="Fungi photography">
+
+            <a href="reflections.html" class="work-item">
+                <div class="work-image">
+                    <img src="images/reflections-media.jpg" alt="Reflections Film & Media">
                 </div>
-                <p class="journal-category">Personal Project</p>
-                <h3 class="journal-title">Finding Fungi</h3>
+                <div class="work-info">
+                    <div class="work-number">09</div>
+                    <h2 class="work-title">Social Media<br>Management</h2>
+                    <p class="work-meta">Reflections Film & Media, 2022–2023</p>
+                    <p class="work-desc">Freelance social media management for a production company specialising in early years and educational content.</p>
+                </div>
             </a>
-            <a href="journal.html" class="crosslink-item">
-                <div class="journal-image">
-                    <img src="images/feathers mcgraw peeping out a box, ready to be installed within the media museum.jpg" alt="Feathers McGraw">
+
+            <a href="fungiexhibition.html" class="work-item">
+                <div class="work-image">
+                    <img src="images/Photograph of me in front of my exhibited photos at The Great Leeds Fungi Exhibition.jpeg" alt="Fungi Exhibition">
                 </div>
-                <p class="journal-category">Behind the Scenes</p>
-                <h3 class="journal-title">Installing Feathers McGraw</h3>
+                <div class="work-info">
+                    <div class="work-number">10</div>
+                    <h2 class="work-title">The Great Leeds<br>Fungi Exhibition</h2>
+                    <p class="work-meta">Headrow House, Leeds, 2025</p>
+                    <p class="work-desc">Personal photography project exploring fungi and natural forms, exhibited as part of a group show curated by Studio Greenly.</p>
+                </div>
             </a>
         </div>
     </section>
