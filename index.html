@@ -232,12 +232,26 @@
             color: var(--white);
             padding: 80px;
         }
-        .footer-grid {
+        .footer-content {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
-            gap: 48px;
-            margin-bottom: 64px;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 80px;
+            margin-bottom: 80px;
         }
+        .footer-main h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            margin-bottom: 24px;
+        }
+        .footer-email {
+            font-size: 20px;
+            color: var(--white);
+            border-bottom: 1px solid var(--white);
+            padding-bottom: 4px;
+            transition: opacity 0.3s;
+        }
+        .footer-email:hover { opacity: 0.7; }
         .footer-section h3 {
             font-size: 11px;
             letter-spacing: 0.2em;
@@ -251,12 +265,6 @@
             color: var(--grey-400);
         }
         .footer-section a:hover { color: var(--white); }
-        .footer-email {
-            font-size: 18px;
-            color: var(--white);
-            border-bottom: 1px solid var(--white);
-            padding-bottom: 2px;
-        }
         .footer-social {
             display: flex;
             gap: 24px;
@@ -287,7 +295,7 @@
             .about-grid { grid-template-columns: 1fr; gap: 48px; }
             .about-image { max-width: 280px; }
             .site-footer { padding: 48px 32px; }
-            .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+            .footer-content { grid-template-columns: 1fr; gap: 48px; }
             .footer-bottom { flex-direction: column; gap: 8px; }
         }
     </style>
@@ -383,27 +391,26 @@
     </section>
 
     <footer class="site-footer">
-        <div class="footer-grid">
+        <div class="footer-content">
+            <div class="footer-main">
+                <h2>Let's work together</h2>
+                <a href="mailto:jessisacreative@gmail.com" class="footer-email">jessisacreative@gmail.com</a>
+            </div>
             <div class="footer-section">
-                <h3>Contact</h3>
-                <p><a href="mailto:jessisacreative@gmail.com" class="footer-email">jessisacreative@gmail.com</a></p>
+                <h3>Location</h3>
+                <p>West Yorkshire, UK</p>
+                <p>Available for freelance projects</p>
+            </div>
+            <div class="footer-section">
+                <h3>Connect</h3>
                 <div class="footer-social">
                     <a href="https://www.linkedin.com/in/jessisacreative/" target="_blank">LinkedIn</a>
                     <a href="https://www.instagram.com/jessisacreative/" target="_blank">Instagram</a>
                 </div>
             </div>
-            <div class="footer-section">
-                <h3>Location</h3>
-                <p>West Yorkshire, UK</p>
-                <p>Available for freelance projects and collaborations</p>
-            </div>
-            <div class="footer-section">
-                <h3>Currently</h3>
-                <p>Marketing Manager at the National Science and Media Museum, Bradford</p>
-            </div>
         </div>
         <div class="footer-bottom">
-            <span>© 2025 Jess Watson</span>
+            <span>© 2026 Jess Watson</span>
             <span>Marketing & Design for Arts & Culture</span>
         </div>
     </footer>
