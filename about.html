@@ -8,11 +8,11 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --black: #0a0a0a;
-            --grey-800: #222;
+            --grey-800: #1a1a1a;
             --grey-600: #555;
-            --grey-400: #999;
-            --grey-200: #ddd;
-            --grey-100: #f4f4f4;
+            --grey-400: #888;
+            --grey-200: #e0e0e0;
+            --grey-100: #f5f5f5;
             --white: #fff;
         }
         html { scroll-behavior: smooth; }
@@ -21,6 +21,7 @@
             color: var(--black);
             background: var(--white);
             font-weight: 400;
+            line-height: 1.6;
         }
         a { color: inherit; text-decoration: none; }
 
@@ -37,135 +38,267 @@
         }
         .logo { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
         nav { display: flex; gap: 48px; }
-        nav a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); transition: color 0.3s; }
+        nav a {
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+            transition: color 0.3s;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--black);
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after, nav a.active::after { width: 100%; }
         nav a:hover, nav a.active { color: var(--black); }
 
+        /* Hero Section */
         .about-hero {
-            padding: 160px 80px 80px;
+            padding: 180px 80px 120px;
             display: grid;
-            grid-template-columns: 400px 1fr;
-            gap: 80px;
-            align-items: start;
+            grid-template-columns: 1fr 1fr;
+            gap: 120px;
+            align-items: end;
+            min-height: 100vh;
         }
-        .about-image img {
+        .hero-image {
+            position: relative;
+        }
+        .hero-image img {
             width: 100%;
+            max-width: 480px;
             height: auto;
             display: block;
         }
-        .about-intro h1 {
-            font-size: clamp(32px, 4vw, 42px);
-            font-weight: 300;
-            letter-spacing: -0.02em;
-            line-height: 1.3;
-            margin-bottom: 32px;
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            left: -20px;
+            right: 20px;
+            bottom: 20px;
+            border: 1px solid var(--grey-200);
+            z-index: -1;
         }
-        .about-intro .lead {
-            font-size: 18px;
-            line-height: 1.6;
-            color: var(--grey-600);
-            margin-bottom: 24px;
+        .hero-content {
+            padding-bottom: 40px;
         }
-        .about-intro p {
-            font-size: 15px;
-            line-height: 1.8;
-            color: var(--grey-600);
-        }
-        .about-intro p + p { margin-top: 20px; }
-
-        .about-section {
-            padding: 80px;
-            border-top: 1px solid var(--grey-200);
-        }
-        .about-section-title {
+        .hero-label {
             font-size: 11px;
             letter-spacing: 0.2em;
             text-transform: uppercase;
             color: var(--grey-400);
+            margin-bottom: 32px;
+        }
+        .hero-title {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
             margin-bottom: 40px;
         }
+        .hero-text {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--grey-600);
+            max-width: 520px;
+        }
+        .hero-text p + p { margin-top: 24px; }
 
+        /* Services Section */
+        .services-section {
+            padding: 120px 80px;
+            background: var(--grey-100);
+        }
+        .services-header {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 80px;
+            margin-bottom: 80px;
+        }
+        .services-label {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+        }
+        .services-intro {
+            font-size: 24px;
+            font-weight: 300;
+            line-height: 1.5;
+            letter-spacing: -0.01em;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 48px;
+        }
+        .service-item {
+            padding: 40px 0;
+            border-top: 1px solid var(--grey-200);
+            transition: transform 0.3s ease;
+        }
+        .service-item:hover {
+            transform: translateY(-4px);
+        }
+        .service-number {
+            font-size: 48px;
+            font-weight: 200;
+            color: var(--grey-200);
+            line-height: 1;
+            margin-bottom: 24px;
+            transition: color 0.3s ease;
+        }
+        .service-item:hover .service-number {
+            color: var(--grey-400);
+        }
+        .service-title {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 16px;
+        }
+        .service-list {
+            list-style: none;
+        }
+        .service-list li {
+            font-size: 14px;
+            color: var(--grey-600);
+            line-height: 2;
+            position: relative;
+            padding-left: 16px;
+        }
+        .service-list li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 12px;
+            width: 4px;
+            height: 4px;
+            background: var(--grey-400);
+            border-radius: 50%;
+        }
+
+        /* Experience Section */
+        .experience-section {
+            padding: 120px 80px;
+        }
+        .experience-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 80px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--grey-200);
+        }
+        .experience-label {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+        }
         .experience-list {
             display: flex;
             flex-direction: column;
-            gap: 48px;
-            max-width: 900px;
         }
         .experience-item {
             display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 40px;
+            grid-template-columns: 180px 1fr 2fr;
+            gap: 48px;
+            padding: 48px 0;
+            border-bottom: 1px solid var(--grey-200);
+            transition: background 0.3s ease;
+        }
+        .experience-item:hover {
+            background: var(--grey-100);
+            margin: 0 -40px;
+            padding-left: 40px;
+            padding-right: 40px;
         }
         .experience-date {
             font-size: 13px;
             color: var(--grey-400);
-            padding-top: 4px;
         }
-        .experience-content h3 {
+        .experience-role h3 {
             font-size: 20px;
             font-weight: 500;
             margin-bottom: 4px;
         }
-        .experience-content .org {
+        .experience-role .org {
             font-size: 14px;
             color: var(--grey-600);
-            margin-bottom: 16px;
         }
-        .experience-content p {
-            font-size: 14px;
+        .experience-desc {
+            font-size: 15px;
             line-height: 1.7;
             color: var(--grey-600);
         }
 
-        .skills-grid {
+        /* Education Section */
+        .education-section {
+            padding: 120px 80px;
+            background: var(--black);
+            color: var(--white);
+        }
+        .education-header {
+            margin-bottom: 80px;
+        }
+        .education-label {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+            margin-bottom: 24px;
+        }
+        .education-title {
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            line-height: 1.1;
+        }
+        .education-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 48px;
-            max-width: 900px;
-        }
-        .skill-category h3 {
-            font-size: 14px;
-            font-weight: 500;
-            margin-bottom: 16px;
-        }
-        .skill-category ul {
-            list-style: none;
-        }
-        .skill-category li {
-            font-size: 14px;
-            color: var(--grey-600);
-            line-height: 2;
-        }
-
-        .education-list {
-            display: flex;
-            flex-direction: column;
-            gap: 32px;
-            max-width: 900px;
         }
         .education-item {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 40px;
+            padding: 32px;
+            border: 1px solid var(--grey-800);
+            transition: border-color 0.3s ease, transform 0.3s ease;
         }
-        .education-date {
-            font-size: 13px;
+        .education-item:hover {
+            border-color: var(--grey-600);
+            transform: translateY(-4px);
+        }
+        .education-year {
+            font-size: 12px;
+            letter-spacing: 0.1em;
             color: var(--grey-400);
-            padding-top: 4px;
+            margin-bottom: 16px;
         }
-        .education-content h3 {
-            font-size: 16px;
+        .education-degree {
+            font-size: 18px;
             font-weight: 500;
-            margin-bottom: 4px;
+            margin-bottom: 8px;
+            line-height: 1.3;
         }
-        .education-content .inst {
+        .education-school {
             font-size: 14px;
-            color: var(--grey-600);
+            color: var(--grey-400);
         }
 
+        /* Footer */
         .site-footer {
             background: var(--black);
             color: var(--white);
             padding: 80px;
+            border-top: 1px solid var(--grey-800);
         }
         .footer-content {
             display: grid;
@@ -219,27 +352,32 @@
         @media (max-width: 1024px) {
             header { padding: 24px 32px; }
             .about-hero {
-                padding: 120px 32px 48px;
+                padding: 140px 32px 80px;
                 grid-template-columns: 1fr;
-                gap: 48px;
+                gap: 64px;
+                min-height: auto;
             }
-            .about-image { max-width: 300px; }
-            .about-section { padding: 48px 32px; }
-            .experience-item, .education-item {
+            .hero-image { order: -1; }
+            .hero-image img { max-width: 320px; }
+            .hero-image::before { display: none; }
+            .services-section { padding: 80px 32px; }
+            .services-header { grid-template-columns: 1fr; gap: 24px; }
+            .services-grid { grid-template-columns: 1fr; gap: 32px; }
+            .experience-section { padding: 80px 32px; }
+            .experience-item {
                 grid-template-columns: 1fr;
-                gap: 8px;
+                gap: 16px;
             }
-            .skills-grid {
-                grid-template-columns: 1fr 1fr;
-                gap: 32px;
+            .experience-item:hover {
+                margin: 0;
+                padding-left: 0;
+                padding-right: 0;
             }
+            .education-section { padding: 80px 32px; }
+            .education-grid { grid-template-columns: 1fr; gap: 24px; }
             .site-footer { padding: 48px 32px; }
             .footer-content { grid-template-columns: 1fr; gap: 48px; }
             .footer-bottom { flex-direction: column; gap: 8px; }
-        }
-
-        @media (max-width: 600px) {
-            .skills-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -253,97 +391,29 @@
     </header>
 
     <section class="about-hero">
-        <div class="about-image">
+        <div class="hero-image">
             <img src="images/My Portrait.jpeg" alt="Jess Watson">
         </div>
-        <div class="about-intro">
-            <h1>I'm a Yorkshire-based creative working in marketing, communications, and design for the cultural sector.</h1>
-            <p class="lead">With almost five years of experience, my work sits at the intersection of campaign delivery, content production, and visual design. I move between strategic thinking and hands-on making, depending on what a project needs.</p>
-            <p>Currently I work as Marketing Manager at the National Science and Media Museum in Bradford (0.5 FTE job share), where I run campaigns for exhibitions, gallery launches and major events. I also work freelance as Campaign Coordinator for Bradford Museums and Galleries, which brought me into projects like the Jameel Prize exhibition during Bradford 2025 City of Culture.</p>
-            <p>Before museums, I worked at Leeds Arts University running campaigns like the End of Year Show and Art Market, and before that I was at Mediaworks UK Ltd creating social content for global FMCG brands. My background covers in-house roles, agency work, and freelance projects, which means I'm comfortable adapting to different scales, timelines and ways of working.</p>
-            <p>I'm interested in how cultural organisations connect with audiences, particularly around accessibility and reaching people who don't usually engage with museums and galleries. A lot of my work has been about translating complex or ambitious projects into campaigns that feel relevant and welcoming.</p>
-        </div>
-    </section>
-
-    <section class="about-section">
-        <h2 class="about-section-title">Experience</h2>
-        <div class="experience-list">
-            <div class="experience-item">
-                <div class="experience-date">2024 – Present</div>
-                <div class="experience-content">
-                    <h3>Marketing Manager</h3>
-                    <p class="org">National Science and Media Museum, Bradford</p>
-                    <p>Leading marketing campaigns for exhibitions, gallery launches and events. Co-led the Sound + Vision galleries campaign and led campaigns for YOU:MATTER and Bradford Science Festival during Bradford 2025.</p>
-                </div>
-            </div>
-            <div class="experience-item">
-                <div class="experience-date">2025 – Ongoing</div>
-                <div class="experience-content">
-                    <h3>Freelance Campaign Coordinator</h3>
-                    <p class="org">Bradford Museums and Galleries</p>
-                    <p>Delivered fast-turnaround marketing campaign for the Jameel Prize: Moving Images exhibition at Cartwright Hall during Bradford 2025 UK City of Culture.</p>
-                </div>
-            </div>
-            <div class="experience-item">
-                <div class="experience-date">2023 – 2024</div>
-                <div class="experience-content">
-                    <h3>Marketing & Design Officer</h3>
-                    <p class="org">Leeds Arts University</p>
-                    <p>Managed campaigns for the End of Year Show, Art Market, and university branding rollout. Coordinated print production, event marketing, and graduation ceremonies.</p>
-                </div>
-            </div>
-            <div class="experience-item">
-                <div class="experience-date">2022 – 2023</div>
-                <div class="experience-content">
-                    <h3>Freelance Social Media Manager</h3>
-                    <p class="org">Reflections Film & Media</p>
-                    <p>Social media management, content creation, and event coverage for a production company specialising in early years and educational content.</p>
-                </div>
-            </div>
-            <div class="experience-item">
-                <div class="experience-date">2021 – 2023</div>
-                <div class="experience-content">
-                    <h3>Junior Content Producer</h3>
-                    <p class="org">Mediaworks UK Ltd</p>
-                    <p>Content strategy and production for global FMCG skincare brands. Led TikTok content creation for the agency, including training resources for staff.</p>
-                </div>
+        <div class="hero-content">
+            <p class="hero-label">About</p>
+            <h1 class="hero-title">I'm a Yorkshire-based creative working in marketing, communications, and design for the cultural sector.</h1>
+            <div class="hero-text">
+                <p>With almost five years of experience, my work sits at the intersection of campaign delivery, content production, and visual design. I move between strategic thinking and hands-on making, depending on what a project needs.</p>
+                <p>I'm interested in how cultural organisations connect with audiences, particularly around accessibility and reaching people who don't usually engage with museums and galleries. A lot of my work has been about translating complex or ambitious projects into campaigns that feel relevant and welcoming.</p>
             </div>
         </div>
     </section>
 
-    <section class="about-section">
-        <h2 class="about-section-title">Education</h2>
-        <div class="education-list">
-            <div class="education-item">
-                <div class="education-date">2024 – 2025 (paused)</div>
-                <div class="education-content">
-                    <h3>MA Creative Practice (Part-Time)</h3>
-                    <p class="inst">Leeds Arts University</p>
-                </div>
-            </div>
-            <div class="education-item">
-                <div class="education-date">2018 – 2021</div>
-                <div class="education-content">
-                    <h3>BA (Hons) Creative Advertising</h3>
-                    <p class="inst">Leeds Arts University</p>
-                </div>
-            </div>
-            <div class="education-item">
-                <div class="education-date">2015 – 2017</div>
-                <div class="education-content">
-                    <h3>Level 3 Extended Diploma in Art & Design</h3>
-                    <p class="inst">Leeds Arts University (Graphic Design)</p>
-                </div>
-            </div>
+    <section class="services-section">
+        <div class="services-header">
+            <p class="services-label">What I Do</p>
+            <p class="services-intro">I work across campaign planning, content creation, design, social media and press. Equally happy thinking strategically about how a campaign should work as I am coordinating a photoshoot, designing window graphics, or writing social copy.</p>
         </div>
-    </section>
-
-    <section class="about-section">
-        <h2 class="about-section-title">Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Marketing</h3>
-                <ul>
+        <div class="services-grid">
+            <div class="service-item">
+                <div class="service-number">01</div>
+                <h3 class="service-title">Marketing</h3>
+                <ul class="service-list">
                     <li>Campaign strategy & planning</li>
                     <li>Paid social advertising</li>
                     <li>Out-of-home advertising</li>
@@ -351,9 +421,10 @@
                     <li>Email marketing</li>
                 </ul>
             </div>
-            <div class="skill-category">
-                <h3>Design</h3>
-                <ul>
+            <div class="service-item">
+                <div class="service-number">02</div>
+                <h3 class="service-title">Design</h3>
+                <ul class="service-list">
                     <li>Adobe Creative Suite</li>
                     <li>Brand development</li>
                     <li>Print design & production</li>
@@ -361,15 +432,80 @@
                     <li>Photography</li>
                 </ul>
             </div>
-            <div class="skill-category">
-                <h3>Content</h3>
-                <ul>
+            <div class="service-item">
+                <div class="service-number">03</div>
+                <h3 class="service-title">Content</h3>
+                <ul class="service-list">
                     <li>Copywriting</li>
                     <li>Social media content</li>
                     <li>Video production</li>
                     <li>Photo & video shoots</li>
                     <li>Content strategy</li>
                 </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="experience-section">
+        <div class="experience-header">
+            <p class="experience-label">Experience</p>
+        </div>
+        <div class="experience-list">
+            <div class="experience-item">
+                <div class="experience-date">2024 – Present</div>
+                <div class="experience-role">
+                    <h3>Marketing Manager</h3>
+                    <p class="org">National Science and Media Museum</p>
+                </div>
+                <p class="experience-desc">Leading marketing campaigns for exhibitions, gallery launches and events. Co-led the Sound + Vision galleries campaign and led campaigns for YOU:MATTER and Bradford Science Festival during Bradford 2025.</p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-date">2025 – Ongoing</div>
+                <div class="experience-role">
+                    <h3>Freelance Campaign Coordinator</h3>
+                    <p class="org">Bradford Museums and Galleries</p>
+                </div>
+                <p class="experience-desc">Delivered fast-turnaround marketing campaign for the Jameel Prize: Moving Images exhibition at Cartwright Hall during Bradford 2025 UK City of Culture.</p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-date">2023 – 2024</div>
+                <div class="experience-role">
+                    <h3>Marketing & Design Officer</h3>
+                    <p class="org">Leeds Arts University</p>
+                </div>
+                <p class="experience-desc">Managed campaigns for the End of Year Show, Art Market, and university branding rollout. Coordinated print production, event marketing, and graduation ceremonies.</p>
+            </div>
+            <div class="experience-item">
+                <div class="experience-date">2021 – 2023</div>
+                <div class="experience-role">
+                    <h3>Junior Content Producer</h3>
+                    <p class="org">Mediaworks UK Ltd</p>
+                </div>
+                <p class="experience-desc">Content strategy and production for global FMCG skincare brands. Led TikTok content creation for the agency, including training resources for staff.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="education-section">
+        <div class="education-header">
+            <p class="education-label">Education</p>
+            <h2 class="education-title">Background in creative<br>advertising & design</h2>
+        </div>
+        <div class="education-grid">
+            <div class="education-item">
+                <p class="education-year">2024 – 2025 (Paused)</p>
+                <h3 class="education-degree">MA Creative Practice</h3>
+                <p class="education-school">Leeds Arts University</p>
+            </div>
+            <div class="education-item">
+                <p class="education-year">2018 – 2021</p>
+                <h3 class="education-degree">BA (Hons) Creative Advertising</h3>
+                <p class="education-school">Leeds Arts University</p>
+            </div>
+            <div class="education-item">
+                <p class="education-year">2015 – 2017</p>
+                <h3 class="education-degree">Extended Diploma in Art & Design</h3>
+                <p class="education-school">Leeds Arts University</p>
             </div>
         </div>
     </section>

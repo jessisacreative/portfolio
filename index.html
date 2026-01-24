@@ -8,11 +8,11 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --black: #0a0a0a;
-            --grey-800: #222;
+            --grey-800: #1a1a1a;
             --grey-600: #555;
-            --grey-400: #999;
-            --grey-200: #ddd;
-            --grey-100: #f4f4f4;
+            --grey-400: #888;
+            --grey-200: #e0e0e0;
+            --grey-100: #f5f5f5;
             --white: #fff;
         }
         html { scroll-behavior: smooth; }
@@ -37,13 +37,22 @@
         header * { color: var(--white); }
         .logo { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
         nav { display: flex; gap: 48px; }
-        nav a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.3s; }
+        nav a {
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            opacity: 0.7;
+            transition: opacity 0.3s;
+            position: relative;
+        }
         nav a:hover { opacity: 1; }
 
+        /* Hero */
         .hero {
             min-height: 100vh;
             display: grid;
-            grid-template-columns: 1.2fr 1fr;
+            grid-template-columns: 1.3fr 1fr;
+            position: relative;
         }
         .hero-left {
             background: var(--black);
@@ -52,14 +61,40 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-left::after {
+            content: '';
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient(to bottom, transparent, var(--grey-800) 20%, var(--grey-800) 80%, transparent);
         }
         .hero-title {
             font-size: clamp(56px, 9vw, 140px);
             font-weight: 300;
-            line-height: 0.85;
+            line-height: 0.9;
             letter-spacing: -0.04em;
         }
-        .hero-title em { font-style: normal; font-weight: 600; }
+        .hero-title em {
+            font-style: normal;
+            font-weight: 600;
+            display: inline-block;
+            position: relative;
+        }
+        .hero-title em::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0.1em;
+            width: 100%;
+            height: 0.08em;
+            background: var(--white);
+            opacity: 0.3;
+        }
         .hero-location {
             font-size: 11px;
             letter-spacing: 0.2em;
@@ -72,28 +107,59 @@
             display: flex;
             align-items: flex-end;
         }
-        .hero-intro { max-width: 380px; }
+        .hero-intro { max-width: 400px; }
         .hero-intro .lead {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 300;
             line-height: 1.35;
             margin-bottom: 28px;
             letter-spacing: -0.01em;
         }
         .hero-intro p {
-            font-size: 14px;
+            font-size: 15px;
             line-height: 1.7;
             color: var(--grey-600);
         }
-
-        .section { padding: 120px 80px; }
-        .section-header {
+        .scroll-indicator {
+            position: absolute;
+            bottom: 48px;
+            right: 48px;
             display: flex;
-            justify-content: space-between;
-            align-items: baseline;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            color: var(--grey-400);
+            font-size: 10px;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+        }
+        .scroll-line {
+            width: 1px;
+            height: 48px;
+            background: linear-gradient(to bottom, var(--grey-400), transparent);
+            animation: scrollPulse 2s ease-in-out infinite;
+        }
+        @keyframes scrollPulse {
+            0%, 100% { opacity: 1; transform: scaleY(1); }
+            50% { opacity: 0.5; transform: scaleY(0.8); }
+        }
+
+        /* Featured Work */
+        .section {
+            padding: 120px 80px;
+        }
+        .section-header {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: end;
             margin-bottom: 80px;
+            padding-bottom: 24px;
             border-bottom: 1px solid var(--grey-200);
-            padding-bottom: 20px;
+        }
+        .section-title-group {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
         }
         .section-label {
             font-size: 11px;
@@ -101,99 +167,139 @@
             text-transform: uppercase;
             color: var(--grey-400);
         }
+        .section-title {
+            font-size: clamp(32px, 4vw, 48px);
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            line-height: 1;
+        }
         .section-link {
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.05em;
             color: var(--grey-400);
             transition: color 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         .section-link:hover { color: var(--black); }
+        .section-link::after {
+            content: '→';
+            transition: transform 0.3s;
+        }
+        .section-link:hover::after {
+            transform: translateX(4px);
+        }
 
         .featured-work {
-            display: flex;
-            flex-direction: column;
-            gap: 120px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 64px 48px;
         }
         .work-item {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
         }
-        .work-item:nth-child(even) { direction: rtl; }
-        .work-item:nth-child(even) > * { direction: ltr; }
-        .work-image { position: relative; overflow: hidden; }
-        .work-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-        .work-item:hover .work-image img { transform: scale(1.04); }
-        .work-number {
-            font-size: 100px;
-            font-weight: 200;
-            line-height: 1;
-            color: var(--grey-200);
-            margin-bottom: 20px;
-            letter-spacing: -0.04em;
-        }
-        .work-item:hover .work-number { color: var(--grey-400); }
-        .work-title {
-            font-size: 36px;
-            font-weight: 400;
-            letter-spacing: -0.02em;
-            margin-bottom: 12px;
-            line-height: 1.1;
-        }
-        .work-meta {
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            color: var(--grey-400);
-            margin-bottom: 24px;
-        }
-        .work-desc {
-            font-size: 15px;
-            line-height: 1.7;
-            color: var(--grey-600);
-            max-width: 400px;
-        }
-
-        .view-all {
-            text-align: center;
+        .work-item:nth-child(2) {
             margin-top: 80px;
         }
-        .view-all-link {
-            display: inline-block;
-            padding: 16px 32px;
-            border: 1px solid var(--black);
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            transition: all 0.3s;
+        .work-image {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4/3;
         }
-        .view-all-link:hover {
+        .work-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .work-item:hover .work-image img {
+            transform: scale(1.05);
+        }
+        .work-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
             background: var(--black);
-            color: var(--white);
+            opacity: 0;
+            transition: opacity 0.4s ease;
+        }
+        .work-item:hover .work-image::after {
+            opacity: 0.1;
+        }
+        .work-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .work-number {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--grey-400);
+            letter-spacing: 0.1em;
+        }
+        .work-title {
+            font-size: 26px;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            line-height: 1.2;
+            transition: transform 0.3s ease;
+        }
+        .work-item:hover .work-title {
+            transform: translateX(8px);
+        }
+        .work-meta {
+            font-size: 13px;
+            color: var(--grey-400);
         }
 
+        /* About Preview */
         .about-preview {
             background: var(--black);
             color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .about-preview::before {
+            content: 'ABOUT';
+            position: absolute;
+            left: -20px;
+            bottom: -40px;
+            font-size: clamp(150px, 20vw, 300px);
+            font-weight: 200;
+            letter-spacing: -0.05em;
+            color: var(--grey-800);
+            pointer-events: none;
+            line-height: 0.8;
         }
         .about-grid {
             display: grid;
             grid-template-columns: 1fr 1.5fr;
-            gap: 80px;
+            gap: 120px;
             align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        .about-image {
+            position: relative;
         }
         .about-image img {
             width: 100%;
-            max-width: 350px;
+            max-width: 400px;
             height: auto;
             display: block;
+        }
+        .about-image::before {
+            content: '';
+            position: absolute;
+            top: -16px;
+            left: -16px;
+            right: 16px;
+            bottom: 16px;
+            border: 1px solid var(--grey-800);
+            z-index: -1;
         }
         .about-content .label {
             font-size: 11px;
@@ -203,34 +309,40 @@
             margin-bottom: 32px;
         }
         .about-content .lead {
-            font-size: 28px;
+            font-size: 32px;
             font-weight: 300;
-            line-height: 1.4;
+            line-height: 1.3;
             letter-spacing: -0.01em;
             margin-bottom: 24px;
         }
         .about-content p {
-            font-size: 15px;
+            font-size: 16px;
             line-height: 1.8;
             color: var(--grey-400);
             max-width: 500px;
-            margin-bottom: 32px;
+            margin-bottom: 40px;
         }
         .about-link {
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+            font-size: 13px;
+            letter-spacing: 0.05em;
             color: var(--white);
-            border-bottom: 1px solid var(--white);
-            padding-bottom: 4px;
-            transition: opacity 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: gap 0.3s ease;
         }
-        .about-link:hover { opacity: 0.7; }
+        .about-link:hover { gap: 20px; }
+        .about-link::after {
+            content: '→';
+            font-size: 18px;
+        }
 
+        /* Footer */
         .site-footer {
             background: var(--black);
             color: var(--white);
             padding: 80px;
+            border-top: 1px solid var(--grey-800);
         }
         .footer-content {
             display: grid;
@@ -286,14 +398,17 @@
             .hero { grid-template-columns: 1fr; }
             .hero-left { padding: 140px 32px 64px; min-height: 60vh; }
             .hero-right { padding: 64px 32px; }
+            .scroll-indicator { display: none; }
             .section { padding: 80px 32px; }
-            .featured-work { gap: 80px; }
-            .work-item { grid-template-columns: 1fr; gap: 32px; }
-            .work-item:nth-child(even) { direction: ltr; }
-            .work-number { font-size: 64px; }
-            .work-title { font-size: 28px; }
-            .about-grid { grid-template-columns: 1fr; gap: 48px; }
-            .about-image { max-width: 280px; }
+            .section-header { grid-template-columns: 1fr; gap: 24px; }
+            .featured-work { grid-template-columns: 1fr; gap: 64px; }
+            .work-item:nth-child(2) { margin-top: 0; }
+            .work-title { font-size: 22px; }
+            .about-preview::before { display: none; }
+            .about-grid { grid-template-columns: 1fr; gap: 64px; }
+            .about-image { max-width: 320px; }
+            .about-image::before { display: none; }
+            .about-content .lead { font-size: 26px; }
             .site-footer { padding: 48px 32px; }
             .footer-content { grid-template-columns: 1fr; gap: 48px; }
             .footer-bottom { flex-direction: column; gap: 8px; }
@@ -323,13 +438,20 @@
                 <p class="lead">Strategic campaigns for museums, galleries, and cultural institutions.</p>
                 <p>Marketing Manager at the National Science and Media Museum. Campaign Coordinator for Bradford Museums and Galleries. Connecting audiences with arts and culture across Yorkshire and beyond.</p>
             </div>
+            <div class="scroll-indicator">
+                <span>Scroll</span>
+                <div class="scroll-line"></div>
+            </div>
         </div>
     </section>
 
     <section class="section">
         <div class="section-header">
-            <span class="section-label">Featured Work</span>
-            <a href="work.html" class="section-link">View all projects →</a>
+            <div class="section-title-group">
+                <span class="section-label">Selected</span>
+                <h2 class="section-title">Recent Projects</h2>
+            </div>
+            <a href="work.html" class="section-link">View all work</a>
         </div>
 
         <div class="featured-work">
@@ -338,10 +460,9 @@
                     <img src="images/bradford science festival social media post.png" alt="Bradford Science Festival">
                 </div>
                 <div class="work-info">
-                    <div class="work-number">01</div>
-                    <h2 class="work-title">Bradford Science Festival</h2>
+                    <span class="work-number">01</span>
+                    <h3 class="work-title">Bradford Science Festival</h3>
                     <p class="work-meta">National Science and Media Museum, 2025</p>
-                    <p class="work-desc">Nine days of free science programming across five Bradford venues during UK City of Culture. Integrated campaign across print, digital OOH, paid social, and PR.</p>
                 </div>
             </a>
 
@@ -350,10 +471,9 @@
                     <img src="images/YOU MATTER.jpg" alt="YOU:MATTER campaign">
                 </div>
                 <div class="work-info">
-                    <div class="work-number">02</div>
-                    <h2 class="work-title">YOU:MATTER</h2>
+                    <span class="work-number">02</span>
+                    <h3 class="work-title">YOU:MATTER</h3>
                     <p class="work-meta">National Science and Media Museum, 2025</p>
-                    <p class="work-desc">Multi-channel campaign for an immersive installation by Marshmallow Laser Feast, part of Bradford 2025 UK City of Culture.</p>
                 </div>
             </a>
 
@@ -362,16 +482,22 @@
                     <img src="images/Sound and Vision.jpg" alt="Sound + Vision gallery">
                 </div>
                 <div class="work-info">
-                    <div class="work-number">03</div>
-                    <h2 class="work-title">Sound + Vision</h2>
+                    <span class="work-number">03</span>
+                    <h3 class="work-title">Sound + Vision</h3>
                     <p class="work-meta">National Science and Media Museum, 2025</p>
-                    <p class="work-desc">Campaign for the museum's new permanent galleries showcasing over 500 world-class exhibits from photography, film, television, animation and sound.</p>
                 </div>
             </a>
-        </div>
 
-        <div class="view-all">
-            <a href="work.html" class="view-all-link">View all projects</a>
+            <a href="jameelprize.html" class="work-item">
+                <div class="work-image">
+                    <img src="images/photographs of the jameel prize exhibitionDSCF9988.jpg" alt="Jameel Prize exhibition">
+                </div>
+                <div class="work-info">
+                    <span class="work-number">04</span>
+                    <h3 class="work-title">Jameel Prize: Moving Images</h3>
+                    <p class="work-meta">Bradford Museums and Galleries, 2025</p>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -384,7 +510,7 @@
                 <p class="label">About</p>
                 <p class="lead">I'm a Yorkshire-based creative working in marketing, communications, and design for the cultural sector.</p>
                 <p>With almost five years of experience, my work sits at the intersection of campaign delivery, content production, and visual design. I move between strategic thinking and hands-on making, depending on what a project needs.</p>
-                <a href="about.html" class="about-link">More about me →</a>
+                <a href="about.html" class="about-link">More about me</a>
             </div>
         </div>
     </section>

@@ -8,11 +8,11 @@
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --black: #0a0a0a;
-            --grey-800: #222;
+            --grey-800: #1a1a1a;
             --grey-600: #555;
-            --grey-400: #999;
-            --grey-200: #ddd;
-            --grey-100: #f4f4f4;
+            --grey-400: #888;
+            --grey-200: #e0e0e0;
+            --grey-100: #f5f5f5;
             --white: #fff;
         }
         html { scroll-behavior: smooth; }
@@ -37,85 +37,142 @@
         }
         .logo { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
         nav { display: flex; gap: 48px; }
-        nav a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--grey-400); transition: color 0.3s; }
+        nav a {
+            font-size: 12px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+            transition: color 0.3s;
+            position: relative;
+        }
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background: var(--black);
+            transition: width 0.3s ease;
+        }
+        nav a:hover::after, nav a.active::after { width: 100%; }
         nav a:hover, nav a.active { color: var(--black); }
 
-        .page-header {
-            padding: 160px 80px 80px;
-            border-bottom: 1px solid var(--grey-200);
+        /* Page Hero */
+        .page-hero {
+            padding: 200px 80px 120px;
+            background: var(--black);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+        .page-hero::before {
+            content: 'WORK';
+            position: absolute;
+            right: -50px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: clamp(200px, 25vw, 400px);
+            font-weight: 200;
+            letter-spacing: -0.05em;
+            color: var(--grey-800);
+            pointer-events: none;
+            line-height: 0.8;
+        }
+        .page-hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+        }
+        .page-label {
+            font-size: 11px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: var(--grey-400);
+            margin-bottom: 32px;
         }
         .page-title {
-            font-size: clamp(48px, 8vw, 80px);
+            font-size: clamp(48px, 7vw, 80px);
             font-weight: 300;
             letter-spacing: -0.03em;
             line-height: 1;
-            margin-bottom: 24px;
+            margin-bottom: 32px;
         }
         .page-intro {
-            font-size: 18px;
-            color: var(--grey-600);
-            max-width: 600px;
-            line-height: 1.6;
+            font-size: 20px;
+            font-weight: 300;
+            color: var(--grey-400);
+            line-height: 1.5;
         }
 
-        .section { padding: 80px; }
-
-        .work-list {
+        /* Projects Section */
+        .projects-section {
+            padding: 120px 80px;
+        }
+        .projects-grid {
             display: flex;
             flex-direction: column;
-            gap: 120px;
         }
-
-        .work-item {
+        .project-item {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            grid-template-columns: 80px 1fr 1.2fr;
+            gap: 48px;
+            padding: 64px 0;
+            border-bottom: 1px solid var(--grey-200);
             align-items: center;
+            transition: background 0.4s ease;
         }
-
-        .work-item:nth-child(even) { direction: rtl; }
-        .work-item:nth-child(even) > * { direction: ltr; }
-
-        .work-image { position: relative; overflow: hidden; }
-        .work-image img {
-            width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        .project-item:first-child {
+            border-top: 1px solid var(--grey-200);
         }
-        .work-item:hover .work-image img { transform: scale(1.04); }
-
-        .work-number {
-            font-size: 100px;
-            font-weight: 200;
-            line-height: 1;
-            color: var(--grey-200);
-            margin-bottom: 20px;
-            letter-spacing: -0.04em;
+        .project-item:hover {
+            background: var(--grey-100);
+            margin: 0 -48px;
+            padding-left: 48px;
+            padding-right: 48px;
         }
-        .work-item:hover .work-number { color: var(--grey-400); }
-
-        .work-title {
-            font-size: 36px;
+        .project-number {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--grey-400);
+            letter-spacing: 0.05em;
+        }
+        .project-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .project-title {
+            font-size: 32px;
             font-weight: 400;
             letter-spacing: -0.02em;
-            margin-bottom: 12px;
             line-height: 1.1;
+            transition: transform 0.3s ease;
         }
-        .work-meta {
-            font-size: 12px;
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
+        .project-item:hover .project-title {
+            transform: translateX(8px);
+        }
+        .project-meta {
+            font-size: 13px;
             color: var(--grey-400);
-            margin-bottom: 24px;
+            letter-spacing: 0.02em;
         }
-        .work-desc {
-            font-size: 15px;
-            line-height: 1.7;
-            color: var(--grey-600);
-            max-width: 400px;
+        .project-image {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16/10;
+        }
+        .project-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .project-item:hover .project-image img {
+            transform: scale(1.05);
         }
 
+        /* Footer */
         .site-footer {
             background: var(--black);
             color: var(--white);
@@ -172,13 +229,23 @@
 
         @media (max-width: 1024px) {
             header { padding: 24px 32px; }
-            .page-header { padding: 120px 32px 48px; }
-            .section { padding: 48px 32px; }
-            .work-list { gap: 80px; }
-            .work-item { grid-template-columns: 1fr; gap: 32px; }
-            .work-item:nth-child(even) { direction: ltr; }
-            .work-number { font-size: 64px; }
-            .work-title { font-size: 28px; }
+            .page-hero { padding: 160px 32px 80px; }
+            .page-hero::before { display: none; }
+            .projects-section { padding: 64px 32px; }
+            .project-item {
+                grid-template-columns: 1fr;
+                gap: 24px;
+                padding: 48px 0;
+            }
+            .project-item:hover {
+                margin: 0;
+                padding-left: 0;
+                padding-right: 0;
+            }
+            .project-number { order: 1; }
+            .project-info { order: 2; }
+            .project-image { order: 3; }
+            .project-title { font-size: 26px; }
             .site-footer { padding: 48px 32px; }
             .footer-content { grid-template-columns: 1fr; gap: 48px; }
             .footer-bottom { flex-direction: column; gap: 8px; }
@@ -194,130 +261,101 @@
         </nav>
     </header>
 
-    <div class="page-header">
-        <h1 class="page-title">Selected Work</h1>
-        <p class="page-intro">Campaigns, branding, and creative projects for museums, galleries, and cultural institutions across Yorkshire and beyond.</p>
-    </div>
+    <section class="page-hero">
+        <div class="page-hero-content">
+            <p class="page-label">Portfolio</p>
+            <h1 class="page-title">Campaigns &<br>Creative Projects</h1>
+            <p class="page-intro">Marketing, branding, and design work for museums, galleries, and cultural institutions across Yorkshire.</p>
+        </div>
+    </section>
 
-    <section class="section">
-        <div class="work-list">
-            <a href="bradfordsciencefestival.html" class="work-item">
-                <div class="work-image">
+    <section class="projects-section">
+        <div class="projects-grid">
+            <a href="bradfordsciencefestival.html" class="project-item">
+                <span class="project-number">01</span>
+                <div class="project-info">
+                    <h2 class="project-title">Bradford Science Festival</h2>
+                    <p class="project-meta">National Science and Media Museum, 2025</p>
+                </div>
+                <div class="project-image">
                     <img src="images/bradford science festival social media post.png" alt="Bradford Science Festival">
                 </div>
-                <div class="work-info">
-                    <div class="work-number">01</div>
-                    <h2 class="work-title">Bradford Science Festival</h2>
-                    <p class="work-meta">National Science and Media Museum, 2025</p>
-                    <p class="work-desc">Nine days of free science programming across five Bradford venues during UK City of Culture. Integrated campaign across print, digital OOH, paid social, and PR.</p>
-                </div>
             </a>
 
-            <a href="youmatter.html" class="work-item">
-                <div class="work-image">
+            <a href="youmatter.html" class="project-item">
+                <span class="project-number">02</span>
+                <div class="project-info">
+                    <h2 class="project-title">YOU:MATTER</h2>
+                    <p class="project-meta">National Science and Media Museum, 2025</p>
+                </div>
+                <div class="project-image">
                     <img src="images/YOU MATTER.jpg" alt="YOU:MATTER campaign">
                 </div>
-                <div class="work-info">
-                    <div class="work-number">02</div>
-                    <h2 class="work-title">YOU:MATTER</h2>
-                    <p class="work-meta">National Science and Media Museum, 2025</p>
-                    <p class="work-desc">Multi-channel campaign for an immersive installation by Marshmallow Laser Feast, part of Bradford 2025 UK City of Culture.</p>
-                </div>
             </a>
 
-            <a href="soundvision.html" class="work-item">
-                <div class="work-image">
+            <a href="soundvision.html" class="project-item">
+                <span class="project-number">03</span>
+                <div class="project-info">
+                    <h2 class="project-title">Sound + Vision</h2>
+                    <p class="project-meta">National Science and Media Museum, 2025</p>
+                </div>
+                <div class="project-image">
                     <img src="images/Sound and Vision.jpg" alt="Sound + Vision gallery">
                 </div>
-                <div class="work-info">
-                    <div class="work-number">03</div>
-                    <h2 class="work-title">Sound + Vision</h2>
-                    <p class="work-meta">National Science and Media Museum, 2025</p>
-                    <p class="work-desc">Campaign for the museum's new permanent galleries showcasing over 500 world-class exhibits from photography, film, television, animation and sound.</p>
-                </div>
             </a>
 
-            <a href="jameelprize.html" class="work-item">
-                <div class="work-image">
+            <a href="jameelprize.html" class="project-item">
+                <span class="project-number">04</span>
+                <div class="project-info">
+                    <h2 class="project-title">Jameel Prize: Moving Images</h2>
+                    <p class="project-meta">Bradford Museums and Galleries, 2025</p>
+                </div>
+                <div class="project-image">
                     <img src="images/photographs of the jameel prize exhibitionDSCF9988.jpg" alt="Jameel Prize exhibition">
                 </div>
-                <div class="work-info">
-                    <div class="work-number">04</div>
-                    <h2 class="work-title">Jameel Prize:<br>Moving Images</h2>
-                    <p class="work-meta">Bradford Museums and Galleries, 2025</p>
-                    <p class="work-desc">Fast-turnaround campaign for the V&A's prestigious contemporary art award at Cartwright Hall during Bradford 2025.</p>
-                </div>
             </a>
 
-            <a href="beyondtheframe.html" class="work-item">
-                <div class="work-image">
+            <a href="beyondtheframe.html" class="project-item">
+                <span class="project-number">05</span>
+                <div class="project-info">
+                    <h2 class="project-title">Beyond the Frame</h2>
+                    <p class="project-meta">Leeds Arts University, 2024</p>
+                </div>
+                <div class="project-image">
                     <img src="images/beyond the frame window graphics outside the uni.jpg" alt="Beyond the Frame">
                 </div>
-                <div class="work-info">
-                    <div class="work-number">05</div>
-                    <h2 class="work-title">Beyond the Frame</h2>
-                    <p class="work-meta">Leeds Arts University, 2024</p>
-                    <p class="work-desc">Full campaign for the university's end of year exhibition, from student brief to delivery across print, OOH and digital.</p>
-                </div>
             </a>
 
-            <a href="artmarket.html" class="work-item">
-                <div class="work-image">
+            <a href="artmarket.html" class="project-item">
+                <span class="project-number">06</span>
+                <div class="project-info">
+                    <h2 class="project-title">The Art Market</h2>
+                    <p class="project-meta">Leeds Arts University, 2024</p>
+                </div>
+                <div class="project-image">
                     <img src="images/Art Market 1.png" alt="The Art Market">
                 </div>
-                <div class="work-info">
-                    <div class="work-number">06</div>
-                    <h2 class="work-title">The Art Market</h2>
-                    <p class="work-meta">Leeds Arts University, 2024</p>
-                    <p class="work-desc">Branding and event coordination for a student marketplace with 130+ sellers. Record-breaking year for sales.</p>
-                </div>
             </a>
 
-            <a href="leedsarts.html" class="work-item">
-                <div class="work-image">
+            <a href="leedsarts.html" class="project-item">
+                <span class="project-number">07</span>
+                <div class="project-info">
+                    <h2 class="project-title">University Branding & Marketing</h2>
+                    <p class="project-meta">Leeds Arts University, 2023–2024</p>
+                </div>
+                <div class="project-image">
                     <img src="images/front cover of the leeds arts university prospectus designed by me.png" alt="University branding">
                 </div>
-                <div class="work-info">
-                    <div class="work-number">07</div>
-                    <h2 class="work-title">University Branding<br>& Marketing</h2>
-                    <p class="work-meta">Leeds Arts University, 2023–2024</p>
-                    <p class="work-desc">Brand rollout following website redesign, including prospectuses, promotional materials and graduation ceremony coordination.</p>
-                </div>
             </a>
 
-            <a href="mediaworks.html" class="work-item">
-                <div class="work-image">
-                    <img src="images/mediaworks-content.jpg" alt="Social media content">
+            <a href="fungiexhibition.html" class="project-item">
+                <span class="project-number">08</span>
+                <div class="project-info">
+                    <h2 class="project-title">The Great Leeds Fungi Exhibition</h2>
+                    <p class="project-meta">Headrow House, Leeds, 2025</p>
                 </div>
-                <div class="work-info">
-                    <div class="work-number">08</div>
-                    <h2 class="work-title">Social Media<br>Content Production</h2>
-                    <p class="work-meta">Mediaworks UK Ltd, 2021–2023</p>
-                    <p class="work-desc">Content strategy and production for global FMCG skincare brands. TikTok content lead, video production, and AR filter creation.</p>
-                </div>
-            </a>
-
-            <a href="reflections.html" class="work-item">
-                <div class="work-image">
-                    <img src="images/reflections-media.jpg" alt="Reflections Film & Media">
-                </div>
-                <div class="work-info">
-                    <div class="work-number">09</div>
-                    <h2 class="work-title">Social Media<br>Management</h2>
-                    <p class="work-meta">Reflections Film & Media, 2022–2023</p>
-                    <p class="work-desc">Freelance social media management for a production company specialising in early years and educational content.</p>
-                </div>
-            </a>
-
-            <a href="fungiexhibition.html" class="work-item">
-                <div class="work-image">
+                <div class="project-image">
                     <img src="images/Photograph of me in front of my exhibited photos at The Great Leeds Fungi Exhibition.jpeg" alt="Fungi Exhibition">
-                </div>
-                <div class="work-info">
-                    <div class="work-number">10</div>
-                    <h2 class="work-title">The Great Leeds<br>Fungi Exhibition</h2>
-                    <p class="work-meta">Headrow House, Leeds, 2025</p>
-                    <p class="work-desc">Personal photography project exploring fungi and natural forms, exhibited as part of a group show curated by Studio Greenly.</p>
                 </div>
             </a>
         </div>
