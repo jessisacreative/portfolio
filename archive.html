@@ -25,10 +25,7 @@
         "image": "https://jessisacreative.github.io/portfolio/images/My Portrait.jpeg",
         "jobTitle": "Marketing Manager",
         "description": "Yorkshire-based creative working across marketing, communications, design, content and photography for museums, galleries and cultural organisations.",
-        "homeLocation": {
-          "@type": "Place",
-          "name": "West Yorkshire, UK"
-        },
+        "homeLocation": { "@type": "Place", "name": "West Yorkshire, UK" },
         "sameAs": [
           "https://www.linkedin.com/in/jessisacreative/",
           "https://www.instagram.com/jessisacreative/",
@@ -49,119 +46,35 @@
     </script>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --black: #0a0a0a;
-            --grey-800: #1a1a1a;
-            --grey-600: #555;
-            --grey-400: #888;
-            --grey-200: #e0e0e0;
-            --grey-100: #f5f5f5;
-            --white: #fff;
-        }
-        body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            color: var(--black);
-            background: var(--white);
-            line-height: 1.65;
-        }
-        a { color: inherit; }
-        header {
-            padding: 32px 48px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--grey-200);
-        }
-        .logo {
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            text-decoration: none;
-        }
-        nav { display: flex; gap: 36px; }
-        nav a {
-            font-size: 12px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-            color: var(--grey-400);
-            text-decoration: none;
-        }
-        nav a:hover { color: var(--black); }
-        main { max-width: 1040px; margin: 0 auto; padding: 120px 48px; }
-        .eyebrow {
-            font-size: 11px;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: var(--grey-400);
-            margin-bottom: 24px;
-        }
-        h1 {
-            font-size: clamp(38px, 7vw, 72px);
-            font-weight: 300;
-            line-height: 1.05;
-            letter-spacing: -0.035em;
-            max-width: 850px;
-            margin-bottom: 40px;
-        }
-        .intro {
-            max-width: 720px;
-            font-size: 18px;
-            color: var(--grey-600);
-            margin-bottom: 100px;
-        }
-        section { margin-top: 90px; }
-        section h2 {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.16em;
-            font-weight: 500;
-            padding-bottom: 18px;
-            border-bottom: 1px solid var(--grey-200);
-        }
-        .item {
-            display: grid;
-            grid-template-columns: 180px 1fr;
-            gap: 36px;
-            padding: 30px 0;
-            border-bottom: 1px solid var(--grey-200);
-        }
-        .item .date { color: var(--grey-400); font-size: 13px; }
-        .item h3 { font-size: 18px; font-weight: 500; margin-bottom: 6px; }
-        .item p { color: var(--grey-600); max-width: 680px; }
-        .item a { text-underline-offset: 3px; }
-        .identity-note {
-            margin-top: 90px;
-            padding: 32px;
-            background: var(--grey-100);
-            color: var(--grey-600);
-            font-size: 14px;
-            max-width: 760px;
-        }
-        footer {
-            background: var(--black);
-            color: var(--white);
-            padding: 48px;
-            font-size: 12px;
-            letter-spacing: 0.08em;
-            text-transform: uppercase;
-        }
-        footer a { color: var(--white); }
-        @media (max-width: 700px) {
-            header { padding: 24px; }
-            nav { gap: 18px; }
-            main { padding: 80px 24px; }
-            .item { grid-template-columns: 1fr; gap: 8px; }
-        }
+        :root { --black:#0a0a0a; --grey-800:#1a1a1a; --grey-600:#555; --grey-400:#888; --grey-200:#e0e0e0; --grey-100:#f5f5f5; --white:#fff; }
+        body { font-family:"Helvetica Neue",Helvetica,Arial,sans-serif; color:var(--black); background:var(--white); line-height:1.65; }
+        a { color:inherit; }
+        header { padding:32px 48px; display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--grey-200); }
+        .logo { font-size:13px; font-weight:500; letter-spacing:.08em; text-transform:uppercase; text-decoration:none; }
+        nav { display:flex; gap:36px; }
+        nav a { font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:var(--grey-400); text-decoration:none; }
+        nav a:hover { color:var(--black); }
+        main { max-width:1040px; margin:0 auto; padding:120px 48px; }
+        .eyebrow { font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:var(--grey-400); margin-bottom:24px; }
+        h1 { font-size:clamp(38px,7vw,72px); font-weight:300; line-height:1.05; letter-spacing:-.035em; max-width:850px; margin-bottom:40px; }
+        .intro { max-width:720px; font-size:18px; color:var(--grey-600); margin-bottom:100px; }
+        section { margin-top:90px; }
+        section h2 { font-size:12px; text-transform:uppercase; letter-spacing:.16em; font-weight:500; padding-bottom:18px; border-bottom:1px solid var(--grey-200); }
+        .item { display:grid; grid-template-columns:180px 1fr; gap:36px; padding:30px 0; border-bottom:1px solid var(--grey-200); }
+        .item .date { color:var(--grey-400); font-size:13px; }
+        .item h3 { font-size:18px; font-weight:500; margin-bottom:6px; }
+        .item p { color:var(--grey-600); max-width:680px; }
+        .item a { text-underline-offset:3px; }
+        .identity-note { margin-top:90px; padding:32px; background:var(--grey-100); color:var(--grey-600); font-size:14px; max-width:760px; }
+        footer { background:var(--black); color:var(--white); padding:48px; font-size:12px; letter-spacing:.08em; text-transform:uppercase; }
+        footer a { color:var(--white); }
+        @media(max-width:700px){header{padding:24px}nav{gap:18px}main{padding:80px 24px}.item{grid-template-columns:1fr;gap:8px}}
     </style>
 </head>
 <body>
     <header>
         <a class="logo" href="index.html">Jess Watson</a>
-        <nav>
-            <a href="work.html">Work</a>
-            <a href="about.html">About</a>
-        </nav>
+        <nav><a href="work.html">Work</a><a href="about.html">About</a></nav>
     </header>
 
     <main>
@@ -176,8 +89,12 @@
                 <div><h3><a href="soundvision.html">National Science and Media Museum</a></h3><p>Marketing campaigns for exhibitions, gallery launches, events and audience development, including the Sound + Vision galleries.</p></div>
             </div>
             <div class="item">
+                <div class="date">2026</div>
+                <div><h3><a href="jim-moir-neo-fauna.html">Jim Moir: Neo Fauna · Cartwright Hall</a></h3><p>Campaign lead across marketing and PR, including press materials, media activity, content and campaign photography for Jim Moir's exhibition at Cartwright Hall Art Gallery.</p></div>
+            </div>
+            <div class="item">
                 <div class="date">2025–2026</div>
-                <div><h3><a href="cartwrighthall.html">Bradford Museums & Galleries</a></h3><p>Freelance campaign and communications work for Cartwright Hall and Bradford Museums & Galleries during Bradford 2025 UK City of Culture.</p></div>
+                <div><h3><a href="cartwrighthall.html">Bradford Museums & Galleries</a></h3><p>Freelance campaign and communications work for Cartwright Hall and Bradford Museums & Galleries.</p></div>
             </div>
             <div class="item">
                 <div class="date">2023–2024</div>
@@ -212,6 +129,10 @@
         <section>
             <h2>Published work</h2>
             <div class="item">
+                <div class="date">Visit Bradford · 2026</div>
+                <div><h3><a href="https://www.visitbradford.com/whats-on/jim-moir-neo-fauna-p2504121">Jim Moir: Neo Fauna</a></h3><p>The Visit Bradford exhibition listing uses campaign photography of Jim Moir at Cartwright Hall taken by Jess Watson. Jess also led the exhibition's marketing and PR campaign.</p></div>
+            </div>
+            <div class="item">
                 <div class="date">BBC News · 2025</div>
                 <div><h3><a href="https://www.bbc.co.uk/news/articles/cn08l8d8948o">Feathers McGraw helps relaunch media museum</a></h3><p>Photography by Jess Watson used in BBC News coverage of the National Science and Media Museum reopening. The BBC page credits the imagery to the museum rather than naming the individual photographer.</p></div>
             </div>
@@ -223,6 +144,10 @@
 
         <section>
             <h2>External references</h2>
+            <div class="item">
+                <div class="date">Press campaign · 2026</div>
+                <div><h3><a href="https://www.hellorayo.co.uk/greatest-hits/west-yorkshire/news/jim-moir-exhibition">Greatest Hits Radio · Jim Moir at Cartwright Hall</a></h3><p>One example from the wider Neo Fauna press campaign, which also secured or supported coverage recorded across BBC, Yorkshire Evening Post, Great British Life and Telegraph & Argus.</p></div>
+            </div>
             <div class="item">
                 <div class="date">Industry press</div>
                 <div><h3><a href="https://www.provokemedia.com/long-reads/article/neurodiversity-in-pr-from-kryptonite-to-superpower">PROVOKE Media</a></h3><p>Interview published during early-career work at Mediaworks.</p></div>
@@ -239,25 +164,14 @@
 
         <section>
             <h2>Profiles</h2>
-            <div class="item">
-                <div class="date">Professional</div>
-                <div><h3><a href="https://www.linkedin.com/in/jessisacreative/">LinkedIn</a></h3><p>Professional employment and project history.</p></div>
-            </div>
-            <div class="item">
-                <div class="date">Creative</div>
-                <div><h3><a href="https://www.instagram.com/jessisacreative/">Instagram · @jessisacreative</a></h3><p>Creative, photography and cultural-sector work.</p></div>
-            </div>
-            <div class="item">
-                <div class="date">Writing</div>
-                <div><h3><a href="https://medium.com/@jw261139">Medium</a></h3><p>Published writing connected to creative practice, arts and culture.</p></div>
-            </div>
+            <div class="item"><div class="date">Professional</div><div><h3><a href="https://www.linkedin.com/in/jessisacreative/">LinkedIn</a></h3><p>Professional employment and project history.</p></div></div>
+            <div class="item"><div class="date">Creative</div><div><h3><a href="https://www.instagram.com/jessisacreative/">Instagram · @jessisacreative</a></h3><p>Creative, photography and cultural-sector work.</p></div></div>
+            <div class="item"><div class="date">Writing</div><div><h3><a href="https://medium.com/@jw261139">Medium</a></h3><p>Published writing connected to creative practice, arts and culture.</p></div></div>
         </section>
 
         <p class="identity-note">This page is a factual index of selected professional and creative work by Jess Watson / @jessisacreative. It intentionally omits private contact information and precise residential details.</p>
     </main>
 
-    <footer>
-        <a href="about.html">About Jess Watson</a> · <a href="work.html">Selected work</a>
-    </footer>
+    <footer><a href="about.html">About Jess Watson</a> · <a href="work.html">Selected work</a></footer>
 </body>
 </html>
