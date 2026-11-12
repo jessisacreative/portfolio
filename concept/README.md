@@ -57,8 +57,8 @@ Open the new file at: concept/index.html
 ## What is still a draft
 
 - All six featured case studies are now redesigned and included in this draft. Other projects from the original website remain available on the live site and can be migrated later.
-- The photography archive needs more curated original photographs and credits.
-- The journal currently has one verified article, rather than invented posts.
+- Photography now brings together original live music work, fine-art nature studies, fungi exhibition work and event documentation. Jess's original fine-art images are credited, resized to WebP and kept under 700px on the longest edge for faster loading.
+- The journal links to one verified published article; additional writing will be added when there are more confirmed public pieces.
 - The Playground is a labelled concept rather than a functioning interactive environment.
 - Search Console, canonical URLs, redirects and a production sitemap are launch tasks, not completed work.
 
