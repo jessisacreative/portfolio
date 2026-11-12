@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eeeae2">
+  <meta name="description" content="Jess Watson is a West Yorkshire-based multidisciplinary creative working across design, cultural campaigns, photography and writing. Explore selected projects and independent work.">
+  <meta name="author" content="Jess Watson">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jess Watson / @jessisacreative — Creative Portfolio">
+  <meta property="og:description" content="Creative work, curious ideas and everything in between. Campaigns, design, photography and culture.">
+  <meta property="og:image" content="https://jessisacreative.github.io/portfolio/images/YOU%20MATTER.jpg">
+  <meta property="og:url" content="https://jessisacreative.github.io/portfolio/concept/">
+  <title>Jess Watson / @jessisacreative — Creative Portfolio</title>
+  <!-- Draft concept: deliberately no canonical tag until the production URL is agreed. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Jess Watson",
+    "alternateName": ["Jessica Watson", "@jessisacreative"],
+    "description": "Multidisciplinary creative specialising in design, cultural campaigns, photography and writing.",
+    "url": "https://jessisacreative.github.io/portfolio/",
+    "homeLocation": {"@type":"Place","name":"West Yorkshire, United Kingdom"},
+    "sameAs": [
+      "https://www.instagram.com/jessisacreative/",
+      "https://www.linkedin.com/in/jessisacreative/"
+    ]
+  }
+  </script>
+  <style>
+    :root{
+      --ink:#1d1d1b; --paper:#eeeae2; --white:#faf9f5; --line:#bdb8ae;
+      --acid:#d8f86e; --coral:#e96e52; --muted:#686761;
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:Arial,Helvetica,sans-serif; --mono:"Courier New",monospace;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    a{color:inherit} a:focus-visible,button:focus-visible{outline:3px solid var(--coral);outline-offset:5px}
+    button{font:inherit} img{display:block;width:100%}
+    ::selection{background:var(--acid);color:var(--ink)}
+    .skip{position:absolute;top:-100px;left:12px;background:var(--acid);padding:12px;z-index:100}
+    .skip:focus{top:12px}
+    .micro{font:700 11px/1.4 var(--mono);letter-spacing:.09em;text-transform:uppercase}
+    .wrap{max-width:1580px;margin:auto;padding-left:clamp(20px,5vw,82px);padding-right:clamp(20px,5vw,82px)}
+    .topline{border-bottom:1px solid var(--ink);background:var(--ink);color:var(--paper)}
+    .topline .wrap{padding-top:8px;padding-bottom:8px;display:flex;justify-content:space-between;gap:12px}
+    .sitehead{position:sticky;top:0;z-index:25;background:rgba(238,234,226,.96);backdrop-filter:blur(12px);border-bottom:1px solid var(--ink)}
+    .head-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;min-height:77px}
+    .brand{text-decoration:none;display:inline-block;font-weight:900;text-transform:lowercase;letter-spacing:-.07em;font-size:clamp(24px,2.5vw,36px);line-height:.95}
+    .brand em{font-style:italic;font-family:var(--serif);font-weight:400}
+    .nav{display:flex;gap:clamp(13px,2.6vw,38px);align-items:center}
+    .nav a{text-decoration:none;text-transform:uppercase;font:700 12px/1 var(--mono);letter-spacing:.035em;padding:9px 0;position:relative}
+    .nav a:after{content:"";height:2px;background:var(--ink);position:absolute;bottom:1px;left:0;right:100%;transition:right .2s}
+    .nav a:hover:after{right:0}
+    .nav .nav-cta{background:var(--ink);color:var(--paper);padding:12px 15px;border-radius:40px}
+    .nav .nav-cta:hover{background:var(--coral)}
+    .nav .nav-cta:after{display:none}
+    .hero{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(270px,.65fr);min-height:660px;border-bottom:1px solid var(--ink)}
+    .hero-copy{padding:clamp(65px,9vw,150px) clamp(20px,5vw,82px) 55px max(20px,calc((100vw - 1580px)/2 + 82px));display:flex;flex-direction:column;justify-content:space-between}
+    .eyebrow{display:flex;gap:15px;align-items:center}
+    .eyebrow .dot{background:var(--coral);width:11px;height:11px;border-radius:100%}
+    h1{font-size:clamp(94px,13vw,230px);line-height:.73;letter-spacing:-.105em;text-transform:uppercase;font-weight:900;margin:36px 0 43px}
+    h1 .second{display:block;font-family:var(--serif);font-style:italic;text-transform:none;font-weight:400;letter-spacing:-.105em;position:relative;padding-left:clamp(9px,3vw,55px)}
+    h1 .asterisk{font-style:normal;font-size:.38em;vertical-align:top;color:var(--coral);letter-spacing:0;padding-left:7px}
+    .hero-bottom{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(140px,.65fr);gap:30px;align-items:end}
+    .hero-desc{font-size:clamp(20px,2.1vw,29px);line-height:1.26;letter-spacing:-.03em;margin:0;max-width:530px}
+    .hero-note{text-align:right;font-size:12px;line-height:1.55;max-width:170px;justify-self:end}
+    .hero-visual{position:relative;background:#302e2b;min-height:600px;overflow:hidden}
+    .hero-visual img{height:100%;object-fit:cover;object-position:center 24%;filter:grayscale(100%) contrast(1.12)}
+    .hero-visual:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(20,20,20,.55),transparent 50%)}
+    .portrait-stamp{position:absolute;bottom:30px;left:32px;color:#fff;z-index:1;display:flex;align-items:end;gap:20px}
+    .portrait-stamp .mark{font:italic 92px/.7 var(--serif)}
+    .portrait-stamp .micro{color:#fff;max-width:140px}
+    .ticker{display:flex;gap:30px;justify-content:space-between;align-items:center;background:var(--acid);border-bottom:1px solid var(--ink);padding-top:18px;padding-bottom:18px;overflow:hidden}
+    .ticker .micro{font-size:12px;white-space:nowrap}
+    .ticker b{font-size:18px}
+    section{scroll-margin-top:80px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:36px}
+    .section-kicker{display:block;margin-bottom:17px}
+    h2{font-weight:900;font-size:clamp(44px,6vw,91px);line-height:.92;letter-spacing:-.07em;margin:0}
+    h2 .serif{font-family:var(--serif);font-style:italic;font-weight:400}
+    .small-intro{max-width:310px;color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 4px}
+    #work{padding-top:105px;padding-bottom:110px}
+    .filterbar{display:flex;gap:7px;flex-wrap:wrap;padding:23px 0 30px;border-top:1px solid var(--ink)}
+    .filter{border:1px solid var(--ink);background:transparent;padding:10px 16px;border-radius:30px;text-transform:uppercase;font:700 11px/1 var(--mono);cursor:pointer;transition:background .2s}
+    .filter[aria-pressed=true],.filter:hover{background:var(--ink);color:var(--paper)}
+    .workgrid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:22px;row-gap:55px}
+    .project{grid-column:span 6;text-decoration:none;display:block}
+    .project.feature{grid-column:span 7}
+    .project.secondary{grid-column:span 5}
+    .project.medium{grid-column:span 4}
+    .project[hidden]{display:none}
+    .project figure{margin:0;position:relative;background:#cbc5ba;overflow:hidden}
+    .project .frame{aspect-ratio:1.42}
+    .project.feature .frame{aspect-ratio:1.19}
+    .project.secondary .frame{aspect-ratio:1.45}
+    .project.medium .frame{aspect-ratio:1.05}
+    .project img{height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .3s}
+    .project:hover img{transform:scale(1.045)}
+    .work-overlay{position:absolute;right:13px;top:13px;width:35px;height:35px;border:1px solid #fff;border-radius:100%;background:var(--paper);display:grid;place-items:center;font-size:21px;transition:transform .2s}
+    .project:hover .work-overlay{transform:rotate(45deg);background:var(--acid)}
+    .projectinfo{padding:17px 0 0;display:flex;justify-content:space-between;align-items:start;gap:12px;border-top:1px solid var(--ink);margin-top:13px}
+    .projectinfo h3{font-size:clamp(20px,2.3vw,33px);line-height:1.05;letter-spacing:-.045em;margin:0 0 8px;font-weight:800}
+    .projectinfo p{font-size:12px;line-height:1.45;color:var(--muted);margin:0}
+    .projectnumber{font:700 11px var(--mono);white-space:nowrap}
+    .work-note{grid-column:span 12;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font:12px/1.5 var(--mono)}
+    .story{background:var(--ink);color:var(--paper);padding:95px 0 100px}
+    .story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(35px,8vw,150px)}
+    .story h2{margin-top:18px;max-width:760px}
+    .story-intro{font-size:clamp(23px,3vw,42px);letter-spacing:-.045em;line-height:1.13;margin:40px 0 25px}
+    .story p:not(.micro):not(.story-intro){font-size:15px;line-height:1.7;max-width:530px;color:#bfbcb4}
+    .story-right{display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+    .story-sticker{align-self:end;width:min(260px,100%);aspect-ratio:1;display:flex;justify-content:center;align-items:center;border-radius:100%;border:2px dashed var(--acid);color:var(--acid);transform:rotate(11deg);text-align:center}
+    .story-sticker span{font:italic clamp(30px,4vw,51px)/.93 var(--serif)}
+    .skills{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+    .skills span{border-top:1px solid #605d57;padding:13px 0;color:#e1dfda;font:700 12px var(--mono)}
+    .link-arrow{display:inline-flex;align-items:center;gap:17px;text-decoration:none;font:700 12px var(--mono);text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:8px;margin-top:21px}
+    .link-arrow b{font-size:22px}
+    .interests{padding-top:105px;padding-bottom:115px}
+    .interest-grid{margin-top:45px;display:grid;grid-template-columns:1.15fr .85fr;gap:22px}
+    .feature-card{text-decoration:none;background:var(--white);border:1px solid var(--ink);min-width:0;display:flex;flex-direction:column}
+    .feature-card figure{margin:0;overflow:hidden;background:var(--coral);position:relative}
+    .feature-card img{height:100%;object-fit:cover;transition:transform .5s}
+    .feature-card:hover img{transform:scale(1.04)}
+    .feature-card .visual{aspect-ratio:1.55}
+    .feature-card .visual-tall{aspect-ratio:1.22;background:var(--acid);display:flex;align-items:center;justify-content:center;padding:30px;text-align:center}
+    .feature-card .visual-tall strong{font-size:clamp(57px,7.2vw,110px);letter-spacing:-.095em;line-height:.76;transform:rotate(-7deg);font-weight:900}
+    .feature-card .visual-tall em{font:italic .8em var(--serif);font-weight:400}
+    .card-copy{display:flex;flex-direction:column;justify-content:space-between;gap:34px;padding:25px;flex:1}
+    .card-copy h3{font-size:clamp(30px,3.4vw,55px);line-height:.96;letter-spacing:-.055em;margin:12px 0}
+    .card-copy p{font-size:14px;line-height:1.5;color:var(--muted);max-width:460px;margin:0}
+    .card-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:16px;font:700 11px var(--mono);text-transform:uppercase;gap:12px}
+    .notebook{padding:110px 0;background:var(--acid);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+    .notebook .section-head{margin-bottom:50px}
+    .article{display:grid;grid-template-columns:80px minmax(0,1fr) 1fr 36px;gap:20px;align-items:center;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);padding:27px 0;text-decoration:none}
+    .article h3{font-size:clamp(24px,4vw,54px);letter-spacing:-.05em;line-height:1;max-width:600px;margin:0}
+    .article p{font-size:14px;line-height:1.5;max-width:350px;margin:0}
+    .article .arrow{font-size:27px;text-align:right}
+    .article:hover h3{text-decoration:underline;text-underline-offset:5px}
+    .playground{background:var(--paper);padding-top:95px;padding-bottom:100px}
+    .playbox{border:1px solid var(--ink);padding:25px;display:grid;grid-template-columns:.85fr 1.15fr;gap:30px;min-height:340px;align-items:stretch}
+    .playbox .playtext{display:flex;flex-direction:column;justify-content:space-between}
+    .playtext h3{font:italic clamp(44px,5.2vw,78px)/.97 var(--serif);letter-spacing:-.06em;margin:10px 0 0}
+    .playtext p{font-size:14px;line-height:1.55;max-width:350px}
+    .playvisual{position:relative;min-height:290px;background:#252522;overflow:hidden;display:grid;place-items:center}
+    .playvisual:before{content:"";position:absolute;width:350px;height:350px;border:1px solid #b6b6a6;border-radius:100%;transform:rotateX(60deg)}
+    .playvisual:after{content:"";position:absolute;width:290px;height:150px;border:1px dashed var(--acid);transform:rotate(-20deg)}
+    .play-shapes{position:relative;z-index:1;display:flex;align-items:end;gap:12px;transform:rotate(-7deg)}
+    .shape-1{width:90px;height:100px;background:var(--coral);border-radius:50% 50% 6px 6px;transform:rotate(-9deg)}
+    .shape-2{width:120px;height:175px;background:var(--acid);border-radius:45% 45% 8px 8px;transform:rotate(10deg)}
+    .shape-3{width:70px;height:75px;background:#f7f3e6;border-radius:50% 50% 4px 4px}
+    .playlabel{position:absolute;bottom:18px;left:18px;color:var(--acid);font:700 11px var(--mono)}
+    .footer{background:var(--ink);color:var(--paper);padding:90px 0 26px}
+    .footer-top{display:flex;justify-content:space-between;gap:40px}
+    .footer h2{font-size:clamp(66px,9vw,155px);margin:15px 0 40px}
+    .footer h2 em{font-family:var(--serif);font-weight:400}
+    .email{font-size:clamp(19px,2.6vw,37px);letter-spacing:-.03em;text-decoration:none;border-bottom:1px solid var(--paper);padding-bottom:10px;display:inline-block;max-width:100%;overflow-wrap:anywhere}
+    .footer-side{display:flex;flex-direction:column;gap:13px;justify-content:end;padding-bottom:10px}
+    .footer-side a{font:700 12px var(--mono);text-decoration:none;text-transform:uppercase}
+    .footer-side a:hover{text-decoration:underline}
+    .footer-bottom{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-top:100px;border-top:1px solid #605d57;padding-top:21px;color:#b3b0a9}
+    @media(max-width:1000px){
+      .hero{grid-template-columns:1.15fr .85fr}
+      .hero-copy{padding-left:30px;padding-right:30px}
+      h1{font-size:clamp(78px,12vw,140px)}
+      .hero-bottom{grid-template-columns:1fr}
+      .hero-note{justify-self:start;text-align:left;max-width:none}
+      .head-inner{min-height:67px}
+      .nav{gap:13px}.nav a{font-size:10px}
+    }
+    @media(max-width:700px){
+      .topline .micro:last-child{display:none}
+      .head-inner{align-items:flex-start;flex-direction:column;gap:12px;padding-top:15px;padding-bottom:15px}
+      .nav{flex-wrap:wrap;gap:8px 18px}
+      .nav a{font-size:10px}.nav .nav-cta{padding:7px 11px}
+      .hero{grid-template-columns:1fr;min-height:0}
+      .hero-copy{min-height:440px;padding:55px 22px 42px}
+      h1{font-size:clamp(92px,18vw,145px);margin:40px 0}
+      .hero-visual{min-height:440px;max-height:660px}
+      .hero-visual img{max-height:600px}
+      .hero-bottom{gap:17px}
+      .hero-desc{font-size:23px}
+      .ticker .micro{font-size:10px}.ticker{gap:11px}
+      #work{padding-top:73px;padding-bottom:75px}
+      .section-head{align-items:start;flex-direction:column;margin-bottom:25px}
+      .workgrid{grid-template-columns:1fr;gap:40px}
+      .project,.project.feature,.project.secondary,.project.medium,.work-note{grid-column:auto}
+      .project .frame,.project.feature .frame,.project.secondary .frame,.project.medium .frame{aspect-ratio:1.25}
+      .work-note{flex-direction:column}
+      .story{padding:70px 0}
+      .story-grid{grid-template-columns:1fr}
+      .story-sticker{align-self:start;width:170px}
+      .story-sticker span{font-size:35px}
+      .interest-grid{grid-template-columns:1fr}
+      .interests{padding-top:75px;padding-bottom:75px}
+      .notebook{padding:76px 0}
+      .article{grid-template-columns:36px minmax(0,1fr) 28px}
+      .article p{grid-column:2;grid-row:2}.article .arrow{grid-column:3;grid-row:1}
+      .playground{padding-top:70px;padding-bottom:75px}
+      .playbox{grid-template-columns:1fr}
+      .footer{padding-top:70px}
+      .footer-top{flex-direction:column}
+      .footer-bottom{margin-top:70px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+  </style>
+</head>
+<body>
+  <a href="#content" class="skip">Skip to content</a>
+  <div class="topline"><div class="wrap">
+    <span class="micro">Independent creative / West Yorkshire, UK</span>
+    <span class="micro">Designing things. Making things. Asking why.</span>
+  </div></div>
+  <header class="sitehead">
+    <div class="wrap head-inner">
+      <a class="brand" href="#home" aria-label="Jess is a creative, home">jess<em>is</em>a creative<span aria-hidden="true">.</span></a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="#work">Work</a><a href="#photography">Photography</a><a href="#journal">Journal</a><a href="#about">About</a><a href="#playground">Playground</a><a href="#contact" class="nav-cta">Say hello ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main id="content">
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <p class="micro eyebrow"><span class="dot" aria-hidden="true"></span> Multi-disciplinary creative / 01</p>
+        <h1>Jess<span class="second">Watson<span class="asterisk">*</span></span></h1>
+        <div class="hero-bottom">
+          <p class="hero-desc">Creative direction, campaigns, design & photography — plus everything that happens in between.</p>
+          <p class="hero-note micro">*A portfolio of work, ideas and occasional side quests.</p>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <img src="https://jessisacreative.github.io/portfolio/images/My%20Portrait.jpeg" alt="Portrait of Jess Watson" fetchpriority="high">
+        <div class="portrait-stamp"><span class="mark" aria-hidden="true">jw.</span><span class="micro">People, culture, creative curiosity.</span></div>
+      </div>
+    </section>
+    <div class="ticker wrap" aria-label="Creative disciplines">
+      <span class="micro">Campaigns</span><b aria-hidden="true">✳</b><span class="micro">Design</span><b aria-hidden="true">✳</b><span class="micro">Photography</span><b aria-hidden="true">✳</b><span class="micro">Culture</span><b aria-hidden="true">✳</b><span class="micro">Experiments</span>
+    </div>
+    <section class="wrap" id="work" aria-labelledby="worktitle">
+      <div class="section-head">
+        <div><span class="micro section-kicker">01 / Things I've made & helped make</span><h2 id="worktitle">Selected <span class="serif">work.</span></h2></div>
+        <p class="small-intro">From major exhibitions to small creative experiments. A selection of campaigns, design and independent work.</p>
+      </div>
+      <div class="filterbar" role="group" aria-label="Filter projects">
+        <button class="filter" type="button" data-filter="all" aria-pressed="true">Everything (06)</button>
+        <button class="filter" type="button" data-filter="campaigns" aria-pressed="false">Campaigns</button>
+        <button class="filter" type="button" data-filter="design" aria-pressed="false">Design</button>
+        <button class="filter" type="button" data-filter="photography" aria-pressed="false">Photography</button>
+      </div>
+      <div class="workgrid" id="workgrid">
+        <a class="project feature" data-tags="campaigns design" href="https://jessisacreative.github.io/portfolio/youmatter.html">
+          <figure class="frame"><img src="https://jessisacreative.github.io/portfolio/images/YOU%20MATTER.jpg" alt="YOU:MATTER immersive exhibition campaign artwork" loading="lazy"><span class="work-overlay" aria-hidden="true">↗</span></figure>
+          <div class="projectinfo"><div><h3>YOU:MATTER</h3><p>Campaign direction, creative & communications / National Science and Media Museum</p></div><span class="projectnumber">01 / 06</span></div>
+        </a>
+        <a class="project secondary" data-tags="campaigns" href="https://jessisacreative.github.io/portfolio/cartwrighthall.html">
+          <figure class="frame"><img src="https://jessisacreative.github.io/portfolio/images/01-jim-moir-neo-fauna-artist-opening.jpg" alt="Cartwright Hall New Seasons of Art exhibition launch" loading="lazy"><span class="work-overlay" aria-hidden="true">↗</span></figure>
+          <div class="projectinfo"><div><h3>New Seasons of Art</h3><p>Arts campaigns / Bradford Museums & Galleries</p></div><span class="projectnumber">02 / 06</span></div>
+        </a>
+        <a class="project medium" data-tags="design campaigns" href="https://jessisacreative.github.io/portfolio/beyondtheframe.html">
+          <figure class="frame"><img src="https://jessisacreative.github.io/portfolio/images/beyond%20the%20frame%20window%20graphics%20outside%20the%20uni.jpg" alt="Beyond the Frame window graphics at Leeds Arts University" loading="lazy"><span class="work-overlay" aria-hidden="true">↗</span></figure>
+          <div class="projectinfo"><div><h3>Beyond the Frame</h3><p>Creative campaign & design / Leeds Arts University</p></div><span class="projectnumber">03 / 06</span></div>
+        </a>
+        <a class="project medium" data-tags="campaigns" href="https://jessisacreative.github.io/portfolio/soundvision.html">
+          <figure class="frame"><img src="https://jessisacreative.github.io/portfolio/images/Sound%20and%20Vision.jpg" alt="Sound + Vision museum galleries and campaign" loading="lazy"><span class="work-overlay" aria-hidden="true">↗</span></figure>
+          <div class="projectinfo"><div><h3>Sound + Vision</h3><p>Gallery launch campaign / National Science and Media Museum</p></div><span class="projectnumber">04 / 06</span></div>
+        </a>
+        <a class="project medium" data-tags="photography" href="https://jessisacreative.github.io/portfolio/fungiexhibition.html">
+          <figure class="frame"><img src="https://jessisacreative.github.io/portfolio/images/Photograph%20of%20me%20in%20front%20of%20my%20exhibited%20photos%20at%20The%20Great%20Leeds%20Fungi%20Exhibition.jpeg" alt="Jess in front of her photography exhibited at the Great Leeds Fungi Exhibition" loading="lazy"><span class="work-overlay" aria-hidden="true">↗</span></figure>
+          <div class="projectinfo"><div><h3>Great Leeds Fungi Exhibition</h3><p>Independent photography / Headrow House</p></div><span class="projectnumber">05 / 06</span></div>
+        </a>
+        <a class="project medium" data-tags="design campaigns" href="https://jessisacreative.github.io/portfolio/leedsarts.html">
+          <figure class="frame"><img src="https://jessisacreative.github.io/portfolio/images/front%20cover%20of%20the%20leeds%20arts%20university%20prospectus%20designed%20by%20me.png" alt="Leeds Arts University prospectus cover design" loading="lazy"><span class="work-overlay" aria-hidden="true">↗</span></figure>
+          <div class="projectinfo"><div><h3>University Creative</h3><p>Brand, print & campaign design / Leeds Arts University</p></div><span class="projectnumber">06 / 06</span></div>
+        </a>
+        <div class="work-note"><span>Want the longer version? Each project opens a full case study from my current portfolio.</span><span>Selected projects / 2023—2026</span></div>
+      </div>
+    </section>
+    <section class="story" id="about" aria-labelledby="abouttitle">
+      <div class="wrap story-grid">
+        <div>
+          <span class="micro">02 / A little about me</span><h2 id="abouttitle">Ideas first.<br><span class="serif">Labels later.</span></h2>
+          <p class="story-intro">I'm Jess — a West Yorkshire-based creative with a background in advertising, design and cultural marketing.</p>
+          <p>By day, I'm a Marketing Manager at the National Science and Media Museum. Outside of work, I'm often photographing something, writing about music or getting absorbed in a new creative rabbit hole.</p>
+          <p>I like work that combines good ideas with thoughtful execution, whether that's a full-scale campaign, a piece of editorial design, or something that's just interesting to make.</p>
+          <a class="link-arrow" href="https://www.linkedin.com/in/jessisacreative/" target="_blank" rel="noopener noreferrer">More about my experience <b aria-hidden="true">↗</b></a>
+        </div>
+        <div class="story-right">
+          <div class="story-sticker" aria-hidden="true"><span>always<br>making<br>something ✳</span></div>
+          <div><p class="micro">What I tend to do</p><div class="skills">
+            <span>01 / Campaign strategy</span><span>02 / Art direction</span>
+            <span>03 / Graphic design</span><span>04 / Photography</span>
+            <span>05 / Writing & content</span><span>06 / Creative experiments</span>
+          </div></div>
+        </div>
+      </div>
+    </section>
+    <section class="wrap interests" id="photography" aria-labelledby="photo-title">
+      <div class="section-head">
+        <div><span class="micro section-kicker">03 / Beyond the brief</span><h2 id="photo-title">Other <span class="serif">obsessions.</span></h2></div>
+        <p class="small-intro">The things that keep me creatively curious — photographs, stories, experiments and a bit of noise.</p>
+      </div>
+      <div class="interest-grid">
+        <a class="feature-card" href="https://jessisacreative.github.io/portfolio/fungiexhibition.html">
+          <figure class="visual"><img src="https://jessisacreative.github.io/portfolio/images/Photograph%20of%20me%20in%20front%20of%20my%20exhibited%20photos%20at%20The%20Great%20Leeds%20Fungi%20Exhibition.jpeg" alt="Photography exhibited at the Great Leeds Fungi Exhibition" loading="lazy"></figure>
+          <div class="card-copy"><div><span class="micro">Photography / Arts & nature</span><h3>A life behind the lens.</h3><p>Exhibitions, events, nature and everything that catches my eye. A growing archive of personal photography.</p></div><div class="card-bottom"><span>View featured photography project</span><span aria-hidden="true">↗</span></div></div>
+        </a>
+        <a class="feature-card" href="#playground">
+          <div class="visual-tall" aria-hidden="true"><strong>MAKE<br><em>some</em><br>THING.</strong></div>
+          <div class="card-copy"><div><span class="micro">Independent practice / Experiments</span><h3>Making things just because.</h3><p>Art experiments, 3D ideas, digital curiosities and projects without a client brief.</p></div><div class="card-bottom"><span>Visit the playground</span><span aria-hidden="true">↗</span></div></div>
+        </a>
+      </div>
+    </section>
+    <section class="notebook" id="journal" aria-labelledby="journal-title">
+      <div class="wrap">
+        <div class="section-head"><div><span class="micro section-kicker">04 / Words, notes & thoughts</span><h2 id="journal-title">The <span class="serif">journal.</span></h2></div><p class="small-intro" style="color:#3c3b36">An expanding collection of things I've written, thought about or wanted to share.</p></div>
+        <a class="article" href="https://blog.scienceandmediamuseum.org.uk/back-to-the-beginning-an-ozzy-fans-review-of-black-sabbaths-final-show/" target="_blank" rel="noopener noreferrer">
+          <span class="micro">01</span><h3>Back to the Beginning: An Ozzy fan's review</h3><p>Music, memory and the final Black Sabbath show — published on the National Science and Media Museum blog.</p><span class="arrow" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section class="wrap playground" id="playground" aria-labelledby="play-title">
+      <div class="section-head"><div><span class="micro section-kicker">05 / Currently tinkering</span><h2 id="play-title">Play<span class="serif">ground.</span></h2></div><p class="small-intro">A space for experiments, evolving ideas and things that might never make sense on a traditional portfolio.</p></div>
+      <div class="playbox">
+        <div class="playtext"><span class="micro">Work in progress / 3D & digital</span><h3>What if a portfolio was a place you could explore?</h3><p>I'm experimenting with little worlds, scanned objects and the idea of turning a portfolio into somewhere you can wander around. More to come.</p><span class="micro">Concept in development / not yet interactive</span></div>
+        <div class="playvisual" role="img" aria-label="Abstract illustration of three colourful 3D-inspired sculptural shapes on a dark background">
+          <div class="play-shapes" aria-hidden="true"><div class="shape-1"></div><div class="shape-2"></div><div class="shape-3"></div></div>
+          <span class="playlabel">[ SOMETHING IS HAPPENING HERE ]</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" id="contact">
+    <div class="wrap">
+      <div class="footer-top">
+        <div><p class="micro">Have an idea? / 06</p><h2>Let's <em>talk.</em></h2><a class="email" href="mailto:jessisacreative@gmail.com">jessisacreative@gmail.com ↗</a></div>
+        <div class="footer-side"><a href="https://www.instagram.com/jessisacreative/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/jessisacreative/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="#home">Back to the top ↑</a></div>
+      </div>
+      <div class="footer-bottom micro"><span>© 2026 Jess Watson / @jessisacreative</span><span>Designed with curiosity / Built for actual people</span><span>West Yorkshire, UK</span></div>
+    </div>
+  </footer>
+  <script>
+  (function(){
+    var buttons=[].slice.call(document.querySelectorAll("[data-filter]"));
+    var cards=[].slice.call(document.querySelectorAll("[data-tags]"));
+    buttons.forEach(function(button){
+      button.addEventListener("click",function(){
+        var selected=button.getAttribute("data-filter");
+        buttons.forEach(function(b){b.setAttribute("aria-pressed",String(b===button));});
+        cards.forEach(function(card){
+          card.hidden=selected!=="all" && card.getAttribute("data-tags").split(" ").indexOf(selected)===-1;
+        });
+      });
+    });
+  })();
+  </script>
+</body>
+</html>
