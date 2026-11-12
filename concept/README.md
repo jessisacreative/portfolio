@@ -47,7 +47,7 @@ Open the new file at: concept/index.html
 
 ## What works already
 
-- Six selected projects link to existing detailed case studies so the original content isn't lost.
+- Six selected projects now link to newly redesigned case-study pages that preserve the existing project descriptions, roles, images and captions.
 - Category filters work with mouse, touch and keyboard.
 - The journal links to the real published Ozzy / Black Sabbath article.
 - Email and social links use existing published contact details.
@@ -56,7 +56,7 @@ Open the new file at: concept/index.html
 
 ## What is still a draft
 
-- Full case-study layouts are not redesigned yet; they open the existing portfolio pages.
+- All six featured case studies are now redesigned and included in this draft. Other projects from the original website remain available on the live site and can be migrated later.
 - The photography archive needs more curated original photographs and credits.
 - The journal currently has one verified article, rather than invented posts.
 - The Playground is a labelled concept rather than a functioning interactive environment.
@@ -68,4 +68,4 @@ No code editing is required. Describe a change in ordinary words, e.g. “less c
 
 ## Publication safety
 
-This is a draft in a separate GitHub branch. Merging and publishing must be a distinct later decision.
+This is a draft in a separate GitHub branch. It contains the editorial homepage, six consistent case studies, and a shared stylesheet. Merging and publishing must be a distinct later decision.
