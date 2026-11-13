@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">Jess Watson monogram</title>
+  <rect width="64" height="64" rx="15" fill="#d8f86e"/>
+  <text x="7" y="47" fill="#1d1d1b" font-family="Georgia, 'Times New Roman', serif" font-size="43" font-style="italic" font-weight="700" letter-spacing="-5">jw</text>
+  <circle cx="55" cy="45" r="3.5" fill="#b3442d"/>
+</svg>
