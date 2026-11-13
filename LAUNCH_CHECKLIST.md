@@ -24,7 +24,7 @@ Sources include both employer-led projects and independently made work. Text dis
 - 16/16 HTML pages checked
 - 97 image tags: all have alt attributes
 - 169 relative internal links: no missing local targets identified
-- All 16 pages have a single H1, a meta description and a canonical URL
+- All 16 pages have a single H1, a meta description and a canonical URL (homepage canonical corrected in subsequent QA)
 - No remaining `src="../images/"` paths in publication HTML
 - Three added photographic image blobs found on the launch branch
 - Sitemap includes 16 URLs; `robots.txt` points to that sitemap
@@ -49,3 +49,33 @@ Describe changes by intent and location, e.g. "make the hero less corporate", "p
 - `concept/editorial-portfolio-2026` contains the working prototype under `concept/`.
 - `launch/editorial-site-2026` contains the **root-path replacement site** and is the actual launch candidate.
 - `main` is the current live portfolio and has not been changed by this work.
+
+## Focused independent QA — 13 November 2026
+
+Reviewed the 16-page launch candidate and selectively compared copy with connected Google Drive documents *Master CV Template (2026)* and *Portfolio Copy*. These source documents were read-only.
+
+### Reversible draft-branch fixes
+
+- Added the missing homepage canonical URL, matching the existing GitHub Pages address used in the sitemap and Open Graph URL.
+- Added CSS handling for the HTML `hidden` attribute so filtered project cards reliably disappear even when authored display rules override the browser default; applied on homepage and shared case-study stylesheet.
+- Added reduced-motion CSS to the homepage and shared stylesheet to respect user preference and disable smooth scrolling/transitions.
+- Corrected misleading YOU:MATTER search/social descriptions (the exhibition explores interconnectedness and the universe, not identity and self-expression).
+- Corrected Beyond the Frame search/social descriptions (the 2024 End of Year Shows spanned creative disciplines, not only photography).
+- Replaced truncated, overly long meta/OG descriptions on Jameel Prize and Art Market with concise project-specific descriptions, without introducing confidential results.
+
+### Confirmed against the source documents
+
+- About page correctly describes an awarded PGCert in Creative Practice, rather than claiming an MA in progress.
+- The source material distinguishes the collaborative Sound + Vision campaign from Jess's creative production responsibilities, and credits Beyond the Frame identity creators Katie Woodcock and Ben Pritchard-Swan.
+- Master CV documents Jameel Prize campaign metrics and Art Market outcomes; avoid presenting them as independently audited or disclosing internal budgets without separate approval.
+- The master CV contains inconsistent end dates for Cartwright Hall freelance activity; the About page's broad “2025—26” avoids inventing a precise final month.
+
+### Still required before publication
+
+- No actual browser-based visual review, keyboard walkthrough, Lighthouse audit or real-device testing was performed in this pass. Earlier static link/image checks recorded above are not equivalent to those tests.
+- Confirm ownership, consent, photographer/artist credits and visual accuracy for all gallery assets. The three live-music photos are present in the branch, but not every institutional image has been independently inspected for rights.
+- Optimise the three JPEG concert images (approximately 4.7 MB combined) into smaller modern formats where feasible; re-check load and layout shift.
+- Review mobile/tablet layout, colour contrast, filter interactions, reduced-motion behaviour, outbound links and social sharing in a browser.
+- Confirm the eventual public domain before launch. If the GitHub Pages address changes, update canonical URLs, Open Graph URLs, structured data and sitemap consistently.
+
+**Publication status remains unchanged: draft only. Do not merge or deploy without Jess's approval.**
