@@ -21,6 +21,7 @@ Start at `concept/index.html`.
 ## Design and access
 
 - Warm paper palette, expressive typography, dark editorial sections, lime and coral accents.
+- Custom SVG monogram favicon applied consistently across all 15 HTML pages.
 - Responsive layouts, descriptive image alt text, reduced-motion support and visible keyboard focus.
 - Skip links move keyboard focus to the main content and account for the sticky header.
 - Project filters use native buttons and update their pressed state.
