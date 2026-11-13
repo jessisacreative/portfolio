@@ -1,231 +1,64 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en-GB">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cartwright Hall New Seasons of Art 2026 — Jess Watson</title>
-    <meta name="description" content="Communications strategy for Cartwright Hall's 2026 season featuring Jim Moir, Pre-Raphaelites Reframed, and South Asian art exhibitions at Bradford Museums and Galleries.">
-    <meta property="og:title" content="Cartwright Hall New Seasons of Art 2026 — Jess Watson">
-    <meta property="og:description" content="Communications strategy for Cartwright Hall's 2026 season at Bradford Museums and Galleries.">
-    <meta property="og:image" content="https://jessisacreative.github.io/portfolio/images/01-jim-moir-neo-fauna-artist-opening.jpg">
-    <meta property="og:url" content="https://jessisacreative.github.io/portfolio/cartwrighthall.html">
-    <meta property="og:type" content="article">
-    <meta name="twitter:card" content="summary_large_image">
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --black: #0a0a0a;
-            --grey-600: #555;
-            --grey-400: #999;
-            --grey-200: #ddd;
-            --grey-100: #f4f4f4;
-            --white: #fff;
-        }
-        html { scroll-behavior: smooth; }
-        body {
-            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-            color: var(--black);
-            background: var(--white);
-            font-weight: 400;
-        }
-        a { color: inherit; text-decoration: none; }
-        img { max-width: 100%; height: auto; display: block; }
-
-        header {
-            position: fixed;
-            top: 0; left: 0; right: 0;
-            z-index: 1000;
-            padding: 32px 48px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            mix-blend-mode: difference;
-        }
-        header * { color: var(--white); }
-        .logo { font-size: 13px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; }
-        nav { display: flex; gap: 48px; }
-        nav a { font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; transition: opacity 0.3s; }
-        nav a:hover { opacity: 1; }
-
-        .project-hero { position: relative; height: 80vh; min-height: 600px; overflow: hidden; }
-        .project-hero img { width: 100%; height: 100%; object-fit: cover; }
-        .project-hero-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.6) 0%, transparent 50%); }
-        .project-hero-content { position: absolute; bottom: 80px; left: 80px; right: 80px; color: var(--white); }
-        .project-number { font-size: 14px; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 24px; }
-        .project-title { font-size: clamp(48px, 8vw, 96px); font-weight: 300; letter-spacing: -0.03em; line-height: 1; margin-bottom: 24px; }
-        .project-meta { font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.7; }
-
-        .project-content { padding: 120px 80px; max-width: 1400px; margin: 0 auto; }
-        .project-intro { display: grid; grid-template-columns: 1fr 2fr; gap: 80px; margin-bottom: 120px; }
-        .project-details { font-size: 13px; line-height: 2; }
-        .project-details dt { color: var(--grey-400); text-transform: uppercase; letter-spacing: 0.1em; font-size: 11px; margin-top: 24px; }
-        .project-details dt:first-child { margin-top: 0; }
-        .project-details dd { color: var(--black); }
-        .project-description { font-size: 22px; font-weight: 300; line-height: 1.6; }
-        .project-description p + p { margin-top: 24px; font-size: 16px; color: var(--grey-600); line-height: 1.8; }
-
-        .project-section { margin-bottom: 80px; }
-        .project-section-title { font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--grey-400); margin-bottom: 24px; }
-        .project-section ul { list-style: none; columns: 2; column-gap: 48px; }
-        .project-section li { font-size: 14px; line-height: 2; color: var(--grey-600); break-inside: avoid; }
-
-        .project-gallery { display: grid; gap: 32px; }
-        .gallery-row { display: grid; gap: 32px; }
-        .gallery-row.two-col { grid-template-columns: 1fr 1fr; }
-        .gallery-row.three-col { grid-template-columns: 1fr 1fr 1fr; }
-        .gallery-item img { width: 100%; height: 100%; object-fit: cover; }
-        .gallery-caption { margin-top: 12px; font-size: 12px; color: var(--grey-400); line-height: 1.5; }
-
-        .project-nav { display: flex; justify-content: space-between; padding: 80px; border-top: 1px solid var(--grey-200); }
-        .project-nav a { font-size: 14px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--grey-400); transition: color 0.3s; }
-        .project-nav a:hover { color: var(--black); }
-        .project-nav .next { text-align: right; }
-        .project-nav .label { font-size: 11px; margin-bottom: 8px; display: block; }
-        .project-nav .title { font-size: 24px; color: var(--black); text-transform: none; letter-spacing: -0.02em; }
-
-        footer { padding: 48px 80px; display: flex; justify-content: space-between; border-top: 1px solid var(--grey-200); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--grey-400); }
-
-        @media (max-width: 1024px) {
-            header { padding: 24px 32px; }
-            .project-hero-content { left: 32px; right: 32px; bottom: 48px; }
-            .project-content { padding: 80px 32px; }
-            .project-intro { grid-template-columns: 1fr; gap: 48px; }
-            .project-section ul { columns: 1; }
-            .gallery-row.two-col, .gallery-row.three-col { grid-template-columns: 1fr; }
-            .project-nav { padding: 48px 32px; flex-direction: column; gap: 48px; }
-            .project-nav .next { text-align: left; }
-            footer { padding: 32px; flex-direction: column; gap: 8px; }
-        }
-    </style>
-</head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#eeeae2">
+  <title>Cartwright Hall New Seasons of Art 2026 — Jess Watson / @jessisacreative</title>
+  <meta name="description" content="Communications strategy for Cartwright Hall's 2026 season featuring Jim Moir, Pre-Raphaelites Reframed, and South Asian art exhibitions at Bradford Museums and Galleries.">
+  <meta name="author" content="Jess Watson">
+  <meta property="og:title" content="Cartwright Hall New Seasons of Art 2026 — Jess Watson">
+  <meta property="og:description" content="Communications strategy for Cartwright Hall's 2026 season featuring Jim Moir, Pre-Raphaelites Reframed, and South Asian art exhibitions at Bradford Museums and Galleries.">
+  <meta property="og:image" content="https://jessisacreative.github.io/portfolio/images/01-jim-moir-neo-fauna-artist-opening.jpg">
+  <meta property="og:type" content="article">
+  <link rel="stylesheet" href="case-study.css">
+  <!-- Concept draft: canonical URL to be set at production launch. -->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"CreativeWork","name":"Cartwright Hall New Seasons of Art 2026","author":{"@type":"Person","name":"Jess Watson"},"description":"Developing a comprehensive exhibitions and communications strategy for Cartwright Hall's 2026 season, building on the momentum of Bradford's City of Culture year and positioning the gallery for sustained growth.","image":"https://jessisacreative.github.io/portfolio/images/01-jim-moir-neo-fauna-artist-opening.jpg","url":"https://jessisacreative.github.io/portfolio/cartwrighthall.html"}</script>
+<link rel="canonical" href="https://jessisacreative.github.io/portfolio/cartwrighthall.html"><meta property="og:url" content="https://jessisacreative.github.io/portfolio/cartwrighthall.html"><meta name="twitter:card" content="summary_large_image"></head>
 <body>
-    <header>
-        <a href="index.html" class="logo">Jess Watson</a>
-        <nav>
-            <a href="work.html">Work</a>
-            <a href="about.html">About</a>
-        </nav>
-    </header>
-
-    <section class="project-hero">
-        <img src="images/01-jim-moir-neo-fauna-artist-opening.jpg" alt="Jim Moir at the Neo Fauna exhibition opening at Cartwright Hall">
-        <div class="project-hero-overlay"></div>
-        <div class="project-hero-content">
-            <p class="project-number">Project 01</p>
-            <h1 class="project-title">Cartwright Hall New Seasons of Art 2026</h1>
-            <p class="project-meta">Bradford Museums and Galleries, 2025–2026</p>
-        </div>
-    </section>
-
-    <div class="project-content">
-        <div class="project-intro">
-            <dl class="project-details">
-                <dt>Client</dt>
-                <dd>Bradford Museums and Galleries</dd>
-                <dt>Role</dt>
-                <dd>Marketing & Communications Consultant</dd>
-                <dt>Scope</dt>
-                <dd>Strategy, Campaign Planning, Brand Development</dd>
-                <dt>Year</dt>
-                <dd>2025–2026</dd>
-            </dl>
-            <div class="project-description">
-                <p>Developing a comprehensive exhibitions and communications strategy for Cartwright Hall's 2026 season, building on the momentum of Bradford's City of Culture year and positioning the gallery for sustained growth.</p>
-                <p>Cartwright Hall sits within Lister Park and has been part of Bradford's civic culture since 1904. After the platform created by Bradford 2025, including hosting the Turner Prize and Jameel Prize, the gallery entered 2026 with an opportunity to move from festival year to durable cultural habit. I was commissioned to create a strategic framework connecting six gallery spaces, each with distinct curatorial visions, under a unified communications approach.</p>
-                <p>The strategy balanced four core themes—Rediscovery, Dialogue, Identity and Legacy—ensuring consistent messaging while celebrating the unique character of each exhibition, from Jim Moir's vibrant wildlife paintings to the Pre-Raphaelites Reframed with Equity Partnership, and emerging South Asian artists curated by Salima Hashmi.</p>
-            </div>
-        </div>
-
-        <div class="project-section">
-            <h3 class="project-section-title">Strategy Deliverables</h3>
-            <ul>
-                <li>Communications strategy for six gallery exhibitions</li>
-                <li>Season brand identity and key messaging framework</li>
-                <li>Audience segmentation and targeting approach</li>
-                <li>Campaign timeline and phased rollout plan</li>
-                <li>Content strategy across owned, earned and social channels</li>
-                <li>Press kit development with quotes, images and access information</li>
-                <li>Monthly communications cycle and reporting framework</li>
-                <li>Partnership coordination with Art Jameel, Equity Partnership and curators</li>
-            </ul>
-        </div>
-
-        <div class="project-section">
-            <h3 class="project-section-title">2026 Season Exhibitions</h3>
-            <ul>
-                <li>Jim Moir: Neo Fauna — New wildlife paintings</li>
-                <li>The Pre-Raphaelites Reframed — Co-created with Equity Partnership</li>
-                <li>South Asian Collection Focus — Curated by Salima Hashmi</li>
-                <li>The Big Picture — Large-scale paintings from the collection</li>
-                <li>Global Voices & Islamic Calligraphy — Art Jameel films and Bradford collection</li>
-                <li>(Un)Layering the Future Past of South Asia — 11 emerging artists</li>
-            </ul>
-        </div>
-
-        <div class="project-gallery">
-            <div class="gallery-row two-col">
-                <div class="gallery-item">
-                    <img src="images/02-jim-moir-neo-fauna-gallery-install.jpg" alt="Jim Moir Neo Fauna gallery installation">
-                    <p class="gallery-caption">Gallery installation for Jim Moir: Neo Fauna</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/03-jim-moir-neo-fauna-hang.jpg" alt="Jim Moir directing the gallery hang">
-                    <p class="gallery-caption">Jim Moir directing the exhibition hang</p>
-                </div>
-            </div>
-            <div class="gallery-row two-col">
-                <div class="gallery-item">
-                    <img src="images/04-pre-raphaelites-reframed-equity-partnership.jpg" alt="Equity Partnership collaborators in the Pre-Raphaelites gallery">
-                    <p class="gallery-caption">Equity Partnership collaborators in The Pre-Raphaelites Reframed</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/05-pre-raphaelites-reframed-gallery.jpg" alt="The Pre-Raphaelites Reframed gallery">
-                    <p class="gallery-caption">The Pre-Raphaelites Reframed gallery at Cartwright Hall</p>
-                </div>
-            </div>
-            <div class="gallery-row two-col">
-                <div class="gallery-item">
-                    <img src="images/07-unlayering-south-asia-opening.jpg" alt="(Un)Layering the Future Past of South Asia exhibition opening">
-                    <p class="gallery-caption">(Un)Layering the Future Past of South Asia: Young Artists' Voices opening</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/08-unlayering-south-asia-curators.jpg" alt="Curators Salima Hashmi and Manmeet K. Walia">
-                    <p class="gallery-caption">Curators Salima Hashmi and Manmeet K. Walia at the exhibition launch</p>
-                </div>
-            </div>
-            <div class="gallery-row two-col">
-                <div class="gallery-item">
-                    <img src="images/09-global-perspectives-islamic-calligraphy-gallery.jpg" alt="Global Voices and Islamic Calligraphy gallery">
-                    <p class="gallery-caption">Global Voices & Islamic Calligraphy gallery with Art Jameel films</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="images/10-global-perspectives-islamic-calligraphy-scrolls.jpg" alt="Islamic calligraphy scrolls from the Bradford collection">
-                    <p class="gallery-caption">Islamic calligraphy scrolls from the Bradford collection</p>
-                </div>
-            </div>
-            <div class="gallery-row">
-                <div class="gallery-item">
-                    <img src="images/Photograph of Cartwright Hall.jpg" alt="Cartwright Hall exterior">
-                    <p class="gallery-caption">Cartwright Hall, Lister Park, Bradford</p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <nav class="project-nav">
-        <a href="work.html" class="prev">
-            <span class="label">Back to</span>
-            <span class="title">All Projects</span>
-        </a>
-        <a href="youmatter.html" class="next">
-            <span class="label">Next Project</span>
-            <span class="title">YOU:MATTER</span>
-        </a>
+  <div class="topline"><div class="wrap"><span class="micro">Jess Watson / Selected projects</span><span class="micro">West Yorkshire, UK</span></div></div>
+  <header class="sitehead"><div class="wrap head-inner">
+    <a class="brand" href="index.html" aria-label="Jess is a creative, homepage">jess<em>is</em>a creative.</a>
+    <nav class="nav" aria-label="Primary navigation">
+      <a href="work.html">Work</a><a href="photography.html">Photography</a><a href="journal.html">Journal</a><a href="about.html">About</a><a class="nav-cta" href="index.html#contact">Say hello ↗</a>
     </nav>
-
-    <footer>
-        <span>© 2026 Jess Watson</span>
-        <span>Marketing & Design for Arts & Culture</span>
-    </footer>
-</body>
-</html>
+  </div></header>
+  <div class="backbar"><div class="wrap"><a href="work.html" class="micro" aria-label="Back to all selected projects">← Back to selected work</a></div></div>
+  <main>
+    <section class="hero" aria-labelledby="project-title">
+      <div class="hero-copy"><div><p class="micro">Case study / 02 of 06 / Campaign strategy / Arts &amp; culture</p>
+        <h1 id="project-title">Cartwright Hall New Seasons of Art 2026</h1></div>
+        <p class="hero-intro">Developing a comprehensive exhibitions and communications strategy for Cartwright Hall's 2026 season, building on the momentum of Bradford's City of Culture year and positioning the gallery for sustained growth.</p>
+      </div>
+      <div class="hero-image"><img src="images/01-jim-moir-neo-fauna-artist-opening.jpg" alt="Jim Moir at the Neo Fauna exhibition opening at Cartwright Hall" fetchpriority="high"><span class="hero-index micro">Project 02 / 06</span></div>
+    </section>
+    <dl class="wrap details"><div class="detail"><dt>Client</dt><dd>Bradford Museums and Galleries</dd></div>
+<div class="detail"><dt>Role</dt><dd>Marketing &amp; Communications Consultant</dd></div>
+<div class="detail"><dt>Scope</dt><dd>Strategy, Campaign Planning, Brand Development</dd></div>
+<div class="detail"><dt>Year</dt><dd>2025–2026</dd></div></dl>
+    <section class="wrap story" aria-labelledby="story-title"><div><span class="micro">01 / Context & contribution</span><h2 id="story-title">The <em>story.</em></h2></div>
+      <div class="story-copy"><p>Developing a comprehensive exhibitions and communications strategy for Cartwright Hall's 2026 season, building on the momentum of Bradford's City of Culture year and positioning the gallery for sustained growth.</p>
+<p>Cartwright Hall sits within Lister Park and has been part of Bradford's civic culture since 1904. After the platform created by Bradford 2025, including hosting the Turner Prize and Jameel Prize, the gallery entered 2026 with an opportunity to move from festival year to durable cultural habit. I was commissioned to create a strategic framework connecting six gallery spaces, each with distinct curatorial visions, under a unified communications approach.</p>
+<p>The strategy balanced four core themes—Rediscovery, Dialogue, Identity and Legacy—ensuring consistent messaging while celebrating the unique character of each exhibition, from Jim Moir's vibrant wildlife paintings to the Pre-Raphaelites Reframed with Equity Partnership, and emerging South Asian artists curated by Salima Hashmi.</p></div>
+    </section>
+    <section class="gallery" aria-labelledby="gallery-title"><div class="wrap">
+      <div class="gallery-head"><div><span class="micro">02 / Project images</span><h2 id="gallery-title">In <em>pictures.</em></h2></div><p>Selected artwork, imagery and campaign material.</p></div>
+      <div class="gallery-grid">
+      <figure class="gallery-item"><img src="images/02-jim-moir-neo-fauna-gallery-install.jpg" alt="Jim Moir Neo Fauna gallery installation" loading="lazy" decoding="async"><figcaption><span class="gallery-num">01</span>Gallery installation for Jim Moir: Neo Fauna</figcaption></figure>
+<figure class="gallery-item"><img src="images/03-jim-moir-neo-fauna-hang.jpg" alt="Jim Moir directing the gallery hang" loading="lazy" decoding="async"><figcaption><span class="gallery-num">02</span>Jim Moir directing the exhibition hang</figcaption></figure>
+<figure class="gallery-item"><img src="images/04-pre-raphaelites-reframed-equity-partnership.jpg" alt="Equity Partnership collaborators in the Pre-Raphaelites gallery" loading="lazy" decoding="async"><figcaption><span class="gallery-num">03</span>Equity Partnership collaborators in The Pre-Raphaelites Reframed</figcaption></figure>
+<figure class="gallery-item"><img src="images/05-pre-raphaelites-reframed-gallery.jpg" alt="The Pre-Raphaelites Reframed gallery" loading="lazy" decoding="async"><figcaption><span class="gallery-num">04</span>The Pre-Raphaelites Reframed gallery at Cartwright Hall</figcaption></figure>
+<figure class="gallery-item"><img src="images/07-unlayering-south-asia-opening.jpg" alt="(Un)Layering the Future Past of South Asia exhibition opening" loading="lazy" decoding="async"><figcaption><span class="gallery-num">05</span>(Un)Layering the Future Past of South Asia: Young Artists' Voices opening</figcaption></figure>
+<figure class="gallery-item"><img src="images/08-unlayering-south-asia-curators.jpg" alt="Curators Salima Hashmi and Manmeet K. Walia" loading="lazy" decoding="async"><figcaption><span class="gallery-num">06</span>Curators Salima Hashmi and Manmeet K. Walia at the exhibition launch</figcaption></figure>
+<figure class="gallery-item"><img src="images/09-global-perspectives-islamic-calligraphy-gallery.jpg" alt="Global Voices and Islamic Calligraphy gallery" loading="lazy" decoding="async"><figcaption><span class="gallery-num">07</span>Global Voices &amp; Islamic Calligraphy gallery with Art Jameel films</figcaption></figure>
+<figure class="gallery-item"><img src="images/10-global-perspectives-islamic-calligraphy-scrolls.jpg" alt="Islamic calligraphy scrolls from the Bradford collection" loading="lazy" decoding="async"><figcaption><span class="gallery-num">08</span>Islamic calligraphy scrolls from the Bradford collection</figcaption></figure>
+<figure class="gallery-item"><img src="images/Photograph%20of%20Cartwright%20Hall.jpg" alt="Cartwright Hall exterior" loading="lazy" decoding="async"><figcaption><span class="gallery-num">09</span>Cartwright Hall, Lister Park, Bradford</figcaption></figure>
+      </div></div>
+    </section>
+    <section class="wrap next" aria-label="More projects"><a href="work.html"><span class="micro">← All projects</span><strong>Back to <em>work.</em></strong></a><a href="beyondtheframe.html"><span class="micro">Next project ↗</span><strong>Beyond the Frame</strong></a></section>
+  </main>
+  <footer class="footer" id="contact"><div class="wrap">
+    <div class="footer-top"><div><p class="micro">Have an idea?</p><a class="email" href="mailto:jessisacreative@gmail.com">jessisacreative@gmail.com ↗</a></div><div><a class="micro" href="https://www.instagram.com/jessisacreative/" target="_blank" rel="noopener noreferrer">Instagram ↗</a> &nbsp; <a class="micro" href="https://www.linkedin.com/in/jessisacreative/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a></div></div>
+    <div class="footer-bottom micro"><span>© 2026 Jess Watson</span><span>Creative work, curious ideas and everything in between.</span></div>
+  </div></footer>
+</body></html>
