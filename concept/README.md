@@ -36,7 +36,7 @@ Start at `concept/index.html`.
 
 ## Static QA completed
 
-All 15 HTML pages were checked for a single title and H1, a meta description, skip-link targets, image alt attributes, valid in-page anchors, and valid inline JavaScript. Structured data parses successfully; provisional site URLs are omitted until the production address is chosen. Focus-accent contrast is 4.63:1 on the paper background and 3.04:1 on the dark background.
+All 15 HTML pages were checked for a single title and H1, concise meta descriptions, matching social titles, skip-link targets, image alt attributes and loading priorities, valid in-page anchors, and valid inline JavaScript. Structured data parses successfully; provisional site URLs are omitted until the production address is chosen. Focus-accent contrast is 4.63:1 on the paper background and 3.04:1 on the dark background.
 
 Rendered desktop and mobile review is still outstanding because the available preview environment could not load the branch. No CI checks are configured.
 
