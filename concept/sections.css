@@ -69,3 +69,19 @@
 .photo-teaser figure{margin:0}
 .photo-teaser figcaption{margin-top:10px;font:12px/1.5 var(--mono)}
 .photo-teaser:hover{text-decoration-color:var(--coral)}
+
+.photo-index{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:25px}
+.photo-index a{padding-block:9px;text-underline-offset:.25em}
+.photo-index a:hover{color:var(--coral)}
+#music-title,#event-title,#nature-title,#still-title,#portugal{scroll-margin-top:125px}
+.photo-contact{padding-bottom:clamp(48px,7vw,90px)}
+.photo-contact .cta-panel{margin-top:0}
+.article-card time{font:700 11px/1.5 var(--mono)}
+.article-card{grid-template-columns:7rem minmax(0,1fr) minmax(0,.8fr) 24px}
+@media(max-width:680px){
+  .article-card{grid-template-columns:minmax(0,1fr) 24px;gap:12px}
+  .article-card time{grid-row:1;grid-column:1}
+  .article-card strong{grid-row:2;grid-column:1}
+  .article-card p{grid-row:3;grid-column:1;margin:0}
+  .article-card .arrow{grid-row:2;grid-column:2}
+}

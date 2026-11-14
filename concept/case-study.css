@@ -19,3 +19,19 @@
 .hero.text-only{grid-template-columns:minmax(0,1fr);min-height:0}
 .hero.text-only .hero-copy{min-height:0;gap:22px}
 .hero.text-only h1{margin-bottom:0}
+
+.nav [aria-current=page]{text-decoration:underline;text-underline-offset:.32em}
+.hero-copy,.detail,.story>*,.footer-top>*,.next>a{min-width:0}
+.hero h1{overflow-wrap:anywhere}
+@media(max-width:680px){
+  .hero-copy{min-height:0;gap:28px;padding-block:clamp(36px,9vw,58px)}
+  .hero h1{font-size:clamp(42px,11vw,70px);margin-bottom:0}
+  .hero-image{min-height:0;height:clamp(230px,70vw,420px)}
+}
+
+.gallery-head h2{font-size:clamp(38px,6vw,77px);line-height:1.02;text-wrap:balance}
+.story h2{font-size:clamp(33px,4vw,58px);overflow-wrap:anywhere}
+.gallery-grid{grid-template-columns:repeat(12,minmax(0,1fr))}
+@media(max-width:680px){
+  .gallery-grid{grid-template-columns:minmax(0,1fr)}
+}
