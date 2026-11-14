@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8f5f2">
+  <meta name="theme-color" content="#fff">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <meta name="description" content="Jess Watson is a West Yorkshire creative working across campaigns, design, photography and writing. Explore selected projects and independent work.">
   <meta name="author" content="Jess Watson">
@@ -33,22 +33,22 @@
 }</script>
   <style>
     :root{
-      --ink:#1d1d1b; --paper:#f8f5f2; --white:#faf9f5; --line:#bdb8ae;
-      --pink:#ead2db; --green:#d8f86e; --rose:#8b3658; --muted:#686761;
+      --ink:#111; --paper:#fff; --white:#fff; --line:#c7c7c7;
+      --magenta:#ff43a0; --green:#d8f86e; --rose:#b00068; --gutter:clamp(20px,5vw,82px); --muted:#686761;
       --serif:Georgia,"Times New Roman",serif;
       --sans:Arial,Helvetica,sans-serif; --mono:"Courier New",monospace;
     }
     *,*::before,*::after{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
-    a{color:inherit} a:focus-visible,button:focus-visible{outline:3px solid var(--rose);outline-offset:5px}
+    a{color:inherit} a:focus-visible,button:focus-visible{outline:3px solid var(--rose);outline-offset:3px;box-shadow:0 0 0 3px var(--paper)}
     button{font:inherit} img{display:block;width:100%}
-    ::selection{background:var(--pink);color:var(--ink)}
-    .skip{position:absolute;top:-100px;left:12px;background:var(--pink);padding:12px;z-index:100}
+    ::selection{background:var(--green);color:var(--ink)}
+    .skip{position:absolute;top:-100px;left:12px;background:var(--green);padding:12px;z-index:100}
     .skip:focus{top:12px}
     .micro{font:700 11px/1.4 var(--mono);letter-spacing:.09em;text-transform:uppercase}
-    .wrap{max-width:1580px;margin:auto;padding-left:clamp(20px,5vw,82px);padding-right:clamp(20px,5vw,82px)}
-    .sitehead{position:sticky;top:0;z-index:25;background:rgba(248,245,242,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--ink)}
+    .wrap{max-width:1580px;margin:auto;padding-inline:var(--gutter)}
+    .sitehead{position:sticky;top:0;z-index:25;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--ink)}
     .head-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;min-height:77px}
     .brand{text-decoration:none;display:inline-block;font-weight:900;text-transform:lowercase;letter-spacing:-.07em;font-size:clamp(24px,2.5vw,36px);line-height:.95}
     .brand em{font-style:italic;font-family:var(--serif);font-weight:400}
@@ -79,7 +79,7 @@
     .project.medium .frame{aspect-ratio:1.05}
     .project img{height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .3s}
     .project:hover img{transform:scale(1.045)}
-    .project:hover .work-overlay{transform:rotate(45deg);background:var(--pink)}
+    .project:hover .work-overlay{transform:rotate(45deg);background:var(--green)}
     .projectinfo{padding:17px 0 0;display:flex;justify-content:space-between;align-items:start;gap:12px;border-top:1px solid var(--ink);margin-top:13px}
     .projectinfo h3{font-size:clamp(20px,2.3vw,33px);line-height:1.05;letter-spacing:-.045em;margin:0 0 8px;font-weight:800}
     .projectinfo p{font-size:12px;line-height:1.45;color:var(--muted);margin:0}
@@ -104,7 +104,7 @@
     .card-copy h3{font-size:clamp(30px,3.4vw,55px);line-height:.96;letter-spacing:-.055em;margin:12px 0}
     .card-copy p{font-size:14px;line-height:1.5;color:var(--muted);max-width:460px;margin:0}
     .card-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:16px;font:700 11px var(--mono);text-transform:uppercase;gap:12px}
-    .notebook{padding:110px 0;background:var(--pink);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+    .notebook{padding:110px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
     .notebook .section-head{margin-bottom:50px}
     .article h3{font-size:clamp(24px,4vw,54px);letter-spacing:-.05em;line-height:1;max-width:600px;margin:0}
     .article p{font-size:14px;line-height:1.5;max-width:350px;margin:0}
@@ -146,15 +146,18 @@
       .footer-top{flex-direction:column}
       .footer-bottom{margin-top:70px}
     }
+    .hero-location::before{content:"";display:inline-block;width:.65em;height:.65em;margin-right:.8em;background:var(--magenta)}
+    .hero-copy{padding-inline-start:max(var(--gutter),calc((100vw - 1580px)/2 + var(--gutter)))}
+    .hero-intro{padding-inline-end:max(var(--gutter),calc((100vw - 1580px)/2 + var(--gutter)))}
     .brand-dot{color:var(--rose)}
     .nav a:not(.nav-cta):hover::after{background:#637221}
     .nav .nav-cta:hover{background:var(--green);color:var(--ink)}
-    .hero{display:grid;grid-template-columns:1.18fr 1fr;min-height:clamp(460px,65vh,640px);border-bottom:1px solid var(--line)}
-    .hero-copy,.hero-intro{padding:clamp(35px,6vw,95px) clamp(24px,6vw,95px)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,1fr);min-height:clamp(460px,65vh,640px);border-bottom:1px solid var(--line)}
+    .hero-copy,.hero-intro{padding:clamp(35px,6vw,95px) var(--gutter)}
     .hero-copy{display:flex;flex-direction:column;justify-content:space-between;gap:44px;background:var(--ink);color:var(--paper)}
-    .hero h1{font-size:clamp(72px,11vw,172px);line-height:.85;letter-spacing:-.09em;margin:0;text-transform:uppercase}
-    .hero h1 .second{display:block;color:var(--pink);font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none}
-    .hero-location{margin:0;color:#ded5d9}
+    .hero h1{font-size:clamp(62px,10.5vw,166px);line-height:.85;letter-spacing:-.09em;margin:0;text-transform:uppercase}
+    .hero h1 .second{display:block;color:var(--paper);font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none}
+    .hero-location{margin:0;color:#ccc}
     .hero-intro{display:flex;flex-direction:column;justify-content:end;align-items:start;background:var(--white)}
     .hero-intro p{max-width:34ch;margin:0 0 18px;line-height:1.55}
     .hero-intro p:first-child{font-size:clamp(24px,3vw,43px);line-height:1.12;letter-spacing:-.04em}
@@ -166,14 +169,14 @@
     .about-portrait{max-width:360px;aspect-ratio:4/3;object-fit:cover;object-position:center 32%}
     .interest-grid{max-width:790px}
     .feature-card{border:0}
-    .notebook{background:#f1e1e6}
+    .notebook{background:var(--paper)}
     .article{display:grid;grid-template-columns:minmax(0,1.3fr) 1fr 32px;gap:20px;align-items:center;border-top:1px solid var(--line);padding:24px 0;text-decoration:none}
     .playbox{max-width:780px;border-top:1px solid var(--line);padding-top:20px}
     .playbox .playtext{display:block}
     :target{scroll-margin-top:110px}
     @media(max-width:700px){
       .hero{grid-template-columns:1fr;min-height:0}
-      .hero h1{font-size:clamp(64px,16vw,110px)}
+      .hero h1{font-size:clamp(56px,15vw,110px)}
       .project.feature,.project.secondary,.project.medium{grid-column:auto}
       .article{grid-template-columns:minmax(0,1fr) 28px}
       .article p{grid-column:1;grid-row:2}
@@ -263,7 +266,7 @@
       </div>
       <div class="interest-grid">
         <a class="feature-card" href="photography.html">
-          <figure class="visual"><img src="photography/yeah-maybe-live-13.jpg" alt="Live music photograph of a guitarist performing under red and orange stage lights, photographed by Jess Watson" loading="lazy"></figure>
+          <figure class="visual"><img src="photography/autumn-charlotte-band.webp" alt="The band performs against a brick wall hung with records under green and purple lights" width="1100" height="733" loading="lazy" decoding="async"></figure>
           <div class="card-copy"><div><h3>Arts, events &amp; nature</h3></div><div class="card-bottom"><span>Explore my photography</span><span aria-hidden="true">↗</span></div></div>
         </a>
       </div>
