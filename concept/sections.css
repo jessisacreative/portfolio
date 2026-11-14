@@ -102,3 +102,14 @@
 .press-entry a{text-decoration:none}
 .shoot-gallery{align-items:start}
 @media(max-width:680px){.project-block{grid-template-columns:minmax(0,1fr)}}
+
+.perspective-hero{padding-block:clamp(48px,7vw,88px)}
+.perspective-hero h1{font-size:clamp(44px,8vw,120px);line-height:.94}
+.perspective-story{display:grid;grid-template-columns:minmax(0,.6fr) minmax(0,1fr);gap:clamp(16px,6vw,85px);padding-bottom:0}
+.perspective-copy{max-width:62ch;font-size:clamp(17px,2vw,22px);line-height:1.6}
+.perspective-copy p:first-child{margin-top:0}
+.perspective-copy h3{margin:1.6em 0 .35em;font-size:1.13em;line-height:1.22}
+.perspective-copy h3+p{margin-top:0}
+.perspective-gallery{padding-bottom:36px}
+.perspective-gallery .photo-gallery{align-items:start}
+@media(max-width:700px){.perspective-story{grid-template-columns:minmax(0,1fr)}}

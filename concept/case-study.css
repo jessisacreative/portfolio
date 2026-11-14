@@ -43,3 +43,7 @@
   .nav{justify-content:flex-start;gap:2px 15px}
   main#main-content,.journal-group{scroll-margin-top:150px}
 }
+
+.perspective-links{display:flex;flex-wrap:wrap;gap:12px 24px;padding-block:24px;border-top:1px solid var(--line)}
+.perspective-links a{text-underline-offset:.2em}
+.perspective-links a:hover{color:var(--coral)}
