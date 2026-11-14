@@ -113,3 +113,6 @@
 .perspective-gallery{padding-bottom:36px}
 .perspective-gallery .photo-gallery{align-items:start}
 @media(max-width:700px){.perspective-story{grid-template-columns:minmax(0,1fr)}}
+
+.project-block.text-block{grid-template-columns:minmax(0,1fr)}
+.text-block > div{max-width:66ch}

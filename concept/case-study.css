@@ -20,7 +20,7 @@
 .hero.text-only .hero-copy{min-height:0;gap:22px}
 .hero.text-only h1{margin-bottom:0}
 
-.nav [aria-current=page]{text-decoration:underline;text-underline-offset:.32em}
+.nav [aria-current]{text-decoration:underline;text-underline-offset:.32em}
 .hero-copy,.detail,.story>*,.footer-top>*,.next>a{min-width:0}
 .hero h1{overflow-wrap:anywhere}
 @media(max-width:680px){
