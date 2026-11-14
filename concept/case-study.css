@@ -35,3 +35,11 @@
 @media(max-width:680px){
   .gallery-grid{grid-template-columns:minmax(0,1fr)}
 }
+
+.nav{gap:clamp(9px,1.5vw,23px);flex-wrap:wrap;justify-content:flex-end}
+.nav a{white-space:nowrap}
+@media(max-width:860px){
+  .head-inner{flex-direction:column;align-items:flex-start;gap:8px;padding-block:12px}
+  .nav{justify-content:flex-start;gap:2px 15px}
+  main#main-content,.journal-group{scroll-margin-top:150px}
+}

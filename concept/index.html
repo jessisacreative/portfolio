@@ -192,7 +192,23 @@
     .home-photo:hover h3{text-decoration:underline;text-decoration-color:var(--rose)}
     .work-note{flex-wrap:wrap;justify-content:start}
     .work-note .link-arrow{margin-top:0}
-    @media(max-width:700px){.home-photo-grid{grid-template-columns:1fr;gap:30px}}
+    .home-discipline{padding-block:clamp(48px,7vw,94px);border-top:1px solid var(--line)}
+    .discipline-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,4vw,52px);align-items:start}
+    .discipline-print img,.content-feature img{object-fit:contain;background:#111}
+    .content-links a{display:block;border-block-start:1px solid var(--line);padding-block:18px}
+    .content-links a:last-child{border-block-end:1px solid var(--line)}
+    .content-links h3{margin-top:0}
+    .nav{gap:clamp(9px,1.5vw,23px);flex-wrap:wrap;justify-content:flex-end}
+    .nav a{white-space:nowrap}
+    @media(max-width:860px){
+      .head-inner{flex-direction:column;align-items:flex-start;gap:8px;padding-block:12px}
+      .nav{justify-content:flex-start;gap:2px 15px}
+      section{scroll-margin-top:150px}
+      :target{scroll-margin-top:150px}
+    }
+    @media(max-width:700px){
+      .home-photo-grid,.discipline-grid{grid-template-columns:1fr;gap:30px}
+    }
   </style>
 </head>
 <body>
@@ -201,7 +217,10 @@
     <div class="wrap head-inner">
       <a class="brand" href="#home" aria-label="Jess is a creative, home">jess<em>is</em>a creative<span class="brand-dot" aria-hidden="true">.</span></a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="work.html">Work</a><a href="photography.html">Photography</a><a href="journal.html">Journal</a><a href="about.html">About</a><a href="#contact" class="nav-cta">Say hello ↗</a>
+        <a href="work.html">Work</a>
+        <a href="design.html">Graphic Design</a>
+        <a href="content.html">Social &amp; Content</a>
+        <a href="photography.html">Photography</a><a href="journal.html">Journal</a><a href="about.html">About</a><a href="#contact" class="nav-cta">Say hello ↗</a>
       </nav>
     </div>
   </header>
@@ -212,7 +231,7 @@
         <p class="micro hero-location">West Yorkshire, UK</p>
       </div>
       <div class="hero-intro">
-        <p>Campaigns, design and photography for arts and culture.</p>
+        <p>Campaigns and creative work for arts and culture.</p>
         <p>I work at the National Science and Media Museum. Away from work, I photograph gigs and write about music.</p>
         <a href="#work" class="link-arrow">See selected work <span aria-hidden="true">↓</span></a>
       </div>
@@ -231,10 +250,6 @@
           <figure class="frame"><img src="../images/01-jim-moir-neo-fauna-artist-opening.jpg" alt="Jim Moir at the Neo Fauna exhibition opening at Cartwright Hall" loading="lazy"></figure>
           <div class="projectinfo"><div><h3>Cartwright Hall 2026 Gallery Launches</h3><p>Arts campaigns / Bradford Museums & Galleries</p></div></div>
         </a>
-        <a class="project medium" data-tags="design campaigns" href="beyondtheframe.html">
-          <figure class="frame"><img src="../images/beyond%20the%20frame%20window%20graphics%20outside%20the%20uni.jpg" alt="Beyond the Frame window graphics at Leeds Arts University" loading="lazy"></figure>
-          <div class="projectinfo"><div><h3>Beyond the Frame</h3><p>Creative campaign & design / Leeds Arts University</p></div></div>
-        </a>
         <a class="project medium" data-tags="campaigns" href="soundvision.html">
           <figure class="frame"><img src="../images/Sound%20and%20Vision.jpg" alt="Sound + Vision museum galleries and campaign" loading="lazy"></figure>
           <div class="projectinfo"><div><h3>Sound + Vision</h3><p>Gallery launch campaign / National Science and Media Museum</p></div></div>
@@ -243,19 +258,58 @@
           <figure class="frame"><img src="../images/Photograph%20of%20me%20in%20front%20of%20my%20exhibited%20photos%20at%20The%20Great%20Leeds%20Fungi%20Exhibition.jpeg" alt="Jess in front of her photography exhibited at the Great Leeds Fungi Exhibition" loading="lazy"></figure>
           <div class="projectinfo"><div><h3>Great Leeds Fungi Exhibition</h3><p>Independent photography / Headrow House</p></div></div>
         </a>
-        <a class="project medium" data-tags="design campaigns" href="leedsarts.html">
-          <figure class="frame"><img src="../images/front%20cover%20of%20the%20leeds%20arts%20university%20prospectus%20designed%20by%20me.png" alt="Leeds Arts University prospectus cover design" loading="lazy"></figure>
-          <div class="projectinfo"><div><h3>University Creative</h3><p>Brand, print & campaign design / Leeds Arts University</p></div></div>
-        </a>
-        <div class="work-note"><a class="link-arrow" href="work.html">View all projects <span aria-hidden="true">↗</span></a> <a class="link-arrow" href="design.html">Graphic design <span aria-hidden="true">↗</span></a> <a class="link-arrow" href="content.html">Social &amp; content <span aria-hidden="true">↗</span></a></div>
+        <div class="work-note"><a class="link-arrow" href="work.html">View all projects <span aria-hidden="true">↗</span></a></div>
       </div>
+    </section>
+    <section class="wrap home-discipline" id="design" aria-labelledby="design-title">
+      <div class="section-head">
+        <h2 id="design-title">Graphic <span class="serif">design.</span></h2>
+        <p class="small-intro">Exhibition graphics, publications and campaign artwork.</p>
+      </div>
+      <div class="discipline-grid">
+        <a class="home-photo" href="beyondtheframe.html">
+          <img src="../images/beyond%20the%20frame%20window%20graphics%20outside%20the%20uni.jpg" alt="" loading="lazy" decoding="async">
+          <h3>Beyond the Frame <span aria-hidden="true">↗</span></h3>
+          <p>Exhibition graphics and print for Leeds Arts University</p>
+        </a>
+        <a class="home-photo discipline-print" href="leedsarts.html">
+          <img src="../images/front%20cover%20of%20the%20leeds%20arts%20university%20prospectus%20designed%20by%20me.png" alt="" loading="lazy" decoding="async">
+          <h3>Leeds Arts University prospectus <span aria-hidden="true">↗</span></h3>
+          <p>Publication design and brand rollout</p>
+        </a>
+      </div>
+      <a class="link-arrow" href="design.html">All graphic design <span aria-hidden="true">↗</span></a>
+    </section>
+    <section class="wrap home-discipline" id="content" aria-labelledby="content-title">
+      <div class="section-head">
+        <h2 id="content-title">Social <span class="serif">&amp; content.</span></h2>
+        <p class="small-intro">Short videos, social planning and event coverage.</p>
+      </div>
+      <div class="discipline-grid">
+        <a class="home-photo content-feature" href="youmatter.html">
+          <img src="../images/you%20matter%20family%20hero%20image%20square.jpg" alt="" loading="lazy" decoding="async">
+          <h3>YOU:MATTER <span aria-hidden="true">↗</span></h3>
+          <p>Social artwork for the exhibition campaign</p>
+        </a>
+        <div class="content-links">
+          <a class="home-photo" href="mediaworks.html">
+            <h3>Mediaworks <span aria-hidden="true">↗</span></h3>
+            <p>TikTok research, production and training</p>
+          </a>
+          <a class="home-photo" href="reflections.html">
+            <h3>Reflections Film &amp; Media <span aria-hidden="true">↗</span></h3>
+            <p>Social channels, short videos and event coverage</p>
+          </a>
+        </div>
+      </div>
+      <a class="link-arrow" href="content.html">All social &amp; content work <span aria-hidden="true">↗</span></a>
     </section>
     <section class="story" id="about" aria-labelledby="abouttitle">
       <div class="wrap story-grid">
         <div>
           <h2 id="abouttitle">About <span class="serif">me.</span></h2>
           <p class="story-intro">I'm Jess — a West Yorkshire-based creative with a background in advertising, design and cultural marketing.</p>
-          <p>By day, I'm a Marketing Manager at the National Science and Media Museum. Outside of work, I'm often photographing something, writing about music or getting absorbed in a new creative rabbit hole.</p>
+          <p>I’m a Marketing Manager at the National Science and Media Museum. I also take on freelance projects with arts and cultural organisations.</p>
           <a class="link-arrow" href="about.html">More about me <b aria-hidden="true">↗</b></a>
         </div>
         <div class="story-right">
