@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#fff">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <meta name="description" content="Jess Watson is a West Yorkshire creative working across campaigns, design, photography and writing. Explore selected projects and independent work.">
+  <meta name="author" content="Jess Watson">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jess Watson / @jessisacreative — Creative Portfolio">
+  <meta property="og:description" content="Jess Watson is a West Yorkshire creative working across campaigns, design, photography and writing. Explore selected projects and independent work.">
+  <meta property="og:image" content="https://jessisacreative.github.io/portfolio/images/YOU%20MATTER.jpg">
+  <title>Jess Watson / @jessisacreative — Creative Portfolio</title>
+  <!-- Draft concept: deliberately no canonical tag until the production URL is agreed. -->
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Jess Watson",
+  "alternateName": [
+    "Jessica Watson",
+    "@jessisacreative"
+  ],
+  "description": "Multidisciplinary creative specialising in design, cultural campaigns, photography and writing.",
+  "homeLocation": {
+    "@type": "Place",
+    "name": "West Yorkshire, United Kingdom"
+  },
+  "sameAs": [
+    "https://www.instagram.com/jessisacreative/",
+    "https://www.linkedin.com/in/jessisacreative/"
+  ]
+}</script>
+  <style>
+    :root{
+      --ink:#111; --paper:#fff; --white:#fff; --line:#c7c7c7;
+      --magenta:#ff43a0; --green:#d8f86e; --rose:#b00068; --gutter:clamp(20px,5vw,82px); --muted:#686761;
+      --serif:Georgia,"Times New Roman",serif;
+      --sans:Arial,Helvetica,sans-serif; --mono:"Courier New",monospace;
+    }
+    *,*::before,*::after{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    a{color:inherit} a:focus-visible,button:focus-visible{outline:3px solid var(--rose);outline-offset:3px;box-shadow:0 0 0 3px var(--paper)}
+    button{font:inherit} img{display:block;width:100%}
+    ::selection{background:var(--green);color:var(--ink)}
+    .skip{position:absolute;top:-100px;left:12px;background:var(--green);padding:12px;z-index:100}
+    .skip:focus{top:12px}
+    .micro{font:700 11px/1.4 var(--mono);letter-spacing:.09em;text-transform:uppercase}
+    .wrap{max-width:1580px;margin:auto;padding-inline:var(--gutter)}
+    .sitehead{position:sticky;top:0;z-index:25;background:rgba(255,255,255,.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--ink)}
+    .head-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;min-height:77px}
+    .brand{text-decoration:none;display:inline-block;font-weight:900;text-transform:lowercase;letter-spacing:-.07em;font-size:clamp(24px,2.5vw,36px);line-height:.95}
+    .brand em{font-style:italic;font-family:var(--serif);font-weight:400}
+    .nav{display:flex;gap:clamp(13px,2.6vw,38px);align-items:center}
+    .nav a{text-decoration:none;text-transform:uppercase;font:700 12px/1 var(--mono);letter-spacing:.035em;padding:9px 0;position:relative}
+    .nav a:after{content:"";height:2px;background:var(--ink);position:absolute;bottom:1px;left:0;right:100%;transition:right .2s}
+    .nav a:hover:after{right:0}
+    .nav .nav-cta{background:var(--ink);color:var(--paper);padding:12px 15px;border-radius:40px}
+    .nav .nav-cta:hover{background:var(--rose)}
+    .nav .nav-cta:after{display:none}
+    section{scroll-margin-top:80px}
+    .section-head{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:36px}
+    .section-kicker{display:block;margin-bottom:17px}
+    h2{font-weight:900;font-size:clamp(44px,6vw,91px);line-height:.92;letter-spacing:-.07em;margin:0}
+    h2 .serif{font-family:var(--serif);font-style:italic;font-weight:400}
+    .small-intro{max-width:310px;color:var(--muted);font-size:14px;line-height:1.5;margin:0 0 4px}
+    #work{padding-top:105px;padding-bottom:110px}
+    .workgrid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:22px;row-gap:55px}
+    .project{grid-column:span 6;text-decoration:none;display:block}
+    .project.feature{grid-column:span 7}
+    .project.secondary{grid-column:span 5}
+    .project.medium{grid-column:span 4}
+    .project[hidden]{display:none}
+    .project figure{margin:0;position:relative;background:#cbc5ba;overflow:hidden}
+    .project .frame{aspect-ratio:1.42}
+    .project.feature .frame{aspect-ratio:1.19}
+    .project.secondary .frame{aspect-ratio:1.45}
+    .project.medium .frame{aspect-ratio:1.05}
+    .project img{height:100%;object-fit:cover;transition:transform .65s cubic-bezier(.2,.7,.2,1),filter .3s}
+    .project:hover img{transform:scale(1.045)}
+    .project:hover .work-overlay{transform:rotate(45deg);background:var(--green)}
+    .projectinfo{padding:17px 0 0;display:flex;justify-content:space-between;align-items:start;gap:12px;border-top:1px solid var(--ink);margin-top:13px}
+    .projectinfo h3{font-size:clamp(20px,2.3vw,33px);line-height:1.05;letter-spacing:-.045em;margin:0 0 8px;font-weight:800}
+    .projectinfo p{font-size:12px;line-height:1.45;color:var(--muted);margin:0}
+    .work-note{grid-column:span 12;border-top:1px solid var(--line);padding-top:18px;display:flex;justify-content:space-between;gap:20px;color:var(--muted);font:12px/1.5 var(--mono)}
+    .story{background:var(--ink);color:var(--paper);padding:95px 0 100px}
+    .story-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(35px,8vw,150px)}
+    .story h2{margin-top:18px;max-width:760px}
+    .story-intro{font-size:clamp(23px,3vw,42px);letter-spacing:-.045em;line-height:1.13;margin:40px 0 25px}
+    .story p:not(.micro):not(.story-intro){font-size:15px;line-height:1.7;max-width:530px;color:#bfbcb4}
+    .story-right{display:flex;flex-direction:column;justify-content:space-between;gap:40px}
+    .skills{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+    .skills span{border-top:1px solid #605d57;padding:13px 0;color:#e1dfda;font:700 12px var(--mono)}
+    .link-arrow{display:inline-flex;align-items:center;gap:17px;text-decoration:none;font:700 12px var(--mono);text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:8px;margin-top:21px}
+    .link-arrow b{font-size:22px}
+    .interests{padding-top:105px;padding-bottom:115px}
+    .feature-card{text-decoration:none;background:var(--white);border:1px solid var(--ink);min-width:0;display:flex;flex-direction:column}
+    .feature-card figure{margin:0;overflow:hidden;background:var(--rose);position:relative}
+    .feature-card img{height:100%;object-fit:cover;transition:transform .5s}
+    .feature-card:hover img{transform:scale(1.04)}
+    .feature-card .visual{aspect-ratio:1.55}
+    .card-copy{display:flex;flex-direction:column;justify-content:space-between;gap:34px;padding:25px;flex:1}
+    .card-copy h3{font-size:clamp(30px,3.4vw,55px);line-height:.96;letter-spacing:-.055em;margin:12px 0}
+    .card-copy p{font-size:14px;line-height:1.5;color:var(--muted);max-width:460px;margin:0}
+    .card-bottom{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--line);padding-top:16px;font:700 11px var(--mono);text-transform:uppercase;gap:12px}
+    .notebook{padding:110px 0;background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .notebook .section-head{margin-bottom:50px}
+    .article h3{font-size:clamp(24px,4vw,54px);letter-spacing:-.05em;line-height:1;max-width:600px;margin:0}
+    .article p{font-size:14px;line-height:1.5;max-width:350px;margin:0}
+    .article .arrow{font-size:27px;text-align:right}
+    .article:hover h3{text-decoration:underline;text-underline-offset:5px}
+
+
+
+
+    .footer{background:var(--ink);color:var(--paper);padding:90px 0 26px}
+    .footer-top{display:flex;justify-content:space-between;gap:40px}
+    .footer h2{font-size:clamp(66px,9vw,155px);margin:15px 0 40px}
+    .footer h2 em{font-family:var(--serif);font-weight:400}
+    .email{font-size:clamp(19px,2.6vw,37px);letter-spacing:-.03em;text-decoration:none;border-bottom:1px solid var(--paper);padding-bottom:10px;display:inline-block;max-width:100%;overflow-wrap:anywhere}
+    .footer-side{display:flex;flex-direction:column;gap:13px;justify-content:end;padding-bottom:10px}
+    .footer-side a{font:700 12px var(--mono);text-decoration:none;text-transform:uppercase}
+    .footer-side a:hover{text-decoration:underline}
+    .footer-bottom{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;margin-top:100px;border-top:1px solid #605d57;padding-top:21px;color:#b3b0a9}
+    @media(max-width:1000px){
+      .head-inner{min-height:67px}
+      .nav{gap:13px}.nav a{font-size:10px}
+    }
+    @media(max-width:700px){
+      .head-inner{align-items:flex-start;flex-direction:column;gap:12px;padding-top:15px;padding-bottom:15px}
+      .nav{flex-wrap:wrap;gap:8px 18px}
+      .nav a{font-size:10px}.nav .nav-cta{padding:7px 11px}
+      #work{padding-top:73px;padding-bottom:75px}
+      .section-head{align-items:start;flex-direction:column;margin-bottom:25px}
+      .workgrid{grid-template-columns:1fr;gap:40px}
+      .project,.project.feature,.project.secondary,.project.medium,.work-note{grid-column:auto}
+      .project .frame,.project.feature .frame,.project.secondary .frame,.project.medium .frame{aspect-ratio:1.25}
+      .work-note{flex-direction:column}
+      .story{padding:70px 0}
+      .story-grid{grid-template-columns:1fr}
+      .interests{padding-top:75px;padding-bottom:75px}
+      .notebook{padding:76px 0}
+
+      .footer{padding-top:70px}
+      .footer-top{flex-direction:column}
+      .footer-bottom{margin-top:70px}
+    }
+    .hero-location::before{content:"";display:inline-block;width:.65em;height:.65em;margin-right:.8em;background:var(--magenta)}
+    .hero-copy{padding-inline-start:max(var(--gutter),calc((100vw - 1580px)/2 + var(--gutter)))}
+    .hero-intro{padding-inline-end:max(var(--gutter),calc((100vw - 1580px)/2 + var(--gutter)))}
+    .brand-dot{color:var(--rose)}
+    .nav a:not(.nav-cta):hover::after{background:#637221}
+    .nav .nav-cta:hover{background:var(--green);color:var(--ink)}
+    .hero{display:grid;grid-template-columns:minmax(0,1.18fr) minmax(0,1fr);min-height:clamp(460px,65vh,640px);border-bottom:1px solid var(--line)}
+    .hero-copy,.hero-intro{padding:clamp(35px,6vw,95px) var(--gutter)}
+    .hero-copy{display:flex;flex-direction:column;justify-content:space-between;gap:44px;background:var(--ink);color:var(--paper)}
+    .hero h1{font-size:clamp(62px,10.5vw,166px);line-height:.85;letter-spacing:-.09em;margin:0;text-transform:uppercase}
+    .hero h1 .second{display:block;color:var(--paper);font-family:var(--serif);font-style:italic;font-weight:400;text-transform:none}
+    .hero-location{margin:0;color:#ccc}
+    .hero-intro{display:flex;flex-direction:column;justify-content:end;align-items:start;background:var(--white)}
+    .hero-intro p{max-width:34ch;margin:0 0 18px;line-height:1.55}
+    .hero-intro p:first-child{font-size:clamp(24px,3vw,43px);line-height:1.12;letter-spacing:-.04em}
+    .project.feature,.project.secondary,.project.medium{grid-column:span 6}
+    .project.feature .frame,.project.secondary .frame,.project.medium .frame{aspect-ratio:1.5}
+    .projectinfo{border-top:0;margin-top:0}
+    .project:hover h3{text-decoration:underline;text-decoration-color:var(--rose);text-underline-offset:.17em}
+    .story-right{align-items:start;justify-content:center}
+    .about-portrait{max-width:360px;aspect-ratio:4/3;object-fit:cover;object-position:center 32%}
+    .interest-grid{max-width:790px}
+    .feature-card{border:0}
+    .notebook{background:var(--paper)}
+    .article{display:grid;grid-template-columns:minmax(0,1.3fr) 1fr 32px;gap:20px;align-items:center;border-top:1px solid var(--line);padding:24px 0;text-decoration:none}
+
+
+    :target{scroll-margin-top:110px}
+    @media(max-width:700px){
+      .hero{grid-template-columns:1fr;min-height:0}
+      .hero h1{font-size:clamp(56px,15vw,110px)}
+      .project.feature,.project.secondary,.project.medium{grid-column:auto}
+      .article{grid-template-columns:minmax(0,1fr) 28px}
+      .article p{grid-column:1;grid-row:2}
+      .article .arrow{grid-column:2;grid-row:1}
+      :target{scroll-margin-top:140px}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+    .home-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    .home-photo{text-decoration:none}
+    .home-photo img{aspect-ratio:4/3;object-fit:cover;background:#e7e7e7}
+    .home-photo h3{font-size:clamp(21px,2.6vw,34px);line-height:1.1;margin:14px 0 5px;letter-spacing:-.04em}
+    .home-photo p{font-size:14px;margin:0;color:var(--muted)}
+    .home-photo:hover h3{text-decoration:underline;text-decoration-color:var(--rose)}
+    .work-note{flex-wrap:wrap;justify-content:start}
+    .work-note .link-arrow{margin-top:0}
+    .home-discipline{padding-block:clamp(48px,7vw,94px);border-top:1px solid var(--line)}
+    .discipline-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(18px,4vw,52px);align-items:start}
+    .discipline-print img,.content-feature img{object-fit:contain;background:#111}
+    .content-links a{display:block;border-block-start:1px solid var(--line);padding-block:18px}
+    .content-links a:last-child{border-block-end:1px solid var(--line)}
+    .content-links h3{margin-top:0}
+    .nav{gap:clamp(9px,1.5vw,23px);flex-wrap:wrap;justify-content:flex-end}
+    .nav a{white-space:nowrap}
+    @media(max-width:860px){
+      .head-inner{flex-direction:column;align-items:flex-start;gap:8px;padding-block:12px}
+      .nav{justify-content:flex-start;gap:2px 15px}
+      section{scroll-margin-top:150px}
+      :target{scroll-margin-top:150px}
+    }
+    @media(max-width:700px){
+      .home-photo-grid,.discipline-grid{grid-template-columns:1fr;gap:30px}
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip">Skip to content</a>
+  <header class="sitehead">
+    <div class="wrap head-inner">
+      <a class="brand" href="#home" aria-label="Jess is a creative, home">jess<em>is</em>a creative<span class="brand-dot" aria-hidden="true">.</span></a>
+      <nav class="nav" aria-label="Primary navigation">
+        <a href="work.html">Work</a>
+        <a href="design.html">Graphic Design</a>
+        <a href="content.html">Social &amp; Content</a>
+        <a href="photography.html">Photography</a><a href="journal.html">Journal</a><a href="about.html">About</a><a href="#contact" class="nav-cta">Say hello ↗</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main-content" tabindex="-1">
+    <section class="hero" id="home" aria-labelledby="home-title">
+      <div class="hero-copy">
+        <h1 id="home-title">Jess <span class="second">Watson</span></h1>
+        <p class="micro hero-location">West Yorkshire, UK</p>
+      </div>
+      <div class="hero-intro">
+        <p>Campaigns and creative work for arts and culture.</p>
+        <p>I work at the National Science and Media Museum. Away from work, I photograph gigs and write about music.</p>
+        <a href="#work" class="link-arrow">See selected work <span aria-hidden="true">↓</span></a>
+      </div>
+    </section>
+    <section class="wrap" id="work" aria-labelledby="worktitle">
+      <div class="section-head">
+        <div><h2 id="worktitle">Selected <span class="serif">work.</span></h2></div>
+        <p class="small-intro">Exhibitions, gallery launches and work I’ve made independently.</p>
+      </div>
+      <div class="workgrid" id="workgrid">
+        <a class="project feature" data-tags="campaigns design" href="youmatter.html">
+          <figure class="frame"><img src="../images/YOU%20MATTER.jpg" alt="YOU:MATTER immersive exhibition campaign artwork" loading="lazy" width="1920" height="960"></figure>
+          <div class="projectinfo"><div><h3>YOU:MATTER</h3><p>Campaign direction, creative & communications / National Science and Media Museum</p></div></div>
+        </a>
+        <a class="project secondary" data-tags="campaigns" href="cartwrighthall.html">
+          <figure class="frame"><img src="../images/01-jim-moir-neo-fauna-artist-opening.jpg" alt="Jim Moir at the Neo Fauna exhibition opening at Cartwright Hall" loading="lazy" width="1086" height="724"></figure>
+          <div class="projectinfo"><div><h3>Cartwright Hall 2026 Gallery Launches</h3><p>Arts campaigns / Bradford Museums & Galleries</p></div></div>
+        </a>
+        <a class="project medium" data-tags="campaigns" href="soundvision.html">
+          <figure class="frame"><img src="../images/Sound%20and%20Vision.jpg" alt="Sound + Vision museum galleries and campaign" loading="lazy" width="1086" height="724"></figure>
+          <div class="projectinfo"><div><h3>Sound + Vision</h3><p>Gallery launch campaign / National Science and Media Museum</p></div></div>
+        </a>
+        <a class="project medium" data-tags="photography" href="fungiexhibition.html">
+          <figure class="frame"><img src="../images/Photograph%20of%20me%20in%20front%20of%20my%20exhibited%20photos%20at%20The%20Great%20Leeds%20Fungi%20Exhibition.jpeg" alt="Jess in front of her photography exhibited at the Great Leeds Fungi Exhibition" loading="lazy" width="1086" height="724"></figure>
+          <div class="projectinfo"><div><h3>Great Leeds Fungi Exhibition</h3><p>Independent photography / Headrow House</p></div></div>
+        </a>
+        <div class="work-note"><a class="link-arrow" href="work.html">View all projects <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+    <section class="wrap home-discipline" id="design" aria-labelledby="design-title">
+      <div class="section-head">
+        <h2 id="design-title">Graphic <span class="serif">design.</span></h2>
+        <p class="small-intro">Exhibition graphics, publications and campaign artwork.</p>
+      </div>
+      <div class="discipline-grid">
+        <a class="home-photo" href="beyondtheframe-design.html">
+          <img src="../images/beyond%20the%20frame%20window%20graphics%20outside%20the%20uni.jpg" alt="" loading="lazy" decoding="async" width="1440" height="1920">
+          <h3>Beyond the Frame <span aria-hidden="true">↗</span></h3>
+          <p>Exhibition graphics and print for Leeds Arts University</p>
+        </a>
+        <a class="home-photo discipline-print" href="leedsarts-design.html">
+          <img src="../images/front%20cover%20of%20the%20leeds%20arts%20university%20prospectus%20designed%20by%20me.png" alt="" loading="lazy" decoding="async" width="1280" height="1600">
+          <h3>Leeds Arts University prospectus <span aria-hidden="true">↗</span></h3>
+          <p>Publication design and brand rollout</p>
+        </a>
+      </div>
+      <a class="link-arrow" href="design.html">All graphic design <span aria-hidden="true">↗</span></a>
+    </section>
+    <section class="wrap home-discipline" id="content" aria-labelledby="content-title">
+      <div class="section-head">
+        <h2 id="content-title">Social <span class="serif">&amp; content.</span></h2>
+        <p class="small-intro">Short videos, social planning and event coverage.</p>
+      </div>
+      <div class="discipline-grid">
+        <a class="home-photo content-feature" href="youmatter-social.html">
+          <img src="../images/you%20matter%20family%20hero%20image%20square.jpg" alt="" loading="lazy" decoding="async" width="1920" height="1920">
+          <h3>YOU:MATTER <span aria-hidden="true">↗</span></h3>
+          <p>Social artwork for the exhibition campaign</p>
+        </a>
+        <div class="content-links">
+          <a class="home-photo" href="mediaworks.html">
+            <h3>Mediaworks <span aria-hidden="true">↗</span></h3>
+            <p>TikTok research, production and training</p>
+          </a>
+          <a class="home-photo" href="reflections.html">
+            <h3>Reflections Film &amp; Media <span aria-hidden="true">↗</span></h3>
+            <p>Social channels, short videos and event coverage</p>
+          </a>
+        </div>
+      </div>
+      <a class="link-arrow" href="content.html">All social &amp; content work <span aria-hidden="true">↗</span></a>
+    </section>
+    <section class="story" id="about" aria-labelledby="abouttitle">
+      <div class="wrap story-grid">
+        <div>
+          <h2 id="abouttitle">About <span class="serif">me.</span></h2>
+          <p class="story-intro">I'm Jess — a West Yorkshire-based creative with a background in advertising, design and cultural marketing.</p>
+          <p>I’m a Marketing Manager at the National Science and Media Museum. I also take on freelance projects with arts and cultural organisations.</p>
+          <a class="link-arrow" href="about.html">More about me <b aria-hidden="true">↗</b></a>
+        </div>
+        <div class="story-right">
+          <img class="about-portrait" src="../images/My%20Portrait.jpeg" alt="Portrait of Jess Watson" loading="lazy" width="1536" height="1920">
+          <div><p class="micro">What I tend to do</p><div class="skills">
+            <span>Campaign strategy</span><span>Art direction</span>
+            <span>Graphic design</span><span>Photography</span>
+            <span>Writing & content</span><span>Creative experiments</span>
+          </div></div>
+        </div>
+      </div>
+    </section>
+    <section class="notebook" id="journal" aria-labelledby="journal-title">
+      <div class="wrap">
+        <div class="section-head"><div><h2 id="journal-title">The <span class="serif">journal.</span></h2></div></div>
+        <a class="article" href="https://blog.scienceandmediamuseum.org.uk/back-to-the-beginning-an-ozzy-fans-review-of-black-sabbaths-final-show/" target="_blank" rel="noopener noreferrer">
+          <h3>Back to the Beginning: An Ozzy fan's review</h3><p>My review of the concert film at Pictureville, published on the National Science and Media Museum blog.</p><span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="link-arrow" href="journal.html">More writing, press &amp; features <span aria-hidden="true">↗</span></a>
+      </div>
+    </section>
+    <section class="wrap interests" id="photography" aria-labelledby="photo-title">
+      <div class="section-head"><h2 id="photo-title">Photo<span class="serif">graphy.</span></h2></div>
+      <div class="home-photo-grid">
+        <a class="home-photo" href="photo-autumn-charlotte.html"><img src="photography/autumn-charlotte-band.webp" alt="" loading="lazy" decoding="async" width="1100" height="733"><h3>Autumn Charlotte &amp; The Love Bugs <span aria-hidden="true">↗</span></h3><p>Live music</p></a>
+        <a class="home-photo" href="photo-cartwright-hall.html"><img src="../images/01-jim-moir-neo-fauna-artist-opening.jpg" alt="" loading="lazy" decoding="async" width="1086" height="724"><h3>Cartwright Hall openings <span aria-hidden="true">↗</span></h3><p>Exhibitions · Bradford</p></a>
+        <a class="home-photo" href="photo-faro-loule.html"><img src="photography/old-faro.webp" alt="" loading="lazy" decoding="async" width="1100" height="733"><h3>Faro &amp; Loulé <span aria-hidden="true">↗</span></h3><p>Places · Algarve</p></a>
+      </div>
+      <a class="link-arrow" href="photography.html">All photography <span aria-hidden="true">↗</span></a>
+    </section>
+
+</main>
+  <footer class="footer" id="contact">
+    <div class="wrap">
+      <div class="footer-top">
+        <div><h2>Let's <em>talk.</em></h2><a class="email" href="mailto:jessisacreative@gmail.com">jessisacreative@gmail.com ↗</a></div>
+        <div class="footer-side"><a href="https://www.instagram.com/jessisacreative/" target="_blank" rel="noopener noreferrer">Instagram ↗</a><a href="https://www.linkedin.com/in/jessisacreative/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a><a href="#home">Back to the top ↑</a></div>
+      </div>
+      <div class="footer-bottom micro"><span>© 2026 Jess Watson / @jessisacreative</span><span>West Yorkshire, UK</span></div>
+    </div>
+  </footer>
+</body>
+</html>
