@@ -110,10 +110,10 @@
     .article p{font-size:14px;line-height:1.5;max-width:350px;margin:0}
     .article .arrow{font-size:27px;text-align:right}
     .article:hover h3{text-decoration:underline;text-underline-offset:5px}
-    .playground{background:var(--paper);padding-top:95px;padding-bottom:100px}
-    .playbox .playtext{display:flex;flex-direction:column;justify-content:space-between}
-    .playtext h3{font:italic clamp(44px,5.2vw,78px)/.97 var(--serif);letter-spacing:-.06em;margin:10px 0 0}
-    .playtext p{font-size:14px;line-height:1.55;max-width:350px}
+
+
+
+
     .footer{background:var(--ink);color:var(--paper);padding:90px 0 26px}
     .footer-top{display:flex;justify-content:space-between;gap:40px}
     .footer h2{font-size:clamp(66px,9vw,155px);margin:15px 0 40px}
@@ -141,7 +141,7 @@
       .story-grid{grid-template-columns:1fr}
       .interests{padding-top:75px;padding-bottom:75px}
       .notebook{padding:76px 0}
-      .playground{padding-top:70px;padding-bottom:75px}
+
       .footer{padding-top:70px}
       .footer-top{flex-direction:column}
       .footer-bottom{margin-top:70px}
@@ -171,8 +171,8 @@
     .feature-card{border:0}
     .notebook{background:var(--paper)}
     .article{display:grid;grid-template-columns:minmax(0,1.3fr) 1fr 32px;gap:20px;align-items:center;border-top:1px solid var(--line);padding:24px 0;text-decoration:none}
-    .playbox{max-width:780px;border-top:1px solid var(--line);padding-top:20px}
-    .playbox .playtext{display:block}
+
+
     :target{scroll-margin-top:110px}
     @media(max-width:700px){
       .hero{grid-template-columns:1fr;min-height:0}
@@ -184,6 +184,15 @@
       :target{scroll-margin-top:140px}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{transition:none!important}}
+    .home-photo-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+    .home-photo{text-decoration:none}
+    .home-photo img{aspect-ratio:4/3;object-fit:cover;background:#e7e7e7}
+    .home-photo h3{font-size:clamp(21px,2.6vw,34px);line-height:1.1;margin:14px 0 5px;letter-spacing:-.04em}
+    .home-photo p{font-size:14px;margin:0;color:var(--muted)}
+    .home-photo:hover h3{text-decoration:underline;text-decoration-color:var(--rose)}
+    .work-note{flex-wrap:wrap;justify-content:start}
+    .work-note .link-arrow{margin-top:0}
+    @media(max-width:700px){.home-photo-grid{grid-template-columns:1fr;gap:30px}}
   </style>
 </head>
 <body>
@@ -192,7 +201,7 @@
     <div class="wrap head-inner">
       <a class="brand" href="#home" aria-label="Jess is a creative, home">jess<em>is</em>a creative<span class="brand-dot" aria-hidden="true">.</span></a>
       <nav class="nav" aria-label="Primary navigation">
-        <a href="work.html">Work</a><a href="photography.html">Photography</a><a href="journal.html">Journal</a><a href="about.html">About</a><a href="#playground">Playground</a><a href="#contact" class="nav-cta">Say hello ↗</a>
+        <a href="work.html">Work</a><a href="photography.html">Photography</a><a href="journal.html">Journal</a><a href="about.html">About</a><a href="#contact" class="nav-cta">Say hello ↗</a>
       </nav>
     </div>
   </header>
@@ -204,7 +213,7 @@
       </div>
       <div class="hero-intro">
         <p>Campaigns, design and photography for arts and culture.</p>
-        <p>I work at the National Science and Media Museum. Away from work, I photograph gigs, write about music and experiment with making little worlds in 3D.</p>
+        <p>I work at the National Science and Media Museum. Away from work, I photograph gigs and write about music.</p>
         <a href="#work" class="link-arrow">See selected work <span aria-hidden="true">↓</span></a>
       </div>
     </section>
@@ -238,7 +247,7 @@
           <figure class="frame"><img src="../images/front%20cover%20of%20the%20leeds%20arts%20university%20prospectus%20designed%20by%20me.png" alt="Leeds Arts University prospectus cover design" loading="lazy"></figure>
           <div class="projectinfo"><div><h3>University Creative</h3><p>Brand, print & campaign design / Leeds Arts University</p></div></div>
         </a>
-        <div class="work-note"><a class="link-arrow" href="work.html">View all projects <span aria-hidden="true">↗</span></a></div>
+        <div class="work-note"><a class="link-arrow" href="work.html">View all projects <span aria-hidden="true">↗</span></a> <a class="link-arrow" href="design.html">Graphic design <span aria-hidden="true">↗</span></a> <a class="link-arrow" href="content.html">Social &amp; content <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>
     <section class="story" id="about" aria-labelledby="abouttitle">
@@ -259,33 +268,26 @@
         </div>
       </div>
     </section>
-    <section class="wrap interests" id="photography" aria-labelledby="photo-title">
-      <div class="section-head">
-        <div><h2 id="photo-title">Photo<span class="serif">graphy.</span></h2></div>
-        <p class="small-intro">Gigs, exhibitions and details I notice out and about.</p>
-      </div>
-      <div class="interest-grid">
-        <a class="feature-card" href="photography.html">
-          <figure class="visual"><img src="photography/autumn-charlotte-band.webp" alt="The band performs against a brick wall hung with records under green and purple lights" width="1100" height="733" loading="lazy" decoding="async"></figure>
-          <div class="card-copy"><div><h3>Arts, events &amp; nature</h3></div><div class="card-bottom"><span>Explore my photography</span><span aria-hidden="true">↗</span></div></div>
-        </a>
-      </div>
-    </section>
     <section class="notebook" id="journal" aria-labelledby="journal-title">
       <div class="wrap">
         <div class="section-head"><div><h2 id="journal-title">The <span class="serif">journal.</span></h2></div></div>
         <a class="article" href="https://blog.scienceandmediamuseum.org.uk/back-to-the-beginning-an-ozzy-fans-review-of-black-sabbaths-final-show/" target="_blank" rel="noopener noreferrer">
           <h3>Back to the Beginning: An Ozzy fan's review</h3><p>My review of the concert film at Pictureville, published on the National Science and Media Museum blog.</p><span class="arrow" aria-hidden="true">↗</span>
         </a>
+        <a class="link-arrow" href="journal.html">More writing, press &amp; features <span aria-hidden="true">↗</span></a>
       </div>
     </section>
-    <section class="wrap playground" id="playground" aria-labelledby="play-title">
-      <div class="section-head"><div><h2 id="play-title">Play<span class="serif">ground.</span></h2></div></div>
-      <div class="playbox">
-        <div class="playtext"><span class="micro">Work in progress / 3D & digital</span><h3>What if a portfolio was a place you could explore?</h3><p>I’m using 3D scans of two fairy-house tree stumps to work out how a small woodland scene could be explored online.</p></div>
+    <section class="wrap interests" id="photography" aria-labelledby="photo-title">
+      <div class="section-head"><h2 id="photo-title">Photo<span class="serif">graphy.</span></h2></div>
+      <div class="home-photo-grid">
+        <a class="home-photo" href="photo-autumn-charlotte.html"><img src="photography/autumn-charlotte-band.webp" alt="" loading="lazy" decoding="async"><h3>Autumn Charlotte &amp; The Love Bugs <span aria-hidden="true">↗</span></h3><p>Live music</p></a>
+        <a class="home-photo" href="photo-cartwright-hall.html"><img src="../images/01-jim-moir-neo-fauna-artist-opening.jpg" alt="" loading="lazy" decoding="async"><h3>Cartwright Hall openings <span aria-hidden="true">↗</span></h3><p>Exhibitions · Bradford</p></a>
+        <a class="home-photo" href="photo-faro-loule.html"><img src="photography/old-faro.webp" alt="" loading="lazy" decoding="async"><h3>Faro &amp; Loulé <span aria-hidden="true">↗</span></h3><p>Places · Algarve</p></a>
       </div>
+      <a class="link-arrow" href="photography.html">All photography <span aria-hidden="true">↗</span></a>
     </section>
-  </main>
+
+</main>
   <footer class="footer" id="contact">
     <div class="wrap">
       <div class="footer-top">
